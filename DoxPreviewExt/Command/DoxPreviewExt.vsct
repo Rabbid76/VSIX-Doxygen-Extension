@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!--  This is the file that defines the actual layout and type of the commands.
+        It is divided in different sections (e.g. command definition, command
+        placement, ...), with each defining a specific set of properties.
+        See the comment before each section for more details about how to
+        use it. -->
+
+  <!--  The VSCT compiler (the tool that translates this file into the binary
+        format that VisualStudio will consume) has the ability to run a preprocessor
+        on the vsct file; this preprocessor is (usually) the C++ preprocessor, so
+        it is possible to define includes and macros with the same syntax used
+        in C++ files. Using this ability of the compiler here, we include some files
+        defining some of the constants that we will use inside the file. -->
+
+  <!--This is the file that defines the IDs for all the commands exposed by VisualStudio. -->
+  <Extern href="stdidcmd.h" />
+
+  <!--This header contains the command ids for the menus provided by the shell. -->
+  <Extern href="vsshlids.h" />
+
+  <!--The Commands section is where commands, menus, and menu groups are defined.
+      This section uses a Guid to identify the package that provides the command defined inside it. -->
+  <Commands package="guidDoxExtension">
+    <!-- Inside this section we have different sub-sections: one for the menus, another
+    for the menu groups, one for the buttons (the actual commands), one for the combos
+    and the last one for the bitmaps used. Each element is identified by a command id that
+    is a unique pair of guid and numeric identifier; the guid part of the identifier is usually
+    called "command set" and is used to group different command inside a logically related
+    group; your package should define its own command set in order to avoid collisions
+    with command ids defined by other packages. -->
+
+    <!-- In this section you can define new menu groups. A menu group is a container for
+         other menus or buttons (commands); from a visual point of view you can see the
+         group as the part of a menu contained between two lines. The parent of a group
+         must be a menu. -->
+    <Groups>
+      <Group guid="guidDoxExtensionCmdSet" id="MyMenuGroup" priority="0x0000">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_CODEWIN" />
+      </Group>
+      <Group guid="guidDoxExtensionCmdSet" id="SubMenuGroupCommon" priority="0x0000">
+        <Parent guid="guidDoxExtensionCmdSet" id="SubMenu" />
+      </Group>
+      <Group guid="guidDoxExtensionCmdSet" id="SubMenuGroupDoxygen" priority="0x0000">
+        <Parent guid="guidDoxExtensionCmdSet" id="SubMenu" />
+      </Group>
+      <Group guid="guidDoxExtensionCmdSet" id="SubMenuGroupDoxygenAction" priority="0x0000">
+        <Parent guid="guidDoxExtensionCmdSet" id="SubMenu" />
+      </Group>
+    </Groups>
+
+    <Menus>
+      <Menu guid="guidDoxExtensionCmdSet" id="SubMenu" priority="0x0100" type="Menu">
+        <Parent guid="guidDoxExtensionCmdSet" id="MyMenuGroup" />
+        <Strings>
+          <ButtonText>Doxygen Preview Extension</ButtonText>
+          <CommandName>Doxygen Preview Extension</CommandName>
+        </Strings>
+      </Menu>
+    </Menus>
+
+    <!--Buttons section. -->
+    <!--This section defines the elements the user can interact with, like a menu command or a button
+        or combo box in a toolbar. -->
+    <Buttons>
+      <!--To define a menu group you have to specify its ID, the parent menu and its display priority.
+          The command is visible and enabled by default. If you need to change the visibility, status, etc, you can use
+          the CommandFlag node.
+          You can add more than one CommandFlag node e.g.:
+              <CommandFlag>DefaultInvisible</CommandFlag>
+              <CommandFlag>DynamicVisibility</CommandFlag>
+          If you do not want an image next to your command, remove the Icon node /> -->
+ <!--SubMenuGroupCommon-->
+      <Button guid="guidDoxExtensionCmdSet" id="cmdidDocumentSourceId" priority="0x0100" type="Button">
+        <Parent guid="guidDoxExtensionCmdSet" id="SubMenuGroupCommon" />
+        <Icon guid="guidImages" id="bmpDocumentSource" />
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Kommentar einfügen</ButtonText>
+        </Strings>
+      </Button>
+<!--SubMenuGroupDoxygen-->
+      <Button guid="guidDoxExtensionCmdSet" id="cmdidDoxygenRefBrowseId" priority="0x0100" type="Button">
+        <Parent guid="guidDoxExtensionCmdSet" id="SubMenuGroupDoxygen" />
+        <Icon guid="guidImages" id="bmpDoxygenRef" />
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Browse Doxygen Reference</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidDoxExtensionCmdSet" id="cmdidDoxygenSourcebrowseId" priority="0x0100" type="Button">
+        <Parent guid="guidDoxExtensionCmdSet" id="SubMenuGroupDoxygen" />
+        <Icon guid="guidImages" id="bmpGlobe" />
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Open Doxygen Sourcebrowser</ButtonText>
+        </Strings>
+      </Button>
+<!--SubMenuGroupDoxygenAction-->
+      <Button guid="guidDoxExtensionCmdSet" id="cmdidDoxygenGenPreviewId" priority="0x0100" type="Button">
+        <Parent guid="guidDoxExtensionCmdSet" id="SubMenuGroupDoxygenAction" />
+        <Icon guid="guidImages" id="bmpSync" />
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Generate local preview from .dox</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidDoxExtensionCmdSet" id="cmdidDoxygenShowPreviewId" priority="0x0100" type="Button">
+        <Parent guid="guidDoxExtensionCmdSet" id="SubMenuGroupDoxygenAction" />
+        <Icon guid="guidImages" id="bmpEye" />
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Show local preview</ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+
+    <!--The bitmaps section is used to define the bitmaps that are used for the commands.-->
+    <Bitmaps>
+      <!--  The bitmap id is defined in a way that is a little bit different from the others:
+            the declaration starts with a guid for the bitmap strip, then there is the resource id of the
+            bitmap strip containing the bitmaps and then there are the numeric ids of the elements used
+            inside a button definition. An important aspect of this declaration is that the element id
+            must be the actual index (1-based) of the bitmap inside the bitmap strip. -->
+      <Bitmap guid="guidImages" href="Resources\CommandIcons.png" usedList="bmpSettings, bmpDocumentSource, bmpExtract, bmpSwitchHeaderSource, bmpMkHead, bmpCheckMsgs, bmpDoxygenRef, bmpGear, bmpGlobe, bmpSync, bmpEye" />
+    </Bitmaps>
+  </Commands>
+
+  <Symbols>
+    <!-- This is the package guid. -->
+    <GuidSymbol name="guidDoxExtension" value="{64DF8652-96DC-4000-82AC-560646B0C8C2}" />
+
+    <!-- This is the guid used to group the menu commands together -->
+    <GuidSymbol name="guidDoxExtensionCmdSet" value="{C7C94F14-0506-4F23-973D-E01A0685E730}">
+      <IDSymbol name="MyMenuGroup" value="0x1020" />
+      <IDSymbol name="SubMenu" value="0x1100" />
+      <IDSymbol name="SubMenuGroupCommon" value="0x1150" />
+      <IDSymbol name="SubMenuGroupDoxygen" value="0x1152" />
+      <IDSymbol name="SubMenuGroupDoxygenAction" value="0x1153" />
+      <IDSymbol value="256" name="cmdidSwitchSourceHeaderId" />
+      <IDSymbol value="257" name="cmdidDocumentSourceId" />
+      <IDSymbol value="261" name="cmdidDoxygenRefBrowseId" />
+      <IDSymbol value="262" name="cmdidDoxygenSourcebrowseId" />
+      <IDSymbol value="266" name="cmdidDoxygenGenPreviewId" />
+      <IDSymbol value="267" name="cmdidDoxygenShowPreviewId" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidImages" value="{0AB789F1-F79E-49C1-8268-87CD5FD218E2}">
+      <IDSymbol name="bmpSettings" value="1" />
+      <IDSymbol name="bmpDocumentSource" value="2" />
+      <IDSymbol name="bmpExtract" value="3" />
+      <IDSymbol name="bmpSwitchHeaderSource" value="4" />
+      <IDSymbol name="bmpMkHead" value="5" />
+      <IDSymbol name="bmpCheckMsgs" value="6" />
+      <IDSymbol name="bmpDoxygenRef" value="7" />
+      <IDSymbol name="bmpGear" value="8" />
+      <IDSymbol name="bmpGlobe" value="9" />
+      <IDSymbol name="bmpSync" value="10" />
+      <IDSymbol name="bmpEye" value="11" />
+    </GuidSymbol>
+  
+    <GuidSymbol value="{537BF8E2-75D6-4FAC-AE82-A6DEF4FAF7DD}" name="guidDoxExtensionCmdSetTools">
+      <IDSymbol value="4128" name="MyMenuGroup" />
+      <IDSymbol name="cmdidSettingsId" value="256" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>

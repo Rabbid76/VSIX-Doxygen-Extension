@@ -1,0 +1,2 @@
+del C:\Users\Gernot\AppData\Local\Microsoft\VisualStudio\15.0_ff39e235Exp\ComponentModelCache\*.* /q
+rem del C:\Users\gernot76.ELITECAD\AppData\Local\Microsoft\VisualStudio\15.0_a3961431Exp\ComponentModelCache\*.* /q
