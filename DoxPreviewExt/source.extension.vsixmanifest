@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="VSDoxRefExtension.{E963E28B-4135-4C2C-9B98-79097A2E8F06}" Version="0.0.1" Language="en-US" Publisher="Gernot Steinegger" />
+    <Identity Id="VSDoxRefExtension.{E963E28B-4135-4C2C-9B98-79097A2E8F06}" Version="0.0.3" Language="en-US" Publisher="Gernot Steinegger" />
     <DisplayName>Doxygen Preview</DisplayName>
     <Description xml:space="preserve">VSIX Doxygen Preview Extension for Visual Studio.</Description>
     <Icon>DoxPreviewExtProduct.ico</Icon>

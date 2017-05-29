@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\Antlr4.CodeGenerator.4.6.1-beta002\build\Antlr4.CodeGenerator.props" Condition="Exists('..\packages\Antlr4.CodeGenerator.4.6.1-beta002\build\Antlr4.CodeGenerator.props')" />
   <Import Project="..\packages\Microsoft.VSSDK.BuildTools.15.0.26201\build\Microsoft.VSSDK.BuildTools.props" Condition="Exists('..\packages\Microsoft.VSSDK.BuildTools.15.0.26201\build\Microsoft.VSSDK.BuildTools.props')" />
   <PropertyGroup>
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
@@ -80,14 +79,19 @@
     <Compile Include="Configuration\OptionPageDoxygenConfiguration.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="DoxUtil\DoxUtilDotGraphPreview.cs" />
     <Compile Include="DoxUtil\DoxUtilDoxSrc.cs" />
     <Compile Include="DoxUtil\DoxUtilFileMap.cs" />
+    <Compile Include="DoxUtil\DoxUtilLatexFormulaPreview.cs" />
     <Compile Include="DoxUtil\DoxUtilLinkMap.cs" />
     <Compile Include="DoxUtil\DoxUtilManager.cs" />
     <Compile Include="DoxUtil\DoxUtilHTMLFinder.cs" />
     <Compile Include="DoxUtil\DoxUtilClassifier.cs" />
     <Compile Include="DoxUtil\DoxUtilMouseProcessor.cs" />
+    <Compile Include="DoxUtil\DoxUtilMscGraphPreview.cs" />
     <Compile Include="DoxUtil\DoxUtilOptions.cs" />
+    <Compile Include="DoxUtil\DoxUtilPlantUmlPreview.cs" />
+    <Compile Include="DoxUtil\DoxUtilPreviewBase.cs" />
     <Compile Include="DoxUtil\DoxUtilQuickInfo.cs" />
     <Compile Include="DoxUtil\DoxUtilTagger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -123,9 +127,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Antlr4.Runtime, Version=4.6.0.0, Culture=neutral, PublicKeyToken=e9931a4108ef2354, processorArchitecture=MSIL">
-      <HintPath>..\packages\Antlr4.Runtime.4.6.1-beta002\lib\net45\Antlr4.Runtime.dll</HintPath>
-    </Reference>
     <Reference Include="EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
@@ -267,10 +268,6 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Xml.Linq.3.5.21022.801\lib\net20\System.Xml.Linq.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
@@ -289,11 +286,8 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.VSSDK.BuildTools.15.0.26201\build\Microsoft.VSSDK.BuildTools.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.VSSDK.BuildTools.15.0.26201\build\Microsoft.VSSDK.BuildTools.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.VSSDK.BuildTools.15.0.26201\build\Microsoft.VSSDK.BuildTools.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.VSSDK.BuildTools.15.0.26201\build\Microsoft.VSSDK.BuildTools.targets'))" />
-    <Error Condition="!Exists('..\packages\Antlr4.CodeGenerator.4.6.1-beta002\build\Antlr4.CodeGenerator.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Antlr4.CodeGenerator.4.6.1-beta002\build\Antlr4.CodeGenerator.props'))" />
-    <Error Condition="!Exists('..\packages\Antlr4.CodeGenerator.4.6.1-beta002\build\Antlr4.CodeGenerator.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Antlr4.CodeGenerator.4.6.1-beta002\build\Antlr4.CodeGenerator.targets'))" />
   </Target>
   <Import Project="..\packages\Microsoft.VSSDK.BuildTools.15.0.26201\build\Microsoft.VSSDK.BuildTools.targets" Condition="Exists('..\packages\Microsoft.VSSDK.BuildTools.15.0.26201\build\Microsoft.VSSDK.BuildTools.targets')" />
-  <Import Project="..\packages\Antlr4.CodeGenerator.4.6.1-beta002\build\Antlr4.CodeGenerator.targets" Condition="Exists('..\packages\Antlr4.CodeGenerator.4.6.1-beta002\build\Antlr4.CodeGenerator.targets')" />
   <PropertyGroup>
     <PostBuildEvent>$(ProjectDir)clearcache.bat</PostBuildEvent>
   </PropertyGroup>
