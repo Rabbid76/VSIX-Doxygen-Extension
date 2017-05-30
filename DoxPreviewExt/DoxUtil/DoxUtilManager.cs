@@ -366,8 +366,10 @@ namespace DoxPreviewExt.DoxUtil
 			var doxConfigXML = doxConfigXMLPath + doxConfigXMLName;
 			if (File.Exists(doxConfigXML) == false)
 			{
+#if DEBUG
 				doxConfigXMLPath = "C:\\source\\model3dviewer\\VSDoxExt\\test\\"; // TODO $$$ test only
 				doxConfigXML = doxConfigXMLPath + doxConfigXMLName;
+#endif
 			}
 
 			// read doxgan configuration paths from 'doxygen_config.xml'

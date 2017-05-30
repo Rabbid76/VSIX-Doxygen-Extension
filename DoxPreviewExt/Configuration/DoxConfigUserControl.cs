@@ -27,6 +27,12 @@ namespace DoxPreviewExt.Configuration
 			this.textBoxMimeTexPath.Text = this.optionsPage.MimeTeXPath;
 		}
 
+		private void DoxConfigUserControl_Load(object sender, EventArgs e)
+		{
+			this.textBoxDoxSourceBrowser.Text = DoxUtil.COptions.DefaultSourceBrowser;
+			this.textBoxDoxConfigFile.Text = DoxUtil.COptions.DefaultConfigFile;
+		}
+
 		private void checkBoxDoxSource_Click(object sender, EventArgs e)
 		{
 			this.optionsPage.UseSourceBrowser = this.checkBoxDoxSource.Checked;
