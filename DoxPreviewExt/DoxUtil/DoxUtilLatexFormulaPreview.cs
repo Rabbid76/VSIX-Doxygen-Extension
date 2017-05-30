@@ -31,7 +31,7 @@ namespace DoxPreviewExt.DoxUtil
 			}
 			else
 			{
-				this.TempFilePath(tempSourcePath_, this.TempName, "dot", out this.tempSourceFileName_, out this.tempSourceFilePath_);
+				this.TempFilePath(tempSourcePath_, this.TempName, "latexf", out this.tempSourceFileName_, out this.tempSourceFilePath_);
 			}
 
 			// generate new temporary preview file path and path
@@ -83,16 +83,13 @@ namespace DoxPreviewExt.DoxUtil
 			state_ = State.busy;
 			try
 			{
-				// find plantuml.jar
-				var mimeTeXDir = Options.MimeTexPath;
-				if (mimeTeXDir == null || mimeTeXDir == "")
+				// find mimetex.exe
+				var mimeTeXTool = this.Options.CurrentMimeTeXTool;
+        if (mimeTeXTool == null || mimeTeXTool == "")
 				{
 					state_ = State.failed;
 					return;
 				}
-				if (mimeTeXDir.EndsWith("/") == false && mimeTeXDir.EndsWith("\\") == false)
-					mimeTeXDir += "\\";
-				var mimeTeXTool = mimeTeXDir + "mimetex.exe";
 
 				// create temporary file with source code
 				if (sourceIsFile_ == false)
@@ -110,7 +107,7 @@ namespace DoxPreviewExt.DoxUtil
 				//   mimetex.exe -e "c:\temp\test.gif" -f "c:\temp\testmimetex.txt" -o -s 5
 				var args = "-e \"" + this.previewFilePath_ + "\" -f \"" + this.tempSourceFilePath_ + "\" -o -s " + priveFontSize_.ToString();
 				ProcessStartInfo startInfo = new ProcessStartInfo(mimeTeXTool, args);
-				startInfo.WorkingDirectory = mimeTeXDir;
+				startInfo.WorkingDirectory = this.tempSourceFilePath_;
 				startInfo.CreateNoWindow = true;
 				startInfo.UseShellExecute = false;
 				startInfo.WindowStyle = ProcessWindowStyle.Hidden;

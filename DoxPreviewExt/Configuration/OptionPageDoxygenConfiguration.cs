@@ -11,7 +11,10 @@ namespace DoxPreviewExt.Configuration
 	{
 		private bool _useSourceBrowser = true;
 		private bool _useConfigFile = true;
-		private string _mimeTeXPath = ExtensionCommon.ExtensionContext.ConstMimeTeXBin;
+		private string _dotExe = ExtensionCommon.ExtensionContext.ConstDotExe;
+		private string _mscgenExe = ExtensionCommon.ExtensionContext.ConstMscGenExe;
+		private string _plantumlJar = ExtensionCommon.ExtensionContext.ConstPlantUmlJar;
+		private string _mimeTeXExe = ExtensionCommon.ExtensionContext.ConstMimeTeXExe;
 
 		public bool UseSourceBrowser
 		{
@@ -25,10 +28,28 @@ namespace DoxPreviewExt.Configuration
 			set { _useConfigFile = value; }
 		}
 
-		public string MimeTeXPath
+		public string DotExe
 		{
-			get { return _mimeTeXPath; }
-			set { _mimeTeXPath = value; }
+			get { return _dotExe; }
+			set { _dotExe = value; }
+		}
+
+		public string MscGenExe
+		{
+			get { return _mscgenExe; }
+			set { _mscgenExe = value; }
+		}
+
+		public string PlantUmlJar
+		{
+			get { return _plantumlJar; }
+			set { _plantumlJar = value; }
+		}
+
+		public string MimeTeXExe
+		{
+			get { return _mimeTeXExe; }
+			set { _mimeTeXExe = value; }
 		}
 
 		protected override IWin32Window Window

@@ -30,7 +30,7 @@ namespace DoxPreviewExt.DoxUtil
 			}
 			else
 			{
-				this.TempFilePath(tempSourcePath_, this.TempName, "dot", out this.tempSourceFileName_, out this.tempSourceFilePath_);
+				this.TempFilePath(tempSourcePath_, this.TempName, "mscgen", out this.tempSourceFileName_, out this.tempSourceFilePath_);
 			}
 
 			// generate new temporary preview file path and path
@@ -82,16 +82,13 @@ namespace DoxPreviewExt.DoxUtil
 			state_ = State.busy;
 			try
 			{
-				// find plantuml.jar
-				var mscgenDir = Options.MscBinPath;
-				if (mscgenDir == null || mscgenDir == "")
+				// find mscgen.exe
+				var mscgenTool = this.Options.CurrentMscGenTool;
+        if (mscgenTool == null || mscgenTool == "")
 				{
 					state_ = State.failed;
 					return;
 				}
-				if (mscgenDir.EndsWith("/") == false && mscgenDir.EndsWith("\\") == false)
-					mscgenDir += "\\";
-				var mscgenTool = mscgenDir + "mscgen.exe";
 
 				// create temporary file with source code
 				if (sourceIsFile_ == false)
@@ -104,10 +101,10 @@ namespace DoxPreviewExt.DoxUtil
 
 				// generate preview file
 				// mscgen - Command-Line Referece [http://msc-generator.sourceforge.net/help/3.7.5/ch05s10.html]
-				// e.g mscgen -T png input.dot > output.png
+				// e.g mscgen.exe -T png input.dot > output.png
 				var args = "-T " + this.previewFileExt_ + " -o \"" + this.previewFilePath_ + "\" \"" + this.tempSourceFilePath_ + "\"";
-				ProcessStartInfo startInfo = new ProcessStartInfo(mscgenTool, args); // TODO $$$ Why does this not work? Unicode?
-				startInfo.WorkingDirectory = mscgenDir;
+				ProcessStartInfo startInfo = new ProcessStartInfo(mscgenTool, args);
+				startInfo.WorkingDirectory = this.tempSourceFilePath_;
 				startInfo.CreateNoWindow = true;
 				startInfo.UseShellExecute = false;
 				startInfo.WindowStyle = ProcessWindowStyle.Hidden;

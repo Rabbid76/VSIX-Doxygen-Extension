@@ -518,6 +518,8 @@ namespace DoxPreviewExt.DoxUtil
 		//! \brief clear doxygen cache
 		public void ClearDoxygenCache()
 		{
+      if (this.Options != null)
+			  this.Options.ClearPaths();
 			UpdateURL("");
 			UpdateLocalHtml("");
 			UpdateFilePaths(ref Cache.imageFileMap_, new List<string>());

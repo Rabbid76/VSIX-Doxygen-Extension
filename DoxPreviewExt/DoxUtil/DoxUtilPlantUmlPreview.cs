@@ -71,7 +71,7 @@ namespace DoxPreviewExt.DoxUtil
 			try
 			{
 				// find plantuml.jar
-				var plantumljar = Options.PlantUmlJarFile;
+				var plantumljar = this.Options.CurrentPlantUmlTool;
 				if (plantumljar == null || plantumljar == "")
 				{
 					state_ = State.failed;

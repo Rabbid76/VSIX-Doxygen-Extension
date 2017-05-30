@@ -13,9 +13,17 @@ namespace DoxPreviewExt.DoxUtil
 
 		private string _currentSourceBrowser = "";
 		private string _currentDoxygenConfigFile = "";
+		private string _currentDotExe = null;
+		private string _currentMscGenExe = null;
+		private string _currentPlantUmlJar = null;
+		private string _currentMimeTeXExe = null;
 
 		public string CurrentSourceBrowser { get { return _currentSourceBrowser; } }
 		public string CurrentDoxygenConfigFile { get { return _currentDoxygenConfigFile; } }
+		public string CurrentDotTool { get { FindDotExe(); return _currentDotExe; } }
+		public string CurrentMscGenTool { get { FindMscGenExe(); return _currentMscGenExe; } }
+		public string CurrentPlantUmlTool { get { FindPlantUmlJar(); return _currentPlantUmlJar; } }
+		public string CurrentMimeTeXTool { get { FindMimeTeXExe(); return _currentMimeTeXExe; } }
 
 		private SortedDictionary<string, List<string>> config_ = new SortedDictionary<string, List<string>>();
 		private List<string> imagePaths_ = new List<string>();
@@ -35,9 +43,18 @@ namespace DoxPreviewExt.DoxUtil
 
 		/// \brief Interpret doxygen configuration file
 		public bool UseConfigFile { get { return Page<Configuration.OptionPageDoxygenConfiguration>().UseConfigFile; } }
-		
-		/// \brief Get Path of mimeTeX Latex Formula to bitmap converter
-		public string MimeTexPath { get { return Page<Configuration.OptionPageDoxygenConfiguration>().MimeTeXPath; } }
+
+		/// \brief Get Executable path and file of Dot Graph to bitmap converter
+		public string DotExe { get { return Page<Configuration.OptionPageDoxygenConfiguration>().DotExe; } }
+
+		/// \brief Get Executable path and file of Message Sequence Chart Graph to bitmap converter
+		public string MscGenExe { get { return Page<Configuration.OptionPageDoxygenConfiguration>().MscGenExe; } }
+
+		/// \brief Get Path of PlantUML to bitmap converter
+		public string PlantUmlJar { get { return Page<Configuration.OptionPageDoxygenConfiguration>().PlantUmlJar; } }
+
+		/// \brief Get Executable path and file of mimeTeX Latex Formula to bitmap converter
+		public string MimeTeXExe { get { return Page<Configuration.OptionPageDoxygenConfiguration>().MimeTeXExe; } }
 
 		/// \brief Browse Reference, if clicked on
 		public bool ClickOnRef { get { return AnyDocumentationValid() && Page<Configuration.OptionPageActionSettings>().ClickOnRef; } }
@@ -52,13 +69,13 @@ namespace DoxPreviewExt.DoxUtil
 		public bool ImageQT { get { return ConfigFileValid() && Page<Configuration.OptionPageActionSettings>().ImageQuicktip; } }
 
 		/// \brief Show Dot Graph preview in Quicktip
-		public bool DotQT { get { return ConfigFileValid() && Page<Configuration.OptionPageActionSettings>().DotQuicktip; } }
+		public bool DotQT { get { return DotValid() && Page<Configuration.OptionPageActionSettings>().DotQuicktip; } }
 
 		/// \brief Show Message Sequence Chart preview in Quicktip
-		public bool MscQT	{	get	{	return ConfigFileValid() && Page<Configuration.OptionPageActionSettings>().MscQuicktip; } }
+		public bool MscQT	{	get	{	return MscGenValid() && Page<Configuration.OptionPageActionSettings>().MscQuicktip; } }
 
 		/// \brief Show Plant UML preview in Quicktip
-		public bool PlantUmlQT { get { return ConfigFileValid() && Page<Configuration.OptionPageActionSettings>().PlantUmlQuicktip; } }
+		public bool PlantUmlQT { get { return PlantUmlValide() && Page<Configuration.OptionPageActionSettings>().PlantUmlQuicktip; } }
 
 		/// \brief Show Latex Formula  preview in Quicktip
 		public bool LatexFormulaQT { get { return MimeTeXValid() && Page<Configuration.OptionPageActionSettings>().LatexFormulaQuicktip; } }
@@ -73,6 +90,15 @@ namespace DoxPreviewExt.DoxUtil
 		{
 			this.Package = package;
 		}
+
+		/// \brief Clear path cache 
+		public void ClearPaths()
+		{
+			_currentDotExe = null;
+		  _currentMscGenExe = null;
+		  _currentPlantUmlJar = null;
+		  _currentMimeTeXExe = null;
+	  }
 
 		/// \brief Tests if source browser is valid
 		private bool SourceBrowserValid()
@@ -101,11 +127,135 @@ namespace DoxPreviewExt.DoxUtil
 			return this.UseConfigFile && configFile != null && configFile != "";
 		}
 
+		/// \brief finds dot.exe
+		private void FindDotExe()
+		{
+			if (_currentDotExe != null)
+				return;
+
+			var dotGraphDir = DoxFileDotGraphBinPath;
+			if (DoxFileDotGraphSuport && dotGraphDir != null && dotGraphDir != "")
+			{
+				if (dotGraphDir.EndsWith("/") == false && dotGraphDir.EndsWith("\\") == false)
+					dotGraphDir += "\\";
+				var dotGraphTool = dotGraphDir + "dot.exe";
+				if ( File.Exists(dotGraphTool) )
+				{
+					_currentDotExe = dotGraphTool;
+					return;
+				}
+			}
+
+			var dotExe = DotExe;
+			if (dotExe != null && File.Exists(dotExe))
+			{
+				_currentDotExe = dotExe;
+				return;
+			}
+
+			_currentDotExe = "";
+		}
+
+		/// \brief finds mscgen.exe
+		private void FindMscGenExe()
+		{
+			if (_currentMscGenExe != null)
+				return;
+
+			var mscgenDir = DoxFileMscgenBinPath;
+			if (mscgenDir != null && mscgenDir != "")
+			{
+				if (mscgenDir.EndsWith("/") == false && mscgenDir.EndsWith("\\") == false)
+					mscgenDir += "\\";
+				var mscgenTool = mscgenDir + "mscgen.exe";
+				if (File.Exists(mscgenTool))
+				{
+					_currentDotExe = mscgenTool;
+					return;
+				}
+			}
+
+			var mscgenExe = MscGenExe;
+			if (mscgenExe != null && File.Exists(mscgenExe))
+			{
+				_currentMscGenExe = mscgenExe;
+				return;
+			}
+
+			_currentMscGenExe = "";
+		}
+
+		/// \brief finds plantuml.jar
+		private void FindPlantUmlJar()
+		{
+			if (_currentPlantUmlJar != null)
+				return;
+
+			var plantUmlDir = DoxFilePlantUmlJarPath;
+			if (plantUmlDir != null && plantUmlDir != "")
+			{
+				if (plantUmlDir.EndsWith("/") == false && plantUmlDir.EndsWith("\\") == false)
+					plantUmlDir += "\\";
+				var plantUmlTool = plantUmlDir + "plantuml.jar";
+				if (File.Exists(plantUmlTool))
+				{
+					_currentPlantUmlJar = plantUmlTool;
+					return;
+				}
+			}
+
+			var plantUmlJar = PlantUmlJar;
+			if (plantUmlJar != null && File.Exists(plantUmlJar))
+			{
+				_currentPlantUmlJar = plantUmlJar;
+				return;
+			}
+
+			_currentPlantUmlJar = "";
+		}
+
+		/// \brief finds mimetex.exe
+		private void FindMimeTeXExe()
+		{
+			if (_currentMimeTeXExe != null)
+				return;
+
+			var mimtexExe = MimeTeXExe;
+			if (mimtexExe != null && File.Exists(mimtexExe))
+			{
+				_currentMimeTeXExe = mimtexExe;
+				return;
+			}
+
+			_currentMimeTeXExe = "";
+		}
+
+		/// \brief Tests if Dot Graph convert tool is valid
+		private bool DotValid()
+		{
+			FindDotExe();
+			return _currentDotExe != null && _currentDotExe != "";
+		}
+
+		/// \brief Tests if Message Sequence Chart Graph convert tool is valid
+		private bool MscGenValid()
+		{
+			FindMscGenExe();
+			return _currentMscGenExe != null && _currentMscGenExe != "";
+		}
+
+		/// \brief Tests if Message Sequence Chart Graph convert tool is valid
+		private bool PlantUmlValide()
+		{
+			FindPlantUmlJar();
+			return _currentPlantUmlJar != null && _currentPlantUmlJar != "";
+		}
+
 		/// \brief Tests if mimeTeX convert tool is valid
 		private bool MimeTeXValid()
 		{
-			string mimeTeX = this.MimeTexPath;
-			return mimeTeX != null && mimeTeX != "";
+			FindMimeTeXExe();
+			return _currentMimeTeXExe != null && _currentMimeTeXExe != "";
 		}
 
 		/// \brief read doxygen configuration from file
@@ -277,41 +427,24 @@ namespace DoxPreviewExt.DoxUtil
 		}
 
 		/// \brief test if mathjax is enabled (Latex formula)
-		public bool MathJaxSuport{ get { return ConfigValue("USE_MATHJAX").ToUpper() == "YES"; } }
+		public bool DoxFileMathJaxSuport{ get { return ConfigValue("USE_MATHJAX").ToUpper() == "YES"; } }
 
 		/// \brief test if dot graph is enabled
-		public bool DotGraphSuport { get { return ConfigValue("HAVE_DOT").ToUpper() == "YES"; } }
+		public bool DoxFileDotGraphSuport { get { return ConfigValue("HAVE_DOT").ToUpper() == "YES"; } }
 
 		/// \brief get mathjax URL
-		public string MathJaxPath { get { return ConfigValue("MATHJAX_RELPATH"); } }
-
-		/// \brief get message sequence chart binaries path
-		public string MscGeneratorBinPath { get { return ConfigValue("MSCGEN_PATH"); } }
+		public string DoxFileMathJaxPath { get { return ConfigValue("MATHJAX_RELPATH"); } }
 
 		/// \brief get dot graph binaries path (graphviz)
-		public string DotGraphBinPath { get { return ConfigValue("DOT_PATH"); } }
+		public string DoxFileDotGraphBinPath { get { return ConfigValue("DOT_PATH"); } }
 
 		/// \brief get message sequence chart binaries path (mscgen)
-		public string MscBinPath { get { return ConfigValue("MSCGEN_PATH"); } }
+		public string DoxFileMscgenBinPath { get { return ConfigValue("MSCGEN_PATH"); } }
 
 		/// \brief get dia binaries path
-		public string DiaBinPath { get { return ConfigValue("DIA_PATH"); } }
+		public string DoxFileDiaBinPath { get { return ConfigValue("DIA_PATH"); } }
 
 		/// \brief get path of plantuml.jar (Plant UML)
-		public string PlantUmlJarPath { get { return ConfigValue("PLANTUML_JAR_PATH"); } }
-		/// \brief get path and file name of plantuml.jar (Plant UML)
-		public string PlantUmlJarFile
-		{
-			get
-			{
-				var path = ConfigValue("PLANTUML_JAR_PATH");
-				if (path == null || path == "")
-					return "";
-				if (path.EndsWith("\\") == false && path.EndsWith("/") == false)
-					path += "\\";
-				var file = path + "plantuml.jar";
-				return file;
-			}
-		}
+		public string DoxFilePlantUmlJarPath { get { return ConfigValue("PLANTUML_JAR_PATH"); } }
 	}
 }

@@ -15,7 +15,10 @@
 		public const string latexHelpURL_      = @"https://en.wikibooks.org/wiki/LaTeX/Mathematics";
 
 		public const string ConstDoxygenExePath = @"C:/tools/doxygen/doxygen.exe";
-		public const string ConstMimeTeXBin = @"C:/tools/mimetex";
+		public const string ConstDotExe         = @"C:/tools/graphviz/bin/dot.exe";
+		public const string ConstMscGenExe      = @"C:/tools/doxygen/mscgen_0_20/mscgen.exe";
+		public const string ConstPlantUmlJar    = @"C:/tools/PlantUML/plantuml.jar";
+		public const string ConstMimeTeXExe     = @"C:/tools/mimetex/mimetex.exe";
 		public const string doxRefAddImage_ = @"secEliteExtensionsDocCodeAddImage";
 
 		public static string DoxygenPreviewTemplatePath { get; set; } = @"C:/source/model3dviewer/OpenGL/DlOGL/doxygen_dox_preview.txt";
