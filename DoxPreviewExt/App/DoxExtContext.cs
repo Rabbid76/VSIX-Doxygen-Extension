@@ -1,4 +1,8 @@
-﻿namespace ExtensionCommon
+﻿using System.Collections.Generic;
+using System.IO;
+
+
+namespace ExtensionCommon
 {
 	public static class ExtensionContext
 	{
@@ -16,13 +20,6 @@
 
 		public const string ConstDoxygenExePath = @"C:/tools/doxygen/doxygen.exe";
 		
-		/// \todo search paths
-		public const string ConstDotExe         = @"C:/tools/graphviz/bin/dot.exe";
-		public const string ConstMscGenExe      = @"C:/tools/doxygen/mscgen_0_20/mscgen.exe";
-		public const string ConstPlantUmlJar    = @"C:/tools/PlantUML/plantuml.jar";
-		public const string ConstMimeTeXExe     = @"C:/tools/mimetex/mimetex.exe";
-		public const string doxRefAddImage_ = @"secEliteExtensionsDocCodeAddImage";
-
 		public static string DoxygenPreviewTemplatePath { get; set; } = @"C:/source/model3dviewer/OpenGL/DlOGL/doxygen_dox_preview.txt";
 		//public static string DoxygenPreviewTemplatePath { get; set; } = @"";
 
@@ -30,5 +27,47 @@
 
 		public const string ConstDoxOptionsActionSettingsName = @"Display and action settings";
 		public const string ConstDoxOptionsConfigurationName = @"Doxygen configuration";
+
+
+		private static List<string> _pathList = new List<string>
+		{
+			@"C:\Program Files",
+			@"C:\Program Files (x86)",
+			@"C:\Tools",
+		};
+
+		private static string SearchFile( string name )
+		{
+			foreach( var path in _pathList)
+			{
+				var filePath = path;
+				if (filePath.EndsWith("/") == false && filePath.EndsWith("\\") == false)
+					filePath += "/";
+				filePath += name;
+				if (File.Exists(filePath))
+					return filePath;
+			}
+			return "";
+		}
+
+		public static string GetDotExe()
+		{
+			return SearchFile(@"graphviz/bin/dot.exe");
+		}
+
+		public static string GetMscGenExe()
+		{
+			return SearchFile(@"mscgen/bin/mscgen.exe");
+		}
+
+		public static string GetPlantUmlJar()
+		{
+			return SearchFile(@"plantuml/plantuml.jar");
+		}
+
+		public static string GetMimeTeXExe()
+		{
+			return SearchFile(@"mimetex/mimetex.exe");
+		}
 	}
 }

@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <None Include="DocsFooter.html" />
     <None Include="DocsHeader.html" />
     <None Include="dox\custom_styles.css" />
     <None Include="dox\pagDoxPreviewImplementation.dox" />
@@ -26,6 +27,9 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="DocsMake.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="..\doxygen_config.xml" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

@@ -23,6 +23,7 @@ var searchData=
   ['_5fmscquicktip',['_mscQuicktip',['../class_dox_preview_ext_1_1_configuration_1_1_option_page_action_settings.html#ac4ed82862245852b8a9c002b6b6a2bac',1,'DoxPreviewExt::Configuration::OptionPageActionSettings']]],
   ['_5foptions',['_options',['../class_dox_preview_ext_1_1_dox_util_1_1_c_manager.html#a2ffd2a068f211908150750b527cc860b',1,'DoxPreviewExt::DoxUtil::CManager']]],
   ['_5fpackage',['_package',['../class_dox_preview_ext_1_1_dox_util_1_1_c_manager.html#aa8f7c297c9b4af4fba3d727bd80c98eb',1,'DoxPreviewExt::DoxUtil::CManager']]],
+  ['_5fpathlist',['_pathList',['../class_extension_common_1_1_extension_context.html#aa5f69c844648820f0090281fa5bfb099',1,'ExtensionCommon::ExtensionContext']]],
   ['_5fplantumljar',['_plantumlJar',['../class_dox_preview_ext_1_1_configuration_1_1_option_page_doxygen_configuration.html#a245e7afc9b2c6df6c2d62a4ea4103367',1,'DoxPreviewExt::Configuration::OptionPageDoxygenConfiguration']]],
   ['_5fplantumlquicktip',['_plantUmlQuicktip',['../class_dox_preview_ext_1_1_configuration_1_1_option_page_action_settings.html#aa401ee5c6f3f8ae55f5c6c56de91844e',1,'DoxPreviewExt::Configuration::OptionPageActionSettings']]],
   ['_5frefquicktip',['_refQuicktip',['../class_dox_preview_ext_1_1_configuration_1_1_option_page_action_settings.html#ad096e9a74077d8d8d1d97f012dee475e',1,'DoxPreviewExt::Configuration::OptionPageActionSettings']]],

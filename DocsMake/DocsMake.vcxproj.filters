@@ -21,10 +21,18 @@
     <None Include="DocsHeader.html">
       <Filter>make</Filter>
     </None>
+    <None Include="DocsFooter.html">
+      <Filter>make</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Text Include="DocsMake.txt">
       <Filter>make</Filter>
     </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="..\doxygen_config.xml">
+      <Filter>make</Filter>
+    </Xml>
   </ItemGroup>
 </Project>

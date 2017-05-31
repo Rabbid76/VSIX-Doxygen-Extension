@@ -11,10 +11,10 @@ namespace DoxPreviewExt.Configuration
 	{
 		private bool _useSourceBrowser = true;
 		private bool _useConfigFile = true;
-		private string _dotExe = ExtensionCommon.ExtensionContext.ConstDotExe;
-		private string _mscgenExe = ExtensionCommon.ExtensionContext.ConstMscGenExe;
-		private string _plantumlJar = ExtensionCommon.ExtensionContext.ConstPlantUmlJar;
-		private string _mimeTeXExe = ExtensionCommon.ExtensionContext.ConstMimeTeXExe;
+		private string _dotExe = ExtensionCommon.ExtensionContext.GetDotExe();
+		private string _mscgenExe = ExtensionCommon.ExtensionContext.GetMscGenExe();
+		private string _plantumlJar = ExtensionCommon.ExtensionContext.GetPlantUmlJar();
+		private string _mimeTeXExe = ExtensionCommon.ExtensionContext.GetMimeTeXExe();
 
 		public bool UseSourceBrowser
 		{

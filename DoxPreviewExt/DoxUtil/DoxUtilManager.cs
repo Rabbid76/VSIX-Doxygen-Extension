@@ -89,8 +89,7 @@ namespace DoxPreviewExt.DoxUtil
 		public static string MscgenHelpURL { get { return ExtensionContext.mscgenHelpURL_; } }
 		public static string PlanUMLHelpURL { get { return ExtensionContext.planUMLHelpURL_; } }
 		public static string LatexHelpURL { get { return ExtensionContext.latexHelpURL_; } }
-		public static string DoxRefAddImage { get { return ExtensionContext.doxRefAddImage_; } }
-
+		
 		public static string DoxExtTempPath
 		{
 			get

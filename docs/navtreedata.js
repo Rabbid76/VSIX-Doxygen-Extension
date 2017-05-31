@@ -5,7 +5,6 @@ var NAVTREE =
     [ "Implementation notes", "pag_dox_preview_implementation.html", [
       [ "Links and Reference", "pag_dox_preview_implementation.html#secDoxPreviewImplementationLinks", null ]
     ] ],
-    [ "Todo List", "todo.html", null ],
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -36,7 +35,7 @@ var NAVTREEINDEX =
 [
 "_assembly_info_8cs.html",
 "class_dox_preview_ext_1_1_dox_util_1_1_c_link_map.html#a7b7a1191c69df7ddfb2cb636c62df921",
-"class_dox_preview_ext_1_1_dox_util_1_1_cmd_classifications.html#a9cec06a8029f402752e4cbc2bada698a"
+"class_dox_preview_ext_1_1_dox_util_1_1_cmd_classifications.html#aaf33459334fc32a3d4b5e3c7b5d18cd3"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

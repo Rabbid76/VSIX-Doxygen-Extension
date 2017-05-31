@@ -1,0 +1,4 @@
+<config>
+    <source>https://rabbid76.github.io/VSIX-Doxygen-Extension/</source>
+    <configurationfile>.\DocsMake\DocsMake.txt</configurationfile>
+</config>

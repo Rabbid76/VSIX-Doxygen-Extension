@@ -41,7 +41,6 @@ var class_dox_preview_ext_1_1_dox_util_1_1_c_manager =
     [ "Cache", "class_dox_preview_ext_1_1_dox_util_1_1_c_manager.html#aea5a96c1c34e36e0e93f11bfdaabb3d3", null ],
     [ "DoxCommadsHelpURL", "class_dox_preview_ext_1_1_dox_util_1_1_c_manager.html#a16492413cb0c89c312ad8954fad5848c", null ],
     [ "DoxExtTempPath", "class_dox_preview_ext_1_1_dox_util_1_1_c_manager.html#a001bac74e95f2b7682adf872efb93daa", null ],
-    [ "DoxRefAddImage", "class_dox_preview_ext_1_1_dox_util_1_1_c_manager.html#ab1caf13150a59054066b562e73a16193", null ],
     [ "GraphvizHelpURL", "class_dox_preview_ext_1_1_dox_util_1_1_c_manager.html#a591d26f9f5e0c5fc605e51eb9057b0fb", null ],
     [ "LatexHelpURL", "class_dox_preview_ext_1_1_dox_util_1_1_c_manager.html#a3d95be2de4028b755106436da086ff33", null ],
     [ "Manager", "class_dox_preview_ext_1_1_dox_util_1_1_c_manager.html#a2d5da48b1cd59d2b0957a1e0915252d9", null ],

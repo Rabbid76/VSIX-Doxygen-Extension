@@ -18,7 +18,6 @@ var searchData=
   ['doxfileplantumljarpath',['DoxFilePlantUmlJarPath',['../class_dox_preview_ext_1_1_dox_util_1_1_c_options.html#aac6676969ce193173fabe40029843fd2',1,'DoxPreviewExt::DoxUtil::COptions']]],
   ['doxhtmloutput',['DoxHtmlOutput',['../class_dox_preview_ext_1_1_dox_util_1_1_c_options.html#a2e4fd0915089f52d9bb7fe6f96227eca',1,'DoxPreviewExt::DoxUtil::COptions']]],
   ['doxmanager',['DoxManager',['../class_dox_preview_ext_1_1_app_1_1_command_manager.html#a3e77159d4aa3df66ec4870b295cd5ff2',1,'DoxPreviewExt.App.CommandManager.DoxManager()'],['../class_dox_preview_ext_1_1_app_1_1_dox_ext_main.html#a3305ca5a5e105cb9ab37833cb59c3721',1,'DoxPreviewExt.App.DoxExtMain.DoxManager()']]],
-  ['doxrefaddimage',['DoxRefAddImage',['../class_dox_preview_ext_1_1_dox_util_1_1_c_manager.html#ab1caf13150a59054066b562e73a16193',1,'DoxPreviewExt::DoxUtil::CManager']]],
   ['doxrootpath',['DoxRootPath',['../class_dox_preview_ext_1_1_dox_util_1_1_c_options.html#aa2c6eb5450a3f65586efb783a64c2bfd',1,'DoxPreviewExt::DoxUtil::COptions']]],
   ['doxygenpreviewtemplatepath',['DoxygenPreviewTemplatePath',['../class_extension_common_1_1_extension_context.html#a825c2fb1f26619280bb13e17c6695ca2',1,'ExtensionCommon::ExtensionContext']]]
 ];

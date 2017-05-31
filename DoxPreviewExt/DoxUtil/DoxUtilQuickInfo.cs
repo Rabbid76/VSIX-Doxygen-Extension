@@ -262,9 +262,9 @@ namespace DoxPreviewExt.DoxUtil
 							AddText(imgTextBlock, colDflt, false, false, "unknown image file  ");
 							AddText(imgTextBlock, colDflt, true, false, spanInfo.Argument);
 							qiContent.Add(imgTextBlock);
-							var hlpURL = manager.FindDoxygenLink(DoxUtil.CManager.DoxRefAddImage, false);
-							if (hlpURL != "")
-								qiContent.Add(CreateTextBlockHRef(colDflt, colHRef, "How to add an image to source code documentation", hlpURL));
+							//var hlpURL = manager.FindDoxygenLink(DoxUtil.CManager.DoxRefAddImage, false);
+							//if (hlpURL != "")
+							//	qiContent.Add(CreateTextBlockHRef(colDflt, colHRef, "How to add an image to source code documentation", hlpURL));
 						}
 					}
 					break;

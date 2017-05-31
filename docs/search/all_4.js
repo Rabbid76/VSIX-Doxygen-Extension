@@ -62,8 +62,6 @@ var searchData=
   ['doxplantumlcontent',['DoxPlantUMLContent',['../class_dox_preview_ext_1_1_dox_util_1_1_cmd_classifications.html#aaf33459334fc32a3d4b5e3c7b5d18cd3',1,'DoxPreviewExt::DoxUtil::CmdClassifications']]],
   ['doxplantumlcontenttype',['DoxPlantUMLContentType',['../class_dox_preview_ext_1_1_dox_util_1_1_cmd_classifications.html#a03e6b26e2ff4ab820e1e5c0ccc348622',1,'DoxPreviewExt::DoxUtil::CmdClassifications']]],
   ['doxpreviewext',['DoxPreviewExt',['../namespace_dox_preview_ext.html',1,'']]],
-  ['doxrefaddimage',['DoxRefAddImage',['../class_dox_preview_ext_1_1_dox_util_1_1_c_manager.html#ab1caf13150a59054066b562e73a16193',1,'DoxPreviewExt::DoxUtil::CManager']]],
-  ['doxrefaddimage_5f',['doxRefAddImage_',['../class_extension_common_1_1_extension_context.html#a7afac5c6cebb17e1896a7e56fd162725',1,'ExtensionCommon::ExtensionContext']]],
   ['doxreference',['DoxReference',['../class_dox_preview_ext_1_1_dox_util_1_1_cmd_classifications.html#ade3d9bd77c8e4ba7709fc10278832a4e',1,'DoxPreviewExt::DoxUtil::CmdClassifications']]],
   ['doxreferencetype',['DoxReferenceType',['../class_dox_preview_ext_1_1_dox_util_1_1_cmd_classifications.html#aca2ec217724c438373c7a40f9ffe7c99',1,'DoxPreviewExt::DoxUtil::CmdClassifications']]],
   ['doxrootpath',['DoxRootPath',['../class_dox_preview_ext_1_1_dox_util_1_1_c_options.html#aa2c6eb5450a3f65586efb783a64c2bfd',1,'DoxPreviewExt::DoxUtil::COptions']]],
