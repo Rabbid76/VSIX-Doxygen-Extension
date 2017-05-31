@@ -153,7 +153,7 @@ namespace DoxPreviewExt.DoxUtil
 				return;
 			}
 
-			_currentDotExe = "";
+			_currentDotExe = ExtensionCommon.ExtensionContext.GetDotExe();
 		}
 
 		/// \brief finds mscgen.exe
@@ -182,7 +182,7 @@ namespace DoxPreviewExt.DoxUtil
 				return;
 			}
 
-			_currentMscGenExe = "";
+			_currentMscGenExe = ExtensionCommon.ExtensionContext.GetMscGenExe();
 		}
 
 		/// \brief finds plantuml.jar
@@ -211,7 +211,7 @@ namespace DoxPreviewExt.DoxUtil
 				return;
 			}
 
-			_currentPlantUmlJar = "";
+			_currentPlantUmlJar = ExtensionCommon.ExtensionContext.GetPlantUmlJar();
 		}
 
 		/// \brief finds mimetex.exe
@@ -227,7 +227,7 @@ namespace DoxPreviewExt.DoxUtil
 				return;
 			}
 
-			_currentMimeTeXExe = "";
+			_currentMimeTeXExe = ExtensionCommon.ExtensionContext.GetMimeTeXExe();
 		}
 
 		/// \brief Tests if Dot Graph convert tool is valid

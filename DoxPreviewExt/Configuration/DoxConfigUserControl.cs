@@ -27,16 +27,45 @@ namespace DoxPreviewExt.Configuration
 			this.textBoxDoxConfigFile.Text = DoxUtil.COptions.DefaultConfigFile;
 
 			// init doxygen tools settings
-			this.textBoxDoxDotExe.Text = this.optionsPage.DotExe;
-			this.textBoxDoxMscGenExe.Text = this.optionsPage.MscGenExe;
-			this.textBoxDoxPlantUmlJar.Text = this.optionsPage.PlantUmlJar;
-			this.textBoxDoxMimeTexExe.Text = this.optionsPage.MimeTeXExe;
 
-			ToolTip toolTip = new ToolTip();
-			toolTip.SetToolTip(this.textBoxDoxDotExe, "Full path and file name of 'dot.exe'");
-			toolTip.SetToolTip(this.textBoxDoxMscGenExe, "Full path and file name of 'mscgen.exe'");
-			toolTip.SetToolTip(this.textBoxDoxPlantUmlJar, "Full path and file name of 'plantuml.jar'");
-			toolTip.SetToolTip(this.textBoxDoxMimeTexExe, "Full path and file name of 'mimetex.exe'");
+			string dotExe = this.optionsPage.DotExe;
+			if (dotExe == null || dotExe == "")
+			{
+				dotExe = ExtensionCommon.ExtensionContext.GetDotExe();
+				this.optionsPage.DotExe = dotExe;
+			}
+
+			string mscGenExe = this.optionsPage.MscGenExe;
+			if (mscGenExe == null || mscGenExe == "")
+			{
+				mscGenExe = ExtensionCommon.ExtensionContext.GetMscGenExe();
+				this.optionsPage.DotExe = mscGenExe;
+			}
+
+			string plantUmlJar = this.optionsPage.PlantUmlJar;
+			if (plantUmlJar == null || plantUmlJar == "")
+			{
+				plantUmlJar = ExtensionCommon.ExtensionContext.GetPlantUmlJar();
+				this.optionsPage.PlantUmlJar = plantUmlJar;
+			}
+
+			string mimeTeXExe = this.optionsPage.MimeTeXExe;
+			if (mimeTeXExe == null || mimeTeXExe == "")
+			{
+				mimeTeXExe = ExtensionCommon.ExtensionContext.GetMimeTeXExe();
+				this.optionsPage.MimeTeXExe = mimeTeXExe;
+			}
+			
+		  this.textBoxDoxDotExe.Text = dotExe;
+			this.textBoxDoxMscGenExe.Text = mscGenExe;
+			this.textBoxDoxPlantUmlJar.Text = plantUmlJar;
+			this.textBoxDoxMimeTexExe.Text = mimeTeXExe;
+
+		  ToolTip toolTip = new ToolTip();
+			toolTip.SetToolTip(this.textBoxDoxDotExe, "Dot Greph: Full path and file name of 'dot.exe'");
+			toolTip.SetToolTip(this.textBoxDoxMscGenExe, "Message Sequence Chart: Full path and file name of 'mscgen.exe'");
+			toolTip.SetToolTip(this.textBoxDoxPlantUmlJar, "Plant UML: Full path and file name of 'plantuml.jar'");
+			toolTip.SetToolTip(this.textBoxDoxMimeTexExe, "LaTeX formula: Full path and file name of 'mimetex.exe'");
 		}
 
 		private void checkBoxDoxSource_Click(object sender, EventArgs e)
