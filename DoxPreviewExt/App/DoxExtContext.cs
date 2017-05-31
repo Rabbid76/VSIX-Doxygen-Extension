@@ -15,6 +15,8 @@
 		public const string latexHelpURL_      = @"https://en.wikibooks.org/wiki/LaTeX/Mathematics";
 
 		public const string ConstDoxygenExePath = @"C:/tools/doxygen/doxygen.exe";
+		
+		/// \todo search paths
 		public const string ConstDotExe         = @"C:/tools/graphviz/bin/dot.exe";
 		public const string ConstMscGenExe      = @"C:/tools/doxygen/mscgen_0_20/mscgen.exe";
 		public const string ConstPlantUmlJar    = @"C:/tools/PlantUML/plantuml.jar";

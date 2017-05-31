@@ -1,0 +1,7 @@
+<map id="DoxPreviewExt.DoxUtil.CManager.LoadOrCreateBitmapImage" name="DoxPreviewExt.DoxUtil.CManager.LoadOrCreateBitmapImage">
+<area shape="rect" id="node2" href="$class_dox_preview_ext_1_1_dox_util_1_1_cmd_quick_info_source.html#a44bbd5288020bf85d9f414b95e773555" title="Add image preview to QuickInfo content. " alt="" coords="283,5,469,47"/>
+<area shape="rect" id="node3" href="$class_dox_preview_ext_1_1_dox_util_1_1_c_plant_u_m_l_image.html#aca9f88b06845022781e47f3264aa9b26" title="DoxPreviewExt.DoxUtil.CPlant\lUMLImage.GetValidImage" alt="" coords="277,71,475,112"/>
+<area shape="rect" id="node4" href="$class_dox_preview_ext_1_1_dox_util_1_1_c_msc_graph_image.html#aff5df9db8ec550d3262ad2be8543118c" title="DoxPreviewExt.DoxUtil.CMsc\lGraphImage.GetValidImage" alt="" coords="279,136,473,177"/>
+<area shape="rect" id="node5" href="$class_dox_preview_ext_1_1_dox_util_1_1_c_latex_formula_image.html#ad1919e20d9409a566ace5bda1fbd7e2f" title="DoxPreviewExt.DoxUtil.CLatex\lFormulaImage.GetValidImage" alt="" coords="276,201,476,243"/>
+<area shape="rect" id="node6" href="$class_dox_preview_ext_1_1_dox_util_1_1_c_dot_graph_image.html#ad28b3c8a962c4782b8bef0bc3452c1bf" title="DoxPreviewExt.DoxUtil.CDot\lGraphImage.GetValidImage" alt="" coords="282,267,470,308"/>
+</map>

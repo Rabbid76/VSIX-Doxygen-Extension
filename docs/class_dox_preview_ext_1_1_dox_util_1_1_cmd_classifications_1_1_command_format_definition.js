@@ -1,0 +1,4 @@
+var class_dox_preview_ext_1_1_dox_util_1_1_cmd_classifications_1_1_command_format_definition =
+[
+    [ "CommandFormatDefinition", "class_dox_preview_ext_1_1_dox_util_1_1_cmd_classifications_1_1_command_format_definition.html#a6da4cf1515e0a7a41a22caf7d8d1cc51", null ]
+];

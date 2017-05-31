@@ -1,0 +1,9 @@
+<map id="DoxPreviewExt.DoxUtil.IPreviewImage.GetImageFile" name="DoxPreviewExt.DoxUtil.IPreviewImage.GetImageFile">
+<area shape="rect" id="node2" href="$class_dox_preview_ext_1_1_dox_util_1_1_c_preview_image_collection.html#a73cac9910652d047ec984c47b6ef5e78" title="DoxPreviewExt.DoxUtil.CPreview\lImageCollection.Add" alt="" coords="260,169,472,211"/>
+<area shape="rect" id="node3" href="$class_dox_preview_ext_1_1_dox_util_1_1_c_manager.html#a41fd97178d306f958adfa04e98245788" title="generate temporary image file from dot graph file " alt="" coords="520,5,743,47"/>
+<area shape="rect" id="node4" href="$class_dox_preview_ext_1_1_dox_util_1_1_c_manager.html#ad7db4f3dab9ed86e292bc247d748a116" title="generate temporary image file from dot graph source code " alt="" coords="520,71,743,112"/>
+<area shape="rect" id="node5" href="$class_dox_preview_ext_1_1_dox_util_1_1_c_manager.html#af01d6d596a0d4a8c53f6767573220d48" title="generate temporary image file from PlatUML source code " alt="" coords="520,136,743,177"/>
+<area shape="rect" id="node6" href="$class_dox_preview_ext_1_1_dox_util_1_1_c_manager.html#aea18832ce732f40416fee962c51c808f" title="generate temporary image file from message sequence chart file " alt="" coords="520,201,743,243"/>
+<area shape="rect" id="node7" href="$class_dox_preview_ext_1_1_dox_util_1_1_c_manager.html#ad46efcd34e05a818e19aa180a8a0744c" title="generate temporary image file from message sequence chart source code " alt="" coords="520,267,743,308"/>
+<area shape="rect" id="node8" href="$class_dox_preview_ext_1_1_dox_util_1_1_c_manager.html#a551bed9380410be9c46e74656bfa2e8a" title="generate temporary image file from PlatUML source code " alt="" coords="520,332,743,373"/>
+</map>

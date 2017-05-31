@@ -1,0 +1,5 @@
+var searchData=
+[
+  ['valid',['valid',['../class_dox_preview_ext_1_1_dox_util_1_1_c_preview_image_base.html#a629a2e920e244aae727a717869d57eeda9f7d0ee82b6a6ca7ddeae841f3253059',1,'DoxPreviewExt::DoxUtil::CPreviewImageBase']]],
+  ['validate',['Validate',['../class_dox_preview_ext_1_1_dox_util_1_1_c_dot_graph_image.html#ae250673a80cbb943b4dca6abb88fd7ff',1,'DoxPreviewExt.DoxUtil.CDotGraphImage.Validate()'],['../class_dox_preview_ext_1_1_dox_util_1_1_c_latex_formula_image.html#adc4f5d199edce1a4b6e561d56012d240',1,'DoxPreviewExt.DoxUtil.CLatexFormulaImage.Validate()'],['../class_dox_preview_ext_1_1_dox_util_1_1_c_msc_graph_image.html#a137c076baaada3921fd1b5fb76d7285a',1,'DoxPreviewExt.DoxUtil.CMscGraphImage.Validate()'],['../class_dox_preview_ext_1_1_dox_util_1_1_c_plant_u_m_l_image.html#a2badf02ad04f52e4444d133a1b6c96d0',1,'DoxPreviewExt.DoxUtil.CPlantUMLImage.Validate()'],['../class_dox_preview_ext_1_1_dox_util_1_1_c_preview_image_base.html#a33ade9366db466e241f30f07244a58dc',1,'DoxPreviewExt.DoxUtil.CPreviewImageBase.Validate()']]]
+];

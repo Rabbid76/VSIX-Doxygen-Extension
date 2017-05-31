@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="dox">
+      <UniqueIdentifier>{fb8688ae-06cf-4988-9a50-4bf499af8fc9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="make">
+      <UniqueIdentifier>{651fdfc9-921d-413d-9968-c79c7de25404}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="dox\custom_styles.css">
+      <Filter>dox</Filter>
+    </None>
+    <None Include="dox\pagDoxPreviewImplementation.dox">
+      <Filter>dox</Filter>
+    </None>
+    <None Include="dox\pagDoxPreviewMain.dox">
+      <Filter>dox</Filter>
+    </None>
+    <None Include="DocsHeader.html">
+      <Filter>make</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="DocsMake.txt">
+      <Filter>make</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

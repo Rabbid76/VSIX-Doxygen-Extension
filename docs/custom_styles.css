@@ -1,0 +1,27 @@
+
+.info-box
+{
+  border:1px solid #808080; 
+  margin: 10px; 
+  padding: 10px; 
+  text-indent: 30px;
+  background: #c3d2e5 url(notice-info.png) 4px center no-repeat;
+}
+
+.note-box
+{
+  border:1px solid #808080; 
+  margin: 10px; 
+  padding: 10px; 
+  text-indent: 30px;
+  background: #efe7b8 url(notice-note.png) 4px center no-repeat;
+}
+
+.error-box
+{
+  border:1px solid #808080; 
+  margin: 10px; 
+  padding: 10px; 
+  text-indent: 30px;
+  background:  #DE7A7B url(notice-alert.png) 4px center no-repeat; 
+}

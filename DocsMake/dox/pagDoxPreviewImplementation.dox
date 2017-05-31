@@ -1,0 +1,94 @@
+/*!
+
+\page pagDoxPreviewImplementation Implementation notes
+\tableofcontents
+
+
+\section secDoxPreviewImplementationLinks Links and Reference
+
+\n
+\anchor anc_migrtateVSExtTo2017
+How to: Migrate Extensibility Projects to Visual Studio 2017 \n
+[https://docs.microsoft.com/en-us/visualstudio/extensibility/how-to-migrate-extensibility-projects-to-visual-studio-2017]
+
+\n
+\anchor anc_howToDenbugVISX
+How to debug Visual Studio extensions \n
+[http://stackoverflow.com/questions/9281662/how-to-debug-visual-studio-extensions]
+
+\n
+\anchor anc_EnvDTE
+<tt>EnvDTE</tt> namespace \n
+<tt>EnvDTE</tt> is an assembly-wrapped COM library containing the objects and members for Visual Studio core automation. \n
+[https://msdn.microsoft.com/en-us/library/envdte.aspx]
+
+\n
+\anchor anc_EnvDTE_Document
+<tt>EnvDTE.Document</tt> Interface
+Represents a document in the environment open for editing. \n
+[https://msdn.microsoft.com/en-us/library/envdte.document.aspx]
+
+\n
+\anchor anc_EnvDTE_TextSelection
+<tt>EnvDTE.TextSelection</tt> Interface
+Provides access to view-based editing operations and selected text. \n
+[https://msdn.microsoft.com/en-us/library/envdte.textselection.aspx]
+
+\n
+Using Editor Templates to Create Extensions \n
+[https://msdn.microsoft.com/en-us/library/dd885492(v=vs.100).aspx]
+
+\n
+VSIX: Add Custom Items to the Fonts and Colors Dialog under the Output Window Category \n
+[https://social.msdn.microsoft.com/Forums/sqlserver/en-US/6096e636-2386-4c1b-901c-f48c4b577a42/vsix-add-custom-items-to-the-fonts-and-colors-dialog-under-the-output-window-category?forum=vsx]
+
+\n
+VSIX IClassifier assigning multiple ClassificationTypes \n
+[http://stackoverflow.com/questions/37579509/vsix-iclassifier-assigning-multiple-classificationtypes]
+
+\n
+\anchor anc_MEF
+Managed Extensibility Framework (MEF) \n
+[https://msdn.microsoft.com/en-us/library/dd460648(v=vs.110).aspx]
+
+\n
+Getting Started with Language Service and Editor Extensions \n
+[https://msdn.microsoft.com/en-us/library/dd885122.aspx]
+
+\n
+Language Service and Editor Extension Points \n
+[https://msdn.microsoft.com/en-us/library/dd885244.aspx]
+
+\n
+Walkthrough: Creating a Margin Glyph \n
+[https://msdn.microsoft.com/en-us/library/ee361745.aspx]
+
+\n
+Walkthrough: Displaying QuickInfo Tooltips \n
+[https://msdn.microsoft.com/en-us/library/ee197646.aspx]
+
+\n
+Walkthrough: Displaying Statement Completion \n
+[https://msdn.microsoft.com/en-us/library/ee372314.aspx]
+
+\n
+Walkthrough: Outlining \n
+[https://msdn.microsoft.com/en-us/library/ee197665(v=vs.140).aspx]
+
+\n
+Microsoft.VisualStudio.Text.Tagging Namespace \n
+[https://msdn.microsoft.com/en-us/library/microsoft.visualstudio.text.tagging.aspx]
+
+\n
+Creating an Options Page \n
+[https://msdn.microsoft.com/en-us/library/bb166195.aspx?f=255&MSPPError=-2147217396]
+
+\n
+Creating a Settings Category \n
+[https://msdn.microsoft.com/en-us/library/bb166176.aspx]
+
+\n
+Create a strong-named key file \n
+[https://msdn.microsoft.com/en-us/library/dd788548.aspx?f=255&MSPPError=-2147217396]
+
+*/

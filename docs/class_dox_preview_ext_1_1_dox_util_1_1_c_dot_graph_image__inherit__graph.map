@@ -1,0 +1,4 @@
+<map id="DoxPreviewExt.DoxUtil.CDotGraphImage" name="DoxPreviewExt.DoxUtil.CDotGraphImage">
+<area shape="rect" id="node2" href="$class_dox_preview_ext_1_1_dox_util_1_1_c_preview_image_base.html" title="{CPreviewImageBase\n|+ Collection\l+ Options\l+ TempName\l# state_\l|+ GetImageFile()\l+ GetValidImage()\l+ CPreviewImageBase()\l+ GetImage()\l# Validate()\l# TempFilePath()\l}" alt="" coords="19,145,179,340"/>
+<area shape="rect" id="node3" href="$interface_dox_preview_ext_1_1_dox_util_1_1_i_preview_image.html" title="{IPreviewImage\n||+ GetImageFile()\l+ GetImage()\l}" alt="" coords="40,5,159,97"/>
+</map>

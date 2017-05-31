@@ -1,0 +1,4 @@
+var class_dox_preview_ext_1_1_command_1_1_command_doxgen_generate_preview_1_1_generate_exit_handler =
+[
+    [ "GenerateExitHandlerEvent", "class_dox_preview_ext_1_1_command_1_1_command_doxgen_generate_preview_1_1_generate_exit_handler.html#a26679ccad3c228b187193bcc840ed79b", null ]
+];
