@@ -3,7 +3,7 @@
 	public static class ExtensionContext
 	{
 		public const string ConstExtensionName = @"DoxPreviewExt";
-		public const string ConstExtensionImgResName = ExtensionContext.ConstExtensionName + @".Command.Resources.";
+		public const string ConstExtensionImgResName = ExtensionContext.ConstExtensionName + @".DoxUtil.Resources.";
 		public const string ConstOptionsCategoryName = @"Doxygen Extentions";
 		
 		public const string constDoxygenSourceBrowserURL = @"";

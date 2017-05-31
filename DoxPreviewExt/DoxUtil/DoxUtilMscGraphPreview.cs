@@ -84,11 +84,12 @@ namespace DoxPreviewExt.DoxUtil
 			{
 				// find mscgen.exe
 				var mscgenTool = this.Options.CurrentMscGenTool;
-        if (mscgenTool == null || mscgenTool == "")
+				if (mscgenTool == null || mscgenTool == "")
 				{
 					state_ = State.failed;
 					return;
 				}
+				var mscgenDir = mscgenTool.Substring(0, mscgenTool.Length - mscgenTool.Length);
 
 				// create temporary file with source code
 				if (sourceIsFile_ == false)
@@ -104,7 +105,7 @@ namespace DoxPreviewExt.DoxUtil
 				// e.g mscgen.exe -T png input.dot > output.png
 				var args = "-T " + this.previewFileExt_ + " -o \"" + this.previewFilePath_ + "\" \"" + this.tempSourceFilePath_ + "\"";
 				ProcessStartInfo startInfo = new ProcessStartInfo(mscgenTool, args);
-				startInfo.WorkingDirectory = this.tempSourceFilePath_;
+				startInfo.WorkingDirectory = mscgenDir;
 				startInfo.CreateNoWindow = true;
 				startInfo.UseShellExecute = false;
 				startInfo.WindowStyle = ProcessWindowStyle.Hidden;

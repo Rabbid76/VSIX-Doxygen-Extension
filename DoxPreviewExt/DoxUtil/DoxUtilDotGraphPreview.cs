@@ -90,11 +90,12 @@ namespace DoxPreviewExt.DoxUtil
 			{
 				// find dot.exe
 				var dotGraphTool = this.Options.CurrentDotTool;
-        if (dotGraphTool == null || dotGraphTool == "")
+				if (dotGraphTool == null || dotGraphTool == "")
 				{
 					state_ = State.failed;
 					return;
 				}
+				var dotGraphDir = dotGraphTool.Substring(0, dotGraphTool.Length - dotGraphTool.Length);
 
 				// create temporary file with source code
 				if (sourceIsFile_ == false)
@@ -117,7 +118,7 @@ namespace DoxPreviewExt.DoxUtil
 				}
 				ProcessStartInfo startInfo = new ProcessStartInfo(this.processFilePath_);
 				//ProcessStartInfo startInfo = new ProcessStartInfo(dotGraphTool, args); // TODO $$$ Why does this not work? Unicode?
-				startInfo.WorkingDirectory = this.tempSourcePath_;
+				startInfo.WorkingDirectory = dotGraphDir;
 				startInfo.CreateNoWindow = true;
 				startInfo.UseShellExecute = false;
 				startInfo.WindowStyle = ProcessWindowStyle.Hidden;

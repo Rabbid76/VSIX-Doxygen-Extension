@@ -85,11 +85,12 @@ namespace DoxPreviewExt.DoxUtil
 			{
 				// find mimetex.exe
 				var mimeTeXTool = this.Options.CurrentMimeTeXTool;
-        if (mimeTeXTool == null || mimeTeXTool == "")
+				if (mimeTeXTool == null || mimeTeXTool == "")
 				{
 					state_ = State.failed;
 					return;
 				}
+				var mimeTeXDir = mimeTeXTool.Substring(0, mimeTeXTool.Length - mimeTeXTool.Length);
 
 				// create temporary file with source code
 				if (sourceIsFile_ == false)
@@ -107,7 +108,7 @@ namespace DoxPreviewExt.DoxUtil
 				//   mimetex.exe -e "c:\temp\test.gif" -f "c:\temp\testmimetex.txt" -o -s 5
 				var args = "-e \"" + this.previewFilePath_ + "\" -f \"" + this.tempSourceFilePath_ + "\" -o -s " + priveFontSize_.ToString();
 				ProcessStartInfo startInfo = new ProcessStartInfo(mimeTeXTool, args);
-				startInfo.WorkingDirectory = this.tempSourceFilePath_;
+				startInfo.WorkingDirectory = mimeTeXDir;
 				startInfo.CreateNoWindow = true;
 				startInfo.UseShellExecute = false;
 				startInfo.WindowStyle = ProcessWindowStyle.Hidden;

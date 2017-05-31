@@ -64,7 +64,7 @@ namespace DoxPreviewExt.Configuration
 			this.optionsPage.PlantUmlJar = this.textBoxDoxPlantUmlJar.Text;
 		}
 
-		private void textBoxMimeTexExe_Leave(object sender, EventArgs e)
+		private void textBoxDoxMimeTexExe_Leave(object sender, EventArgs e)
 		{
 			this.optionsPage.MimeTeXExe = this.textBoxDoxMimeTexExe.Text;
 		}

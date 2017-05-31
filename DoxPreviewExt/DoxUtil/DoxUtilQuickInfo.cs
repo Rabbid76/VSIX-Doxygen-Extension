@@ -318,7 +318,7 @@ namespace DoxPreviewExt.DoxUtil
 					break;
 
 				case DoxTokenType.MscFile:
-					if (opt.DotQT)
+					if (opt.MscQT)
 					{
 						var mscTextBlock = new System.Windows.Controls.TextBlock { TextWrapping = System.Windows.TextWrapping.NoWrap };
 						if (spanInfo.WellKnown)

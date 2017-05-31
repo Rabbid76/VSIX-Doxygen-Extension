@@ -170,7 +170,7 @@ namespace DoxPreviewExt.DoxUtil
 				var mscgenTool = mscgenDir + "mscgen.exe";
 				if (File.Exists(mscgenTool))
 				{
-					_currentDotExe = mscgenTool;
+					_currentMscGenExe = mscgenTool;
 					return;
 				}
 			}

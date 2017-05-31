@@ -52,6 +52,7 @@
 			this.buttonUpdateCache.Text = "Update cache";
 			this.buttonUpdateCache.UseVisualStyleBackColor = true;
 			this.buttonUpdateCache.Click += new System.EventHandler(this.buttonUpdateCache_Click);
+			this.buttonUpdateCache.Leave += new System.EventHandler(this.textBoxDoxMimeTexExe_Leave);
 			// 
 			// textBoxDoxMimeTexExe
 			// 
@@ -59,7 +60,7 @@
 			this.textBoxDoxMimeTexExe.Name = "textBoxDoxMimeTexExe";
 			this.textBoxDoxMimeTexExe.Size = new System.Drawing.Size(386, 20);
 			this.textBoxDoxMimeTexExe.TabIndex = 42;
-			this.textBoxDoxMimeTexExe.Leave += new System.EventHandler(this.textBoxMimeTexExe_Leave);
+			this.textBoxDoxMimeTexExe.Leave += new System.EventHandler(this.textBoxDoxMimeTexExe_Leave);
 			// 
 			// labelDoxMimeTexExe
 			// 
@@ -69,6 +70,7 @@
 			this.labelDoxMimeTexExe.Size = new System.Drawing.Size(74, 13);
 			this.labelDoxMimeTexExe.TabIndex = 41;
 			this.labelDoxMimeTexExe.Text = "mimeTeX.exe ";
+			this.labelDoxMimeTexExe.Leave += new System.EventHandler(this.textBoxDoxMimeTexExe_Leave);
 			// 
 			// checkBoxConfigFile
 			// 
@@ -80,6 +82,7 @@
 			this.checkBoxConfigFile.Text = "Config file";
 			this.checkBoxConfigFile.UseVisualStyleBackColor = true;
 			this.checkBoxConfigFile.Click += new System.EventHandler(this.checkBoxConfigFile_Click);
+			this.checkBoxConfigFile.Leave += new System.EventHandler(this.textBoxDoxMimeTexExe_Leave);
 			// 
 			// textBoxDoxConfigFile
 			// 
@@ -88,6 +91,7 @@
 			this.textBoxDoxConfigFile.ReadOnly = true;
 			this.textBoxDoxConfigFile.Size = new System.Drawing.Size(386, 20);
 			this.textBoxDoxConfigFile.TabIndex = 39;
+			this.textBoxDoxConfigFile.Leave += new System.EventHandler(this.textBoxDoxMimeTexExe_Leave);
 			// 
 			// checkBoxDoxSource
 			// 
@@ -99,6 +103,7 @@
 			this.checkBoxDoxSource.Text = "Sourcebrowser";
 			this.checkBoxDoxSource.UseVisualStyleBackColor = true;
 			this.checkBoxDoxSource.Click += new System.EventHandler(this.checkBoxDoxSource_Click);
+			this.checkBoxDoxSource.Leave += new System.EventHandler(this.textBoxDoxMimeTexExe_Leave);
 			// 
 			// textBoxDoxSourceBrowser
 			// 
@@ -107,6 +112,7 @@
 			this.textBoxDoxSourceBrowser.ReadOnly = true;
 			this.textBoxDoxSourceBrowser.Size = new System.Drawing.Size(386, 20);
 			this.textBoxDoxSourceBrowser.TabIndex = 37;
+			this.textBoxDoxSourceBrowser.Leave += new System.EventHandler(this.textBoxDoxMimeTexExe_Leave);
 			// 
 			// textBoxDoxDotExe
 			// 
@@ -114,7 +120,7 @@
 			this.textBoxDoxDotExe.Name = "textBoxDoxDotExe";
 			this.textBoxDoxDotExe.Size = new System.Drawing.Size(386, 20);
 			this.textBoxDoxDotExe.TabIndex = 45;
-			this.textBoxDoxDotExe.Leave += new System.EventHandler(this.textBoxDoxDotExe_Leave);
+			this.textBoxDoxDotExe.Leave += new System.EventHandler(this.textBoxDoxMimeTexExe_Leave);
 			// 
 			// labelDoxDotExe
 			// 
@@ -124,6 +130,7 @@
 			this.labelDoxDotExe.Size = new System.Drawing.Size(42, 13);
 			this.labelDoxDotExe.TabIndex = 44;
 			this.labelDoxDotExe.Text = "dot.exe";
+			this.labelDoxDotExe.Leave += new System.EventHandler(this.textBoxDoxMimeTexExe_Leave);
 			// 
 			// textBoxDoxMscGenExe
 			// 
@@ -131,7 +138,7 @@
 			this.textBoxDoxMscGenExe.Name = "textBoxDoxMscGenExe";
 			this.textBoxDoxMscGenExe.Size = new System.Drawing.Size(386, 20);
 			this.textBoxDoxMscGenExe.TabIndex = 47;
-			this.textBoxDoxMscGenExe.Leave += new System.EventHandler(this.textBoxDoxMscGenExe_Leave);
+			this.textBoxDoxMscGenExe.Leave += new System.EventHandler(this.textBoxDoxMimeTexExe_Leave);
 			// 
 			// labelDoxMscGenExe
 			// 
@@ -141,6 +148,7 @@
 			this.labelDoxMscGenExe.Size = new System.Drawing.Size(64, 13);
 			this.labelDoxMscGenExe.TabIndex = 46;
 			this.labelDoxMscGenExe.Text = "mscgen.exe";
+			this.labelDoxMscGenExe.Leave += new System.EventHandler(this.textBoxDoxMimeTexExe_Leave);
 			// 
 			// textBoxDoxPlantUmlJar
 			// 
@@ -148,7 +156,7 @@
 			this.textBoxDoxPlantUmlJar.Name = "textBoxDoxPlantUmlJar";
 			this.textBoxDoxPlantUmlJar.Size = new System.Drawing.Size(386, 20);
 			this.textBoxDoxPlantUmlJar.TabIndex = 49;
-			this.textBoxDoxPlantUmlJar.Leave += new System.EventHandler(this.textBoxDoxPlantUmlJar_Leave);
+			this.textBoxDoxPlantUmlJar.Leave += new System.EventHandler(this.textBoxDoxMimeTexExe_Leave);
 			// 
 			// labelDoxPlantUmlJar
 			// 
@@ -158,6 +166,7 @@
 			this.labelDoxPlantUmlJar.Size = new System.Drawing.Size(68, 13);
 			this.labelDoxPlantUmlJar.TabIndex = 48;
 			this.labelDoxPlantUmlJar.Text = "PlantUML.jar";
+			this.labelDoxPlantUmlJar.Leave += new System.EventHandler(this.textBoxDoxMimeTexExe_Leave);
 			// 
 			// DoxConfigUserControl
 			// 
