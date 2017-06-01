@@ -9,14 +9,14 @@
 <g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 35)">
 <title>DoxPreviewExt.DoxUtil.COptions.UpdateConfiguration</title>
 <polygon fill="white" stroke="none" points="-4,4 -4,-35 370,-35 370,4 -4,4"/>
-<!-- Node37 -->
-<g id="node1" class="node"><title>Node37</title>
+<!-- Node45 -->
+<g id="node1" class="node"><title>Node45</title>
 <polygon fill="#bfbfbf" stroke="black" points="0,-0.5 0,-30.5 163,-30.5 163,-0.5 0,-0.5"/>
 <text text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">DoxPreviewExt.DoxUtil.COptions.</text>
 <text text-anchor="middle" x="81.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">UpdateConfiguration</text>
 </g>
-<!-- Node38 -->
-<g id="node2" class="node"><title>Node38</title>
+<!-- Node46 -->
+<g id="node2" class="node"><title>Node46</title>
 <g id="a_node2"><a xlink:href="class_dox_preview_ext_1_1_dox_util_1_1_c_manager.html#ae0251541070702a49ccf3a122403fdd9" target="_top" xlink:title="DoxPreviewExt.DoxUtil.CManager.\lUpdate">
 <polygon fill="white" stroke="black" points="199,-0.5 199,-30.5 366,-30.5 366,-0.5 199,-0.5"/>
 <text text-anchor="start" x="207" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">DoxPreviewExt.DoxUtil.CManager.</text>
@@ -24,8 +24,8 @@
 </a>
 </g>
 </g>
-<!-- Node37&#45;&gt;Node38 -->
-<g id="edge1" class="edge"><title>Node37&#45;&gt;Node38</title>
+<!-- Node45&#45;&gt;Node46 -->
+<g id="edge1" class="edge"><title>Node45&#45;&gt;Node46</title>
 <path fill="none" stroke="midnightblue" d="M173.412,-15.5C181.87,-15.5 190.411,-15.5 198.788,-15.5"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="173.154,-12.0001 163.154,-15.5 173.154,-19.0001 173.154,-12.0001"/>
 </g>

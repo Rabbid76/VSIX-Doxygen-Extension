@@ -1,0 +1,7 @@
+<map id="DoxPreviewExt.Configuration.DoxConfigUserControl.DoxConfigUserControl_Load" name="DoxPreviewExt.Configuration.DoxConfigUserControl.DoxConfigUserControl_Load">
+<area shape="rect" id="node2" href="$class_extension_common_1_1_extension_context.html#a1a6c1b51700f6b4604a6906a9a332bed" title="ExtensionCommon.Extension\lContext.GetDotExe" alt="" coords="292,5,487,47"/>
+<area shape="rect" id="node4" href="$class_extension_common_1_1_extension_context.html#afeafea2570ec2900adc162582e200ee5" title="ExtensionCommon.Extension\lContext.GetMimeTeXExe" alt="" coords="292,71,487,112"/>
+<area shape="rect" id="node5" href="$class_extension_common_1_1_extension_context.html#ad25f5df49f666ee4086ad2082d11297f" title="ExtensionCommon.Extension\lContext.GetMscGenExe" alt="" coords="292,136,487,177"/>
+<area shape="rect" id="node6" href="$class_extension_common_1_1_extension_context.html#afd880183fe4e7732e532f547c36e1ff1" title="ExtensionCommon.Extension\lContext.GetPlantUmlJar" alt="" coords="292,201,487,243"/>
+<area shape="rect" id="node3" href="$class_extension_common_1_1_extension_context.html#a88a4125aee97e6ff5a6651650ac23cda" title="ExtensionCommon.Extension\lContext.SearchFile" alt="" coords="535,104,729,145"/>
+</map>

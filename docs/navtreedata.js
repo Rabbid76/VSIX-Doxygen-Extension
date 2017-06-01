@@ -1,6 +1,6 @@
 var NAVTREE =
 [
-  [ "VSIXDoxygenPreviewExtension", "index.html", [
+  [ "VSIX Doxygen Preview Extension", "index.html", [
     [ "Implementation", "index.html#secImplementation", null ],
     [ "Implementation notes", "pag_dox_preview_implementation.html", [
       [ "Links and Reference", "pag_dox_preview_implementation.html#secDoxPreviewImplementationLinks", null ]

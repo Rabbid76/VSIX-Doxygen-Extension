@@ -1,6 +1,11 @@
 <map id="ExtensionCommon.ExtensionContext.SearchFile" name="ExtensionCommon.ExtensionContext.SearchFile">
-<area shape="rect" id="node2" href="$class_extension_common_1_1_extension_context.html#a1a6c1b51700f6b4604a6906a9a332bed" title="ExtensionCommon.Extension\lContext.GetDotExe" alt="" coords="248,5,443,47"/>
-<area shape="rect" id="node3" href="$class_extension_common_1_1_extension_context.html#afeafea2570ec2900adc162582e200ee5" title="ExtensionCommon.Extension\lContext.GetMimeTeXExe" alt="" coords="248,71,443,112"/>
-<area shape="rect" id="node4" href="$class_extension_common_1_1_extension_context.html#ad25f5df49f666ee4086ad2082d11297f" title="ExtensionCommon.Extension\lContext.GetMscGenExe" alt="" coords="248,136,443,177"/>
-<area shape="rect" id="node5" href="$class_extension_common_1_1_extension_context.html#afd880183fe4e7732e532f547c36e1ff1" title="ExtensionCommon.Extension\lContext.GetPlantUmlJar" alt="" coords="248,201,443,243"/>
+<area shape="rect" id="node2" href="$class_extension_common_1_1_extension_context.html#a1a6c1b51700f6b4604a6906a9a332bed" title="ExtensionCommon.Extension\lContext.GetDotExe" alt="" coords="248,112,443,153"/>
+<area shape="rect" id="node5" href="$class_extension_common_1_1_extension_context.html#afeafea2570ec2900adc162582e200ee5" title="ExtensionCommon.Extension\lContext.GetMimeTeXExe" alt="" coords="248,47,443,88"/>
+<area shape="rect" id="node7" href="$class_extension_common_1_1_extension_context.html#ad25f5df49f666ee4086ad2082d11297f" title="ExtensionCommon.Extension\lContext.GetMscGenExe" alt="" coords="248,177,443,219"/>
+<area shape="rect" id="node9" href="$class_extension_common_1_1_extension_context.html#afd880183fe4e7732e532f547c36e1ff1" title="ExtensionCommon.Extension\lContext.GetPlantUmlJar" alt="" coords="248,243,443,284"/>
+<area shape="rect" id="node3" href="$class_dox_preview_ext_1_1_configuration_1_1_dox_config_user_control.html#afb8cf2f1bb23c2d7413f7dd38d79a9cb" title="DoxPreviewExt.Configuration.\lDoxConfigUserControl.DoxConfigUser\lControl_Load" alt="" coords="491,137,729,193"/>
+<area shape="rect" id="node4" href="$class_dox_preview_ext_1_1_dox_util_1_1_c_options.html#a40557ffccb8874f15c58e5f94b63f25f" title="finds dot.exe " alt="" coords="501,71,719,112"/>
+<area shape="rect" id="node6" href="$class_dox_preview_ext_1_1_dox_util_1_1_c_options.html#a58c8764b3b8e65aa40e59faccf8fd7ea" title="finds mimetex.exe " alt="" coords="501,5,719,47"/>
+<area shape="rect" id="node8" href="$class_dox_preview_ext_1_1_dox_util_1_1_c_options.html#afa156c1305d1b2c0fc4e47e4695fe0b7" title="finds mscgen.exe " alt="" coords="501,217,719,259"/>
+<area shape="rect" id="node10" href="$class_dox_preview_ext_1_1_dox_util_1_1_c_options.html#a98919fe74033a74fa46d5b6a9f08b4ca" title="finds plantuml.jar " alt="" coords="501,283,719,324"/>
 </map>
