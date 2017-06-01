@@ -39,7 +39,7 @@ namespace DoxPreviewExt.Configuration
 			if (mscGenExe == null || mscGenExe == "")
 			{
 				mscGenExe = ExtensionCommon.ExtensionContext.GetMscGenExe();
-				this.optionsPage.DotExe = mscGenExe;
+				this.optionsPage.MscGenExe = mscGenExe;
 			}
 
 			string plantUmlJar = this.optionsPage.PlantUmlJar;
@@ -62,7 +62,7 @@ namespace DoxPreviewExt.Configuration
 			this.textBoxDoxMimeTexExe.Text = mimeTeXExe;
 
 		  ToolTip toolTip = new ToolTip();
-			toolTip.SetToolTip(this.textBoxDoxDotExe, "Dot Greph: Full path and file name of 'dot.exe'");
+			toolTip.SetToolTip(this.textBoxDoxDotExe, "Dot Graph: Full path and file name of 'dot.exe'");
 			toolTip.SetToolTip(this.textBoxDoxMscGenExe, "Message Sequence Chart: Full path and file name of 'mscgen.exe'");
 			toolTip.SetToolTip(this.textBoxDoxPlantUmlJar, "Plant UML: Full path and file name of 'plantuml.jar'");
 			toolTip.SetToolTip(this.textBoxDoxMimeTexExe, "LaTeX formula: Full path and file name of 'mimetex.exe'");

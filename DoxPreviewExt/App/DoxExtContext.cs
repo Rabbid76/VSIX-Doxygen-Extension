@@ -31,9 +31,9 @@ namespace ExtensionCommon
 
 		private static List<string> _pathList = new List<string>
 		{
+			@"C:\Tools",
 			@"C:\Program Files",
 			@"C:\Program Files (x86)",
-			@"C:\Tools",
 		};
 
 		private static string SearchFile( string name )
