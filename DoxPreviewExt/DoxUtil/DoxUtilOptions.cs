@@ -117,7 +117,7 @@ namespace DoxPreviewExt.DoxUtil
 		/// \brief Test if any documentation valid
 		private bool AnyDocumentationValid()
 		{
-			return SourceBrowserValid() || AnyDocumentationValid();
+			return SourceBrowserValid() || LocalDocumentationValid();
 		}
 
 		/// \brief Tests if configuration file is valid
