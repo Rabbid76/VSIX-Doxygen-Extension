@@ -6,5 +6,6 @@ var class_dox_preview_ext_1_1_dox_util_1_1_c_link_map =
     [ "UpdateLinkMap", "class_dox_preview_ext_1_1_dox_util_1_1_c_link_map.html#a13f563fce496e29eab81abc5a8d23b12", null ],
     [ "doxLinkMap_", "class_dox_preview_ext_1_1_dox_util_1_1_c_link_map.html#a57ea16f1bfe4db666061c6cbb5942c7e", null ],
     [ "rootURL_", "class_dox_preview_ext_1_1_dox_util_1_1_c_link_map.html#a9abf31f41837376a430c02f62b2bc382", null ],
+    [ "searchPrefix", "class_dox_preview_ext_1_1_dox_util_1_1_c_link_map.html#a845cff582dc73b2f01214100daadddd3", null ],
     [ "RootURL", "class_dox_preview_ext_1_1_dox_util_1_1_c_link_map.html#aa09485207d79dd97cbe74221cd906b46", null ]
 ];

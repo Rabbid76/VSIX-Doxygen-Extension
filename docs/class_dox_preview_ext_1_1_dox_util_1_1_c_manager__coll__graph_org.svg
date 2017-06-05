@@ -145,25 +145,26 @@
 </g>
 <!-- Node6 -->
 <g id="node6" class="node"><title>Node6</title>
-<g id="a_node6"><a xlink:href="class_dox_preview_ext_1_1_dox_util_1_1_c_link_map.html" target="_top" xlink:title="{DoxPreviewExt.DoxUtil.CLinkMap\n|+ RootURL\l&#45; doxLinkMap_\l&#45; rootURL_\l|+ CLinkMap()\l+ UpdateLinkMap()\l+ FindDoxygenLink()\l&#45; GenerateLinkMap()\l}">
-<polygon fill="white" stroke="black" points="352,-1008 352,-1120 515,-1120 515,-1008 352,-1008"/>
-<text text-anchor="middle" x="433.5" y="-1108" font-family="Helvetica,sans-Serif" font-size="10.00">DoxPreviewExt.DoxUtil.CLinkMap</text>
-<polyline fill="none" stroke="black" points="352,-1101 515,-1101 "/>
-<text text-anchor="start" x="360" y="-1089" font-family="Helvetica,sans-Serif" font-size="10.00">+ RootURL</text>
-<text text-anchor="start" x="360" y="-1078" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; doxLinkMap_</text>
-<text text-anchor="start" x="360" y="-1067" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; rootURL_</text>
-<polyline fill="none" stroke="black" points="352,-1060 515,-1060 "/>
-<text text-anchor="start" x="360" y="-1048" font-family="Helvetica,sans-Serif" font-size="10.00">+ CLinkMap()</text>
-<text text-anchor="start" x="360" y="-1037" font-family="Helvetica,sans-Serif" font-size="10.00">+ UpdateLinkMap()</text>
-<text text-anchor="start" x="360" y="-1026" font-family="Helvetica,sans-Serif" font-size="10.00">+ FindDoxygenLink()</text>
-<text text-anchor="start" x="360" y="-1015" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; GenerateLinkMap()</text>
+<g id="a_node6"><a xlink:href="class_dox_preview_ext_1_1_dox_util_1_1_c_link_map.html" target="_top" xlink:title="{DoxPreviewExt.DoxUtil.CLinkMap\n|+ RootURL\l&#45; doxLinkMap_\l&#45; rootURL_\l&#45; searchPrefix\l|+ CLinkMap()\l+ UpdateLinkMap()\l+ FindDoxygenLink()\l&#45; GenerateLinkMap()\l}">
+<polygon fill="white" stroke="black" points="352,-1002.5 352,-1125.5 515,-1125.5 515,-1002.5 352,-1002.5"/>
+<text text-anchor="middle" x="433.5" y="-1113.5" font-family="Helvetica,sans-Serif" font-size="10.00">DoxPreviewExt.DoxUtil.CLinkMap</text>
+<polyline fill="none" stroke="black" points="352,-1106.5 515,-1106.5 "/>
+<text text-anchor="start" x="360" y="-1094.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ RootURL</text>
+<text text-anchor="start" x="360" y="-1083.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; doxLinkMap_</text>
+<text text-anchor="start" x="360" y="-1072.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; rootURL_</text>
+<text text-anchor="start" x="360" y="-1061.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; searchPrefix</text>
+<polyline fill="none" stroke="black" points="352,-1054.5 515,-1054.5 "/>
+<text text-anchor="start" x="360" y="-1042.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ CLinkMap()</text>
+<text text-anchor="start" x="360" y="-1031.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ UpdateLinkMap()</text>
+<text text-anchor="start" x="360" y="-1020.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FindDoxygenLink()</text>
+<text text-anchor="start" x="360" y="-1009.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; GenerateLinkMap()</text>
 </a>
 </g>
 </g>
 <!-- Node6&#45;&gt;Node4 -->
 <g id="edge6" class="edge"><title>Node6&#45;&gt;Node4</title>
-<path fill="none" stroke="#404040" d="M419.733,-1007.7C401.406,-934.089 369.44,-805.694 353.349,-741.061"/>
-<polygon fill="none" stroke="#404040" points="353.251,-740.664 347.919,-735.808 350.351,-729.02 355.682,-733.876 353.251,-740.664"/>
+<path fill="none" stroke="#404040" d="M418.436,-1002.49C399.905,-928.062 368.98,-803.844 353.283,-740.794"/>
+<polygon fill="none" stroke="#404040" points="353.254,-740.676 347.922,-735.821 350.354,-729.032 355.685,-733.888 353.254,-740.676"/>
 <text text-anchor="middle" x="449" y="-965" font-family="Helvetica,sans-Serif" font-size="10.00"> +mainLinkMap_</text>
 <text text-anchor="middle" x="449" y="-954" font-family="Helvetica,sans-Serif" font-size="10.00">+localLinkMap_</text>
 </g>

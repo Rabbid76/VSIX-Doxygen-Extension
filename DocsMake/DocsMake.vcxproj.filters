@@ -24,6 +24,12 @@
     <None Include="DocsFooter.html">
       <Filter>make</Filter>
     </None>
+    <None Include="dox\pagTODOandNotes.dox">
+      <Filter>dox</Filter>
+    </None>
+    <None Include="dox\pagDoxygenDocu.dox">
+      <Filter>dox</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Text Include="DocsMake.txt">

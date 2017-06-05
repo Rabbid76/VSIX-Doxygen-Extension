@@ -92,12 +92,92 @@ $(document).ready(function(){initNavTree('index.html','');});
 </div><!--header-->
 <div class="contents">
 <div class="toc"><h3>Table of Contents</h3>
-<ul><li class="level1"><a href="#secImplementation">Implementation</a></li>
+<ul><li class="level1"><a href="#secFunctinality">Functionality</a></li>
+<li class="level1"><a href="#secExtensionsRequirements">Doxygen Preview Extension Requirements</a></li>
+<li class="level1"><a href="#secExtensionsDocCode">Document the source code</a><ul><li class="level2"><a href="#secExtensionsDocCodeCreateLocalDox">Crate local doxygen documantation</a></li>
+<li class="level2"><a href="#secExtensionsDocCodeHead">Add head documantation to source code</a></li>
+<li class="level2"><a href="#secExtensionsDocCodeAddImage">Add an image to source code documentation</a></li>
+<li class="level2"><a href="#secExtensionsDocCodeCreateDotGraph">Create Dot Graph</a></li>
+<li class="level2"><a href="#secExtensionsDocCodeCreateMSC">Create Mssage Sequence Chart</a></li>
+<li class="level2"><a href="#secExtensionsDocCodeCreatePlantUML">Create Palnt UML diagram</a></li>
+<li class="level2"><a href="#secExtensionsDocCodeCreateLatexFormula">Create Latex Formula</a></li>
+</ul>
+</li>
+<li class="level1"><a href="#secExtensionsImplementation">Implementation</a></li>
+<li class="level1"><a href="#secRelated">Related</a></li>
 </ul>
 </div>
-<div class="textblock"><h1><a class="anchor" id="secImplementation"></a>
+<div class="textblock"><h1><a class="anchor" id="secFunctinality"></a>
+Functionality</h1>
+<ul>
+<li>Context menu command for adding source code documentation <br />
+</li>
+<li>Doxygen special commands syntax highlighting for <b>C/C++</b> and <b>C#</b> content type and fies with extension <b><code>.dox</code></b> <br />
+</li>
+<li>Quickinfo for doxygen special commands including images <br />
+</li>
+<li>Tracking of Doxygen references <br />
+</li>
+<li>Preview of Dot Graphs <br />
+</li>
+<li>Preview of Mssage Sequence Chart <br />
+</li>
+<li>Preview of LaTeX Formulas <br />
+</li>
+</ul>
+<h1><a class="anchor" id="secExtensionsRequirements"></a>
+Doxygen Preview Extension Requirements</h1>
+<ul>
+<li>Doxgen <br />
+ cf <a class="el" href="pag_doxygen_docu.html#secDoxygenRequirements">Doxygen Requirements</a> <br />
+</li>
+<li><b>mimeTeX</b> [<a href="http://blog.math.ntu.edu.tw/~history/cgi-bin/mimetex.html">http://blog.math.ntu.edu.tw/~history/cgi-bin/mimetex.html</a>] <br />
+ [<a href="http://ctan.mackichan.com/support/mimetex/mimetex.html">http://ctan.mackichan.com/support/mimetex/mimetex.html</a>] <br />
+ [<a href="http://www.forkosh.com/mimetex.html">http://www.forkosh.com/mimetex.html</a>] <br />
+ <code>\\DevTools\msw\mimetex</code> <br />
+</li>
+</ul>
+<h1><a class="anchor" id="secExtensionsDocCode"></a>
+Document the source code</h1>
+<h2><a class="anchor" id="secExtensionsDocCodeCreateLocalDox"></a>
+Crate local doxygen documantation</h2>
+<p>A <b>local doxygen html documentation for the <code>.dox</code> files</b>, but <b>not</b> for the source code itself, will be generated when building the project <b><code>.\p\1400\dox_src\DoxPreview.vcxproj</code></b>. The generated HTML documentation can be found at <b><code>.\p\1400\dox_src\doxygen_preview\html\index.html</code></b>.</p>
+<h2><a class="anchor" id="secExtensionsDocCodeHead"></a>
+Add head documantation to source code</h2>
+<ul>
+<li>Open dcontext menue with a <em>right click</em> in <b>C/C++</b> or <b>C#</b> content.</li>
+<li>Doxygen Preview Extensions -&gt; Kommentar einfügen</li>
+</ul>
+<h2><a class="anchor" id="secExtensionsDocCodeAddImage"></a>
+Add an image to source code documentation</h2>
+<p>Images to be embedded in the doxygen documentation must be contained in the directory <b><code>".\p\1400\dox_src\images"</code></b> or a subdirectory thereof. The supported image types are <b><code>.bmp</code></b>, <b><code>.jpg</code></b>, <b><code>.png</code></b>, <b><code>.gif</code></b>, <b><code>.tif</code></b> and <b><code>.svg</code></b>. <br />
+To embedded the image use the special doxygen command <b><code><a href="https://www.stack.nl/~dimitri/doxygen/manual/commands.html#cmdimage">@image</a></code></b>. <br />
+<br />
+e.g. </p><div class="fragment"><div class="line">/ ****************************************************************** <span class="comment">// **</span></div><div class="line">  \brief Foo</div><div class="line">  </div><div class="line">  \image html my_image.svg <span class="stringliteral">&quot;my image caption&quot;</span></div><div class="line">  </div><div class="line">  \author  anyone</div><div class="line">  \date    01.01.2017</div><div class="line">  \version 1.0</div><div class="line">                                                                       /</div><div class="line"><span class="keywordtype">void</span> Foo( <span class="keywordtype">void</span> )</div><div class="line">{</div><div class="line">  ...</div><div class="line">}; </div></div><!-- fragment --><p>If <b>Doxygen Preview Extension</b> is installed the image will be displayed in the quicktip of the special doxygen command <b><code>@image html my_image.svg</code></b>. <br />
+In order for the images to be displayed, the directory <b><code>".\p\1400\dox_src\images"</code></b> is analyzed when Visual studio is started. All image file names are managed in a dictionary cache. If a new image is added, the cache has to be updated: <b><code>Extras -&gt; Options -&gt; Doxygen Extensions -&gt; Doxygen configuration -&gt; Update Cache</code></b>.</p>
+<h2><a class="anchor" id="secExtensionsDocCodeCreateDotGraph"></a>
+Create Dot Graph</h2>
+<p>cf Gaphviz - Graph Visualization Software [<a href="http://www.graphviz.org/">http://www.graphviz.org/</a>] <br />
+cf Doteditor - [<a href="http://vincenthee.github.io/DotEditor/">http://vincenthee.github.io/DotEditor/</a>] <br />
+ </p><div class="fragment"><div class="line">\dot</div><div class="line">digraph <span class="stringliteral">&quot;UML diagram&quot;</span></div><div class="line">{</div><div class="line">  <span class="comment">// INTERACTIVE_SVG=YES</span></div><div class="line">  edge [fontsize=<span class="stringliteral">&quot;10&quot;</span>, style=<span class="stringliteral">&quot;solid&quot;</span>, fontname=<span class="stringliteral">&quot;Helvetica&quot;</span>]</div><div class="line">  node [shape=record, fontname=<span class="stringliteral">&quot;Helvetica&quot;</span>, fontsize=<span class="stringliteral">&quot;10&quot;</span>];</div><div class="line"></div><div class="line">  <span class="comment">// inheritance  </span></div><div class="line">  edge [dir=<span class="stringliteral">&quot;back&quot;</span>, style=<span class="stringliteral">&quot;solid&quot;</span>, arrowhead=<span class="stringliteral">&quot;none&quot;</span>, arrowtail=<span class="stringliteral">&quot;onormal&quot;</span>, color=<span class="stringliteral">&quot;midnightblue&quot;</span>]</div><div class="line">  A -&gt; B1</div><div class="line">  A -&gt; B2</div><div class="line">  A -&gt; B3</div><div class="line"></div><div class="line">  <span class="comment">// association</span></div><div class="line">  edge [dir=<span class="stringliteral">&quot;front&quot;</span>, style=<span class="stringliteral">&quot;dashed&quot;</span>, arrowhead=<span class="stringliteral">&quot;vee&quot;</span>, arrowtail=<span class="stringliteral">&quot;none&quot;</span>, color=<span class="stringliteral">&quot;grey25&quot;</span>]</div><div class="line">  B1 -&gt; C1  [label=<span class="stringliteral">&quot;assoziation&quot;</span>, headlabel=<span class="stringliteral">&quot;*&quot;</span>, taillabel=<span class="stringliteral">&quot;1&quot;</span>]</div><div class="line"></div><div class="line">  <span class="comment">// aggregation</span></div><div class="line">  edge [dir=<span class="stringliteral">&quot;back&quot;</span>, style=<span class="stringliteral">&quot;solid&quot;</span>, arrowhead=<span class="stringliteral">&quot;none&quot;</span>, arrowtail=<span class="stringliteral">&quot;odiamond&quot;</span>, color=<span class="stringliteral">&quot;grey25&quot;</span>]</div><div class="line">  B2 -&gt; C2 [label=<span class="stringliteral">&quot;aggregation&quot;</span>, headlabel=<span class="stringliteral">&quot;*&quot;</span>, taillabel=<span class="stringliteral">&quot;1&quot;</span>]</div><div class="line"></div><div class="line">  <span class="comment">// composition</span></div><div class="line">  edge [dir=<span class="stringliteral">&quot;back&quot;</span>, style=<span class="stringliteral">&quot;solid&quot;</span>, arrowhead=<span class="stringliteral">&quot;none&quot;</span>, arrowtail=<span class="stringliteral">&quot;diamond&quot;</span>, color=<span class="stringliteral">&quot;grey25&quot;</span>]</div><div class="line">  B3 -&gt; C3 [label=<span class="stringliteral">&quot;composition&quot;</span>, headlabel=<span class="stringliteral">&quot;*&quot;</span>, taillabel=<span class="stringliteral">&quot;1&quot;</span>]</div><div class="line">}</div><div class="line">\enddot</div></div><!-- fragment --><h2><a class="anchor" id="secExtensionsDocCodeCreateMSC"></a>
+Create Mssage Sequence Chart</h2>
+<p>cf Mscgen [<a href="http://www.mcternan.me.uk/mscgen/">http://www.mcternan.me.uk/mscgen/</a>] <br />
+</p>
+<h2><a class="anchor" id="secExtensionsDocCodeCreatePlantUML"></a>
+Create Palnt UML diagram</h2>
+<p>cf PlantUML [<a href="http://plantuml.com/">http://plantuml.com/</a>] <br />
+ </p><dl class="section attention"><dt>Attention</dt><dd>That is not recommended</dd></dl>
+<h2><a class="anchor" id="secExtensionsDocCodeCreateLatexFormula"></a>
+Create Latex Formula</h2>
+<p>cf LaTeX/Mathematics [<a href="https://en.wikibooks.org/wiki/LaTeX/Mathematics">https://en.wikibooks.org/wiki/LaTeX/Mathematics</a>] <br />
+cf LaTeX/Advanced Mathematics [<a href="https://en.wikibooks.org/wiki/LaTeX/Advanced_Mathematics">https://en.wikibooks.org/wiki/LaTeX/Advanced_Mathematics</a>] <br />
+</p>
+<h1><a class="anchor" id="secExtensionsImplementation"></a>
 Implementation</h1>
-<p><a class="el" href="pag_dox_preview_implementation.html">Implementation notes</a> </p>
+<p><a class="el" href="pag_dox_preview_implementation.html">Implementation notes</a></p>
+<h1><a class="anchor" id="secRelated"></a>
+Related</h1>
+<p><a class="el" href="pag_doxygen_docu.html">Create Doxygen Documentation</a> <a class="el" href="pag_t_o_d_o.html">To do list, tasks and notes</a> </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

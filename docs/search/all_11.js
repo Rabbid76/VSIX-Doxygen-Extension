@@ -1,6 +1,7 @@
 var searchData=
 [
   ['searchfile',['SearchFile',['../class_extension_common_1_1_extension_context.html#a88a4125aee97e6ff5a6651650ac23cda',1,'ExtensionCommon::ExtensionContext']]],
+  ['searchprefix',['searchPrefix',['../class_dox_preview_ext_1_1_dox_util_1_1_c_link_map.html#a845cff582dc73b2f01214100daadddd3',1,'DoxPreviewExt::DoxUtil::CLinkMap']]],
   ['serviceprovider',['ServiceProvider',['../class_dox_preview_ext_1_1_command_1_1_command_base.html#a88d03a27fa7fb35dba6e377ffce5de9a',1,'DoxPreviewExt::Command::CommandBase']]],
   ['solutionfile',['SolutionFile',['../class_dox_preview_ext_1_1_dox_util_1_1_c_manager.html#a8af7825b63b2a2bb74945de4e5681716',1,'DoxPreviewExt::DoxUtil::CManager']]],
   ['sourcebrowservalid',['SourceBrowserValid',['../class_dox_preview_ext_1_1_dox_util_1_1_c_options.html#a4e866fc91feca1ff33d43f3bdf339afa',1,'DoxPreviewExt::DoxUtil::COptions']]],

@@ -24,6 +24,8 @@
     <None Include="dox\custom_styles.css" />
     <None Include="dox\pagDoxPreviewImplementation.dox" />
     <None Include="dox\pagDoxPreviewMain.dox" />
+    <None Include="dox\pagDoxygenDocu.dox" />
+    <None Include="dox\pagTODOandNotes.dox" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="DocsMake.txt" />

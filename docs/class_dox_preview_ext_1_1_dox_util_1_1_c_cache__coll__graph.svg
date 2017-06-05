@@ -47,24 +47,25 @@
 </g>
 <!-- Node3 -->
 <g id="node3" class="node"><title>Node3</title>
-<g id="a_node3"><a xlink:href="class_dox_preview_ext_1_1_dox_util_1_1_c_link_map.html" target="_top" xlink:title="{DoxPreviewExt.DoxUtil.CLinkMap\n|+ RootURL\l&#45; doxLinkMap_\l&#45; rootURL_\l|+ CLinkMap()\l+ UpdateLinkMap()\l+ FindDoxygenLink()\l&#45; GenerateLinkMap()\l}">
-<polygon fill="white" stroke="black" points="179,-144 179,-256 342,-256 342,-144 179,-144"/>
-<text text-anchor="middle" x="260.5" y="-244" font-family="Helvetica,sans-Serif" font-size="10.00">DoxPreviewExt.DoxUtil.CLinkMap</text>
-<polyline fill="none" stroke="black" points="179,-237 342,-237 "/>
-<text text-anchor="start" x="187" y="-225" font-family="Helvetica,sans-Serif" font-size="10.00">+ RootURL</text>
-<text text-anchor="start" x="187" y="-214" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; doxLinkMap_</text>
-<text text-anchor="start" x="187" y="-203" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; rootURL_</text>
-<polyline fill="none" stroke="black" points="179,-196 342,-196 "/>
-<text text-anchor="start" x="187" y="-184" font-family="Helvetica,sans-Serif" font-size="10.00">+ CLinkMap()</text>
-<text text-anchor="start" x="187" y="-173" font-family="Helvetica,sans-Serif" font-size="10.00">+ UpdateLinkMap()</text>
-<text text-anchor="start" x="187" y="-162" font-family="Helvetica,sans-Serif" font-size="10.00">+ FindDoxygenLink()</text>
-<text text-anchor="start" x="187" y="-151" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; GenerateLinkMap()</text>
+<g id="a_node3"><a xlink:href="class_dox_preview_ext_1_1_dox_util_1_1_c_link_map.html" target="_top" xlink:title="{DoxPreviewExt.DoxUtil.CLinkMap\n|+ RootURL\l&#45; doxLinkMap_\l&#45; rootURL_\l&#45; searchPrefix\l|+ CLinkMap()\l+ UpdateLinkMap()\l+ FindDoxygenLink()\l&#45; GenerateLinkMap()\l}">
+<polygon fill="white" stroke="black" points="179,-138.5 179,-261.5 342,-261.5 342,-138.5 179,-138.5"/>
+<text text-anchor="middle" x="260.5" y="-249.5" font-family="Helvetica,sans-Serif" font-size="10.00">DoxPreviewExt.DoxUtil.CLinkMap</text>
+<polyline fill="none" stroke="black" points="179,-242.5 342,-242.5 "/>
+<text text-anchor="start" x="187" y="-230.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ RootURL</text>
+<text text-anchor="start" x="187" y="-219.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; doxLinkMap_</text>
+<text text-anchor="start" x="187" y="-208.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; rootURL_</text>
+<text text-anchor="start" x="187" y="-197.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; searchPrefix</text>
+<polyline fill="none" stroke="black" points="179,-190.5 342,-190.5 "/>
+<text text-anchor="start" x="187" y="-178.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ CLinkMap()</text>
+<text text-anchor="start" x="187" y="-167.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ UpdateLinkMap()</text>
+<text text-anchor="start" x="187" y="-156.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FindDoxygenLink()</text>
+<text text-anchor="start" x="187" y="-145.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; GenerateLinkMap()</text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node1 -->
 <g id="edge2" class="edge"><title>Node3&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M249.681,-143.909C243.667,-121.645 234.657,-96.4374 221.5,-76 219.468,-72.8434 217.164,-69.7675 214.687,-66.8001"/>
+<path fill="none" stroke="#404040" d="M248.122,-138.312C242.143,-117.496 233.565,-94.7421 221.5,-76 219.468,-72.8434 217.164,-69.7675 214.687,-66.8001"/>
 <polygon fill="none" stroke="#404040" points="214.445,-66.5389 207.435,-64.8477 206.3,-57.7265 213.31,-59.4176 214.445,-66.5389"/>
 <text text-anchor="middle" x="277" y="-101" font-family="Helvetica,sans-Serif" font-size="10.00"> +mainLinkMap_</text>
 <text text-anchor="middle" x="277" y="-90" font-family="Helvetica,sans-Serif" font-size="10.00">+localLinkMap_</text>

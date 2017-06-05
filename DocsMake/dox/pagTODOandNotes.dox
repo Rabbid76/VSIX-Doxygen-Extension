@@ -1,0 +1,17 @@
+/*!
+
+\page pagTODO To do list, tasks and notes
+
+
+\todo Autocomplete special command and reference target
+\todo adapt QuickInfo position
+\todo add help button to context menu and configuration dialog (GitHub project page https://rabbid76.github.io/VSIX-Doxygen-Extension/)
+\todo set svg background ???
+\todo \\diafile dia file support
+\todo mathjar configuration [http://docs.mathjax.org/en/latest/output.html]
+\todo exception handling
+\todo .dox file template
+\todo evaluate \\ref namespace::class::method
+\todo enable \\code C/C++ and C# syntax highlighting (use common C++ and C# tagger)
+
+*/

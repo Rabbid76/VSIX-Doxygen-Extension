@@ -1,4 +1,4 @@
 <map id="DoxPreviewExt.DoxUtil.CCache" name="DoxPreviewExt.DoxUtil.CCache">
 <area shape="rect" id="node2" href="$class_dox_preview_ext_1_1_dox_util_1_1_c_file_map.html" title="{DoxPreviewExt.DoxUtil.CFileMap\n|+ RootPaths\l&#45; fileMap_\l&#45; rootPaths_\l|+ CFileMap()\l+ UpdateFileMap()\l+ FindFilePath()\l&#45; GenerateFileMap()\l&#45; FindeFilesRecursive()\l}" alt="" coords="5,5,220,171"/>
-<area shape="rect" id="node3" href="$class_dox_preview_ext_1_1_dox_util_1_1_c_link_map.html" title="{DoxPreviewExt.DoxUtil.CLinkMap\n|+ RootURL\l&#45; doxLinkMap_\l&#45; rootURL_\l|+ CLinkMap()\l+ UpdateLinkMap()\l+ FindDoxygenLink()\l&#45; GenerateLinkMap()\l}" alt="" coords="244,13,461,163"/>
+<area shape="rect" id="node3" href="$class_dox_preview_ext_1_1_dox_util_1_1_c_link_map.html" title="{DoxPreviewExt.DoxUtil.CLinkMap\n|+ RootURL\l&#45; doxLinkMap_\l&#45; rootURL_\l&#45; searchPrefix\l|+ CLinkMap()\l+ UpdateLinkMap()\l+ FindDoxygenLink()\l&#45; GenerateLinkMap()\l}" alt="" coords="244,5,461,171"/>
 </map>

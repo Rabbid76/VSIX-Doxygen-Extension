@@ -3,8 +3,133 @@
 \mainpage
 \tableofcontents
 
-\section secImplementation Implementation
+\section secFunctinality Functionality
+
+- Context menu command for adding source code documentation \n
+- Doxygen special commands syntax highlighting for <b>C/C++</b> and <b>C#</b> content type and fies with extension
+  <b><tt>.dox</tt></b> \n
+- Quickinfo for doxygen special commands including images \n 
+- Tracking of Doxygen references \n
+- Preview of Dot Graphs \n
+- Preview of Mssage Sequence Chart \n
+- Preview of LaTeX Formulas \n
+
+
+\section secExtensionsRequirements Doxygen Preview Extension Requirements
+
+- Doxgen \n
+  cf \ref secDoxygenRequirements \n
+
+- <b>mimeTeX</b> 
+  [http://blog.math.ntu.edu.tw/~history/cgi-bin/mimetex.html] \n
+  [http://ctan.mackichan.com/support/mimetex/mimetex.html] \n
+  [http://www.forkosh.com/mimetex.html] \n
+  <tt>\\\hydra\\DevTools\\msw\\mimetex</tt> \n
+
+
+\section secExtensionsDocCode Document the source code
+
+
+\subsection secExtensionsDocCodeCreateLocalDox Crate local doxygen documantation
+
+A <b>local doxygen html documentation for the <tt>.dox</tt> files</b>, but <b>not</b> for the source code itself,
+will be generated when building the project <b><tt>.\\p\\1400\\dox_src\\DoxPreview.vcxproj</tt></b>. The generated HTML documentation can be found at 
+<b><tt>.\\p\\1400\\dox_src\\doxygen_preview\\html\\index.html</tt></b>.
+
+\subsection secExtensionsDocCodeHead Add head documantation to source code
+
+- Open dcontext menue with a <i>right click</i> in <b>C/C++</b> or <b>C#</b> content.
+- Doxygen Preview Extensions -> Kommentar einfügen
+
+
+\subsection secExtensionsDocCodeAddImage Add an image to source code documentation
+
+Images to be embedded in the doxygen documentation must be contained in the directory <b><tt>".\p\1400\dox_src\images"</tt></b>
+or a subdirectory thereof. The supported image types are <b><tt>.bmp</tt></b>, <b><tt>.jpg</tt></b>, <b><tt>.png</tt></b>,
+<b><tt>.gif</tt></b>, <b><tt>.tif</tt></b> and <b><tt>.svg</tt></b>. \n
+To embedded the image use the special doxygen command <b><tt>[\@image](https://www.stack.nl/~dimitri/doxygen/manual/commands.html#cmdimage)</tt></b>. \n
+\n
+e.g.
+\code{.cpp}
+/ ****************************************************************** // **
+* \brief Foo
+* 
+* \image html my_image.svg "my image caption"
+* 
+* \author  anyone
+* \date    01.01.2017
+* \version 1.0
+********************************************************************** /
+void Foo( void )
+{
+  ...
+}; 
+\endcode
+
+If <b>Doxygen Preview Extension</b> is installed the image will be displayed in the quicktip of the special doxygen command
+<b><tt>\@image html my_image.svg</tt></b>. \n
+In order for the images to be displayed, the directory <b><tt>".\p\1400\dox_src\images"</tt></b> is analyzed when Visual studio
+is started. All image file names are managed in a dictionary cache. If a new image is added, the cache has to be updated:
+<b><tt>Extras -> Options -> Doxygen Extensions -> Doxygen configuration -> Update Cache</tt></b>.
+
+
+\subsection secExtensionsDocCodeCreateDotGraph Create Dot Graph
+cf Gaphviz - Graph Visualization Software [http://www.graphviz.org/] \n
+cf Doteditor - [http://vincenthee.github.io/DotEditor/] \n
+
+\code{.txt}
+\dot
+digraph "UML diagram"
+{
+  // INTERACTIVE_SVG=YES
+  edge [fontsize="10", style="solid", fontname="Helvetica"]
+  node [shape=record, fontname="Helvetica", fontsize="10"];
+
+  // inheritance  
+  edge [dir="back", style="solid", arrowhead="none", arrowtail="onormal", color="midnightblue"]
+  A -> B1
+  A -> B2
+  A -> B3
+
+  // association
+  edge [dir="front", style="dashed", arrowhead="vee", arrowtail="none", color="grey25"]
+  B1 -> C1  [label="assoziation", headlabel="*", taillabel="1"]
+
+  // aggregation
+  edge [dir="back", style="solid", arrowhead="none", arrowtail="odiamond", color="grey25"]
+  B2 -> C2 [label="aggregation", headlabel="*", taillabel="1"]
+
+  // composition
+  edge [dir="back", style="solid", arrowhead="none", arrowtail="diamond", color="grey25"]
+  B3 -> C3 [label="composition", headlabel="*", taillabel="1"]
+}
+\enddot
+\endcode
+
+
+\subsection secExtensionsDocCodeCreateMSC Create Mssage Sequence Chart
+cf Mscgen [http://www.mcternan.me.uk/mscgen/] \n
+
+
+\subsection secExtensionsDocCodeCreatePlantUML Create Palnt UML diagram
+cf PlantUML [http://plantuml.com/] \n
+
+\attention That is not recommended 
+
+
+\subsection secExtensionsDocCodeCreateLatexFormula Create Latex Formula
+cf LaTeX/Mathematics [https://en.wikibooks.org/wiki/LaTeX/Mathematics] \n
+cf LaTeX/Advanced Mathematics [https://en.wikibooks.org/wiki/LaTeX/Advanced_Mathematics] \n
+
+
+\section secExtensionsImplementation Implementation
 
 \subpage pagDoxPreviewImplementation
+
+
+\section secRelated Related
+
+\subpage pagDoxygenDocu
+\subpage pagTODO
 
 */
