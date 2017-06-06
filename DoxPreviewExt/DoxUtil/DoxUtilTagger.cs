@@ -209,7 +209,14 @@ namespace DoxPreviewExt.DoxUtil
 						if (validRefDecl)
 						{
 							var refTextSpan = identList[i + 1];
-							var refSpan = new SnapshotSpan(identSpan.Start, refTextSpan.End);
+							var refTextEndPoint = refTextSpan.End;
+							var dotPos = refText.IndexOf('.');
+							if ( dotPos >= 0 )
+							{
+								refText = refText.Substring(0, dotPos);
+								refTextEndPoint = refTextSpan.Start + dotPos;
+							}
+							var refSpan = new SnapshotSpan(identSpan.Start, refTextEndPoint);
 							var url = manager.FindDoxygenLink(refText, false);
 							spanTags.Add(new DoxTokenTag(DoxTokenType.Ref, refSpan, refTextSpan, cmdName, url != "" ? url : refText, url != ""));
 							i++;

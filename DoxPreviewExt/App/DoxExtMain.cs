@@ -93,7 +93,7 @@ namespace DoxPreviewExt.App
 			Command.CommandDocumentSource.Initialize(this, this.cmdManager);
       Command.CommandDoxygenRefBrowse.Initialize(this, this.cmdManager);
 			Command.CommandDoxygenBrowse.Initialize(this, this.cmdManager, 262 /* cmdidDoxygenSourcebrowseId */, true, false, "");
-			Command.CommandDoxygenBrowse.Initialize(this, this.cmdManager, 266 /* cmdidDoxygenShowPreviewId */, false, true, "");
+			Command.CommandDoxygenBrowse.Initialize(this, this.cmdManager, 267 /* cmdidDoxygenShowPreviewId */, false, true, "");
 			Command.CommandDoxgenGeneratePreview.Initialize(this, this.cmdManager);
 		}
 

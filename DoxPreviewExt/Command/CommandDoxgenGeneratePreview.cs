@@ -9,7 +9,7 @@ namespace DoxPreviewExt.Command
 {
 	internal sealed class CommandDoxgenGeneratePreview : CommandBase
 	{
-		public const int CommandId = 267;
+		public const int CommandId = 266;
 		public static readonly Guid CommandSet = new Guid("C7C94F14-0506-4F23-973D-E01A0685E730");
 
 		private CommandDoxgenGeneratePreview(Package package, App.CommandManager cmdManager)
