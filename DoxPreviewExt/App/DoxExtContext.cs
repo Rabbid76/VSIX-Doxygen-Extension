@@ -8,7 +8,7 @@ namespace ExtensionCommon
 	{
 		public const string ConstExtensionName = @"DoxPreviewExt";
 		public const string ConstExtensionImgResName = ExtensionContext.ConstExtensionName + @".DoxUtil.Resources.";
-		public const string ConstOptionsCategoryName = @"Doxygen Extentions";
+		public const string ConstOptionsCategoryName = @"Doxygen Preview";
 		
 		public const string constDoxygenSourceBrowserURL = @"";
 

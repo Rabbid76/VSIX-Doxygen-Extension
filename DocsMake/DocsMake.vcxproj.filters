@@ -7,6 +7,9 @@
     <Filter Include="make">
       <UniqueIdentifier>{651fdfc9-921d-413d-9968-c79c7de25404}</UniqueIdentifier>
     </Filter>
+    <Filter Include="image">
+      <UniqueIdentifier>{c18a1f03-1ce6-4bba-96ce-5e8bbf69f39b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="dox\custom_styles.css">
@@ -27,8 +30,8 @@
     <None Include="dox\pagTODOandNotes.dox">
       <Filter>dox</Filter>
     </None>
-    <None Include="dox\pagDoxygenDocu.dox">
-      <Filter>dox</Filter>
+    <None Include="..\README.md">
+      <Filter>make</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -40,5 +43,13 @@
     <Xml Include="..\doxygen_config.xml">
       <Filter>make</Filter>
     </Xml>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="image\display_and_action_settings.jpg">
+      <Filter>image</Filter>
+    </Image>
+    <Image Include="image\doxygen_configuration.jpg">
+      <Filter>image</Filter>
+    </Image>
   </ItemGroup>
 </Project>

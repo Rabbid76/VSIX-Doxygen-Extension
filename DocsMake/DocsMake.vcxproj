@@ -19,12 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\README.md" />
     <None Include="DocsFooter.html" />
     <None Include="DocsHeader.html" />
     <None Include="dox\custom_styles.css" />
     <None Include="dox\pagDoxPreviewImplementation.dox" />
     <None Include="dox\pagDoxPreviewMain.dox" />
-    <None Include="dox\pagDoxygenDocu.dox" />
     <None Include="dox\pagTODOandNotes.dox" />
   </ItemGroup>
   <ItemGroup>
@@ -32,6 +32,10 @@
   </ItemGroup>
   <ItemGroup>
     <Xml Include="..\doxygen_config.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="image\display_and_action_settings.jpg" />
+    <Image Include="image\doxygen_configuration.jpg" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

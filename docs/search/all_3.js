@@ -84,6 +84,5 @@ var searchData=
   ['currentmimetextool',['CurrentMimeTeXTool',['../class_dox_preview_ext_1_1_dox_util_1_1_c_options.html#a215f23e18ae61f40f43180a7ac85dc9f',1,'DoxPreviewExt::DoxUtil::COptions']]],
   ['currentmscgentool',['CurrentMscGenTool',['../class_dox_preview_ext_1_1_dox_util_1_1_c_options.html#a0adf9dcab94af80c66f7be6ab1fcc952',1,'DoxPreviewExt::DoxUtil::COptions']]],
   ['currentplantumltool',['CurrentPlantUmlTool',['../class_dox_preview_ext_1_1_dox_util_1_1_c_options.html#ac3edb393a0489a05ed50e1a75aecb2a6',1,'DoxPreviewExt::DoxUtil::COptions']]],
-  ['currentsourcebrowser',['CurrentSourceBrowser',['../class_dox_preview_ext_1_1_dox_util_1_1_c_options.html#a05a4d8011d9a56f8e434a375f36dca14',1,'DoxPreviewExt::DoxUtil::COptions']]],
-  ['create_20doxygen_20documentation',['Create Doxygen Documentation',['../pag_doxygen_docu.html',1,'index']]]
+  ['currentsourcebrowser',['CurrentSourceBrowser',['../class_dox_preview_ext_1_1_dox_util_1_1_c_options.html#a05a4d8011d9a56f8e434a375f36dca14',1,'DoxPreviewExt::DoxUtil::COptions']]]
 ];

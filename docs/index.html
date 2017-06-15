@@ -93,8 +93,12 @@ $(document).ready(function(){initNavTree('index.html','');});
 <div class="contents">
 <div class="toc"><h3>Table of Contents</h3>
 <ul><li class="level1"><a href="#secFunctinality">Functionality</a></li>
-<li class="level1"><a href="#secExtensionsRequirements">Doxygen Preview Extension Requirements</a></li>
-<li class="level1"><a href="#secExtensionsDocCode">Document the source code</a><ul><li class="level2"><a href="#secExtensionsDocCodeCreateLocalDox">Crate local doxygen documantation</a></li>
+<li class="level1"><a href="#secExtensionsRequirements">Requirements</a></li>
+<li class="level1"><a href="#secExtensionsConfiguration">Configuration</a><ul><li class="level2"><a href="#secExtensionsDoxConfigFile">Doxygen configuration file</a></li>
+<li class="level2"><a href="#secExtensionsDoxVSConfig">Options</a></li>
+</ul>
+</li>
+<li class="level1"><a href="#secExtensionsDocCode">Document the source code</a><ul><li class="level2"><a href="#secExtensionsDocCodeCreateLocalDox">Crate local doxygen documentation</a></li>
 <li class="level2"><a href="#secExtensionsDocCodeHead">Add head documantation to source code</a></li>
 <li class="level2"><a href="#secExtensionsDocCodeAddImage">Add an image to source code documentation</a></li>
 <li class="level2"><a href="#secExtensionsDocCodeCreateDotGraph">Create Dot Graph</a></li>
@@ -126,35 +130,85 @@ Functionality</h1>
 </li>
 </ul>
 <h1><a class="anchor" id="secExtensionsRequirements"></a>
-Doxygen Preview Extension Requirements</h1>
+Requirements</h1>
+<p>To install Doxygen download <a href="http://www.stack.nl/~dimitri/doxygen/download.html"><b>Doxygen Windows binaries</b></a> and follow the <a href="http://www.stack.nl/~dimitri/doxygen/manual/install.html">Doxygen installation guide</a>.</p>
 <ul>
-<li>Doxgen <br />
- cf <a class="el" href="pag_doxygen_docu.html#secDoxygenRequirements">Doxygen Requirements</a> <br />
+<li><b>Doxygen</b> <br />
+ [<a href="http://www.stack.nl/~dimitri/doxygen/download.html">http://www.stack.nl/~dimitri/doxygen/download.html</a>] <br />
+</li>
+<li><b>Graphviz</b> <br />
+ [<a href="http://www.graphviz.org/Download.php">http://www.graphviz.org/Download.php</a>] <br />
+</li>
+<li><b>Mscgen</b> <br />
+ [<a href="http://www.mcternan.me.uk/mscgen/">http://www.mcternan.me.uk/mscgen/</a>] <br />
+</li>
+<li><b>PlantUML</b> <br />
+ [<a href="http://plantuml.com/download">http://plantuml.com/download</a>] <br />
 </li>
 <li><b>mimeTeX</b> [<a href="http://blog.math.ntu.edu.tw/~history/cgi-bin/mimetex.html">http://blog.math.ntu.edu.tw/~history/cgi-bin/mimetex.html</a>] <br />
  [<a href="http://ctan.mackichan.com/support/mimetex/mimetex.html">http://ctan.mackichan.com/support/mimetex/mimetex.html</a>] <br />
  [<a href="http://www.forkosh.com/mimetex.html">http://www.forkosh.com/mimetex.html</a>] <br />
- <code>\\DevTools\msw\mimetex</code> <br />
-</li>
+ <br />
+In the <a href="http://www.stack.nl/~dimitri/doxygen/manual/index.html"><b>Doxygen Documentation</b></a> can be found documantation about <a href="http://www.stack.nl/~dimitri/doxygen/manual/docblocks.html">documenting the code</a>, adding <a href="http://www.stack.nl/~dimitri/doxygen/manual/markdown.html">documents in Markdown format</a>, including <a href="http://www.stack.nl/~dimitri/doxygen/manual/formulas.html">formulars</a>, <a href="http://www.stack.nl/~dimitri/doxygen/manual/tables.html">tables</a>, <a href="http://www.stack.nl/~dimitri/doxygen/manual/diagrams.html">graphs and diagrams</a> and further.</li>
 </ul>
+<h1><a class="anchor" id="secExtensionsConfiguration"></a>
+Configuration</h1>
+<p>The Doxygen Preview Extension searches in your Visual Studio solution directory for a XML file named <em>doxygen_config.xml</em>. The content of the file should look like this. </p><div class="fragment"><div class="line">&lt;<span class="keywordtype">config</span>&gt;</div><div class="line">    &lt;<span class="keywordtype">source</span>&gt;<span class="keyword">https:</span>//<span class="keyword">rabbid76.github.io</span>/<span class="keyword">VSIX-Doxygen-Extension</span>/&lt;/<span class="keywordtype">source</span>&gt;</div><div class="line">    &lt;<span class="keywordtype">configurationfile</span>&gt;.\<span class="keyword">DocsMake</span>\<span class="keyword">DocsMake.txt</span>&lt;/<span class="keywordtype">configurationfile</span>&gt;</div><div class="line">&lt;/<span class="keywordtype">config</span>&gt;</div></div><!-- fragment --><p>The <code>source</code> tag contains the location of your doxygen documentation. The <code>configurationfile</code> tag contains the absolute or relative path to the doxygen configuration file.</p>
+<h2><a class="anchor" id="secExtensionsDoxConfigFile"></a>
+Doxygen configuration file</h2>
+<p>The following attributes are of the doxygen configuation file are considerd by the Doxygen Preview Extension:</p>
+<ul>
+<li><b><code>OUTPUT_DIRECTORY</code></b> <br />
+ The <code>OUTPUT_DIRECTORY</code> tag is used to specify the (relative or absolute) path into which the generated documentation will be written. If a relative path is entered, it will be relative to the location where doxygen was started. If left blank the current directory will be used. <br />
+</li>
+<li><b><code>IMAGE_PATH</code></b> <br />
+ The <code>IMAGE_PATH</code> tag can be used to specify one or more files or directories that contain images that are to be included in the documentation (see the <b><code>\image</code></b> command). <br />
+</li>
+<li><b><code>GENERATE_HTML</code></b> <br />
+ If the <code>GENERATE_HTML</code> tag is set to <code>YES</code>, doxygen will generate HTML output The default value is: <code>YES</code>. <br />
+</li>
+<li><b><code>HTML_OUTPUT</code></b> <br />
+ The <code>HTML_OUTPUT</code> tag is used to specify where the HTML docs will be put. If a relative path is entered the value of OUTPUT_DIRECTORY will be put in front of it. <br />
+ The default directory is: <code>html</code>. This tag requires that the tag <code>GENERATE_HTML</code> is set to <code>YES</code>.</li>
+<li><b><code>MSCGEN_PATH</code></b> <br />
+ You can define message sequence charts within doxygen comments using the <code>\msc</code> command. Doxygen will then run the mscgen tool (see: [<a href="http://www.mcternan.me.uk/mscgen/">http://www.mcternan.me.uk/mscgen/</a>])) to produce the chart and insert it in the documentation. The <code>MSCGEN_PATH</code> tag allows you to specify the directory where the mscgen tool resides. If left empty the tool is assumed to be found in the default search path. <br />
+</li>
+<li><b><code>HAVE_DOT</code></b> <br />
+ If you set the <code>HAVE_DOT</code> tag to YES then doxygen will assume the dot tool is available from the path. This tool is part of Graphviz (see: [<a href="http://www.graphviz.org/">http://www.graphviz.org/</a>]), a graph visualization toolkit from AT&amp;T and Lucent Bell Labs. The default value is: <code>NO</code>.</li>
+<li><b><code>DOT_PATH</code></b> <br />
+ The <code>DOT_PATH</code> tag can be used to specify the path where the dot tool can be found. If left blank, it is assumed the dot tool can be found in the path. This tag requires that the tag <code>HAVE_DOT</code> is set to <code>YES</code>.</li>
+<li><b><code>PLANTUML_JAR_PATH</code></b> <br />
+ When using plantuml, the <code>PLANTUML_JAR_PATH</code> tag should be used to specify the path where java can find the plantuml.jar file. If left blank, it is assumed PlantUML is not used or called during a preprocessing step. Doxygen will generate a warning when it encounters a <code>\startuml</code> command in this case and will not generate output for the diagram.</li>
+<li><b><code>PLANTUML_JAR_PATH</code></b> <br />
+ When using plantuml, the specified paths are searched for files specified by the <code>!include</code> statement in a plantuml block.</li>
+</ul>
+<h2><a class="anchor" id="secExtensionsDoxVSConfig"></a>
+Options</h2>
+<p><br />
+Configuration: </p><div class="image">
+<img src="doxygen_configuration.jpg" alt="doxygen_configuration.jpg"/>
+</div>
+<p><br />
+Display settings: </p><div class="image">
+<img src="display_and_action_settings.jpg" alt="display_and_action_settings.jpg"/>
+</div>
 <h1><a class="anchor" id="secExtensionsDocCode"></a>
 Document the source code</h1>
 <h2><a class="anchor" id="secExtensionsDocCodeCreateLocalDox"></a>
-Crate local doxygen documantation</h2>
-<p>A <b>local doxygen html documentation for the <code>.dox</code> files</b>, but <b>not</b> for the source code itself, will be generated when building the project <b><code>.\p\1400\dox_src\DoxPreview.vcxproj</code></b>. The generated HTML documentation can be found at <b><code>.\p\1400\dox_src\doxygen_preview\html\index.html</code></b>.</p>
+Crate local doxygen documentation</h2>
 <h2><a class="anchor" id="secExtensionsDocCodeHead"></a>
 Add head documantation to source code</h2>
 <ul>
 <li>Open dcontext menue with a <em>right click</em> in <b>C/C++</b> or <b>C#</b> content.</li>
-<li>Doxygen Preview Extensions -&gt; Kommentar einfügen</li>
+<li>Doxygen Preview Extensions -&gt; Add Doxygen comment</li>
 </ul>
 <h2><a class="anchor" id="secExtensionsDocCodeAddImage"></a>
 Add an image to source code documentation</h2>
-<p>Images to be embedded in the doxygen documentation must be contained in the directory <b><code>".\p\1400\dox_src\images"</code></b> or a subdirectory thereof. The supported image types are <b><code>.bmp</code></b>, <b><code>.jpg</code></b>, <b><code>.png</code></b>, <b><code>.gif</code></b>, <b><code>.tif</code></b> and <b><code>.svg</code></b>. <br />
-To embedded the image use the special doxygen command <b><code><a href="https://www.stack.nl/~dimitri/doxygen/manual/commands.html#cmdimage">@image</a></code></b>. <br />
+<p>To embedded an image use the special doxygen command <b><code><a href="https://www.stack.nl/~dimitri/doxygen/manual/commands.html#cmdimage">@image</a></code></b>. <br />
 <br />
 e.g. </p><div class="fragment"><div class="line">/ ****************************************************************** <span class="comment">// **</span></div><div class="line">  \brief Foo</div><div class="line">  </div><div class="line">  \image html my_image.svg <span class="stringliteral">&quot;my image caption&quot;</span></div><div class="line">  </div><div class="line">  \author  anyone</div><div class="line">  \date    01.01.2017</div><div class="line">  \version 1.0</div><div class="line">                                                                       /</div><div class="line"><span class="keywordtype">void</span> Foo( <span class="keywordtype">void</span> )</div><div class="line">{</div><div class="line">  ...</div><div class="line">}; </div></div><!-- fragment --><p>If <b>Doxygen Preview Extension</b> is installed the image will be displayed in the quicktip of the special doxygen command <b><code>@image html my_image.svg</code></b>. <br />
-In order for the images to be displayed, the directory <b><code>".\p\1400\dox_src\images"</code></b> is analyzed when Visual studio is started. All image file names are managed in a dictionary cache. If a new image is added, the cache has to be updated: <b><code>Extras -&gt; Options -&gt; Doxygen Extensions -&gt; Doxygen configuration -&gt; Update Cache</code></b>.</p>
+In order for the images to be displayed, the directories indicated in the <b><code>IMAGE_PATH</code></b> attribute of the Doxygen configuration file are analyzed. All image file names are managed in a dictionary cache. If a new image is added, the cache has to be updated: <br />
+<b><code>Extras -&gt; Options -&gt; Doxygen Preview -&gt; Doxygen configuration -&gt; Update Cache</code></b>.</p>
 <h2><a class="anchor" id="secExtensionsDocCodeCreateDotGraph"></a>
 Create Dot Graph</h2>
 <p>cf Gaphviz - Graph Visualization Software [<a href="http://www.graphviz.org/">http://www.graphviz.org/</a>] <br />
@@ -174,10 +228,14 @@ cf LaTeX/Advanced Mathematics [<a href="https://en.wikibooks.org/wiki/LaTeX/Adva
 </p>
 <h1><a class="anchor" id="secExtensionsImplementation"></a>
 Implementation</h1>
-<p><a class="el" href="pag_dox_preview_implementation.html">Implementation notes</a></p>
+<ul>
+<li><a class="el" href="pag_dox_preview_implementation.html">Implementation notes</a></li>
+</ul>
 <h1><a class="anchor" id="secRelated"></a>
 Related</h1>
-<p><a class="el" href="pag_doxygen_docu.html">Create Doxygen Documentation</a> <a class="el" href="pag_t_o_d_o.html">To do list, tasks and notes</a> </p>
+<ul>
+<li><a class="el" href="pag_t_o_d_o.html">To do list, tasks and notes</a> </li>
+</ul>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

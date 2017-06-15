@@ -2,9 +2,13 @@ var NAVTREE =
 [
   [ "VSIX Doxygen Preview Extension", "index.html", [
     [ "Functionality", "index.html#secFunctinality", null ],
-    [ "Doxygen Preview Extension Requirements", "index.html#secExtensionsRequirements", null ],
+    [ "Requirements", "index.html#secExtensionsRequirements", null ],
+    [ "Configuration", "index.html#secExtensionsConfiguration", [
+      [ "Doxygen configuration file", "index.html#secExtensionsDoxConfigFile", null ],
+      [ "Options", "index.html#secExtensionsDoxVSConfig", null ]
+    ] ],
     [ "Document the source code", "index.html#secExtensionsDocCode", [
-      [ "Crate local doxygen documantation", "index.html#secExtensionsDocCodeCreateLocalDox", null ],
+      [ "Crate local doxygen documentation", "index.html#secExtensionsDocCodeCreateLocalDox", null ],
       [ "Add head documantation to source code", "index.html#secExtensionsDocCodeHead", null ],
       [ "Add an image to source code documentation", "index.html#secExtensionsDocCodeAddImage", null ],
       [ "Create Dot Graph", "index.html#secExtensionsDocCodeCreateDotGraph", null ],
@@ -16,35 +20,6 @@ var NAVTREE =
     [ "Related", "index.html#secRelated", null ],
     [ "Implementation notes", "pag_dox_preview_implementation.html", [
       [ "Links and Reference", "pag_dox_preview_implementation.html#secDoxPreviewImplementationLinks", null ]
-    ] ],
-    [ "Create Doxygen Documentation", "pag_doxygen_docu.html", [
-      [ "Installation", "pag_doxygen_docu.html#secDoxygenDocuInstall", null ],
-      [ "Doxygen Requirements", "pag_doxygen_docu.html#secDoxygenRequirements", null ],
-      [ "Doxygen Manual", "pag_doxygen_docu.html#secDoxygenDocuDoxDocu", [
-        [ "Special Commands", "pag_doxygen_docu.html#secDoxygenDocuDoxSepcCmd", [
-          [ "General Special Commands", "pag_doxygen_docu.html#secDoxygenDocuDoxSepcCmdgeneral", null ],
-          [ "Special Commands for source code documentation", "pag_doxygen_docu.html#secDoxygenDocuDoxSepcCmdCode", null ],
-          [ "Special Commands for related page documentation", "pag_doxygen_docu.html#secDoxygenDocuDoxSepcCmdRelated", null ],
-          [ "Special Commands for referencing code in related page documentation", "pag_doxygen_docu.html#secDoxygenDocuDoxSepcCmdRefCode", null ]
-        ] ],
-        [ "HTML Commands", "pag_doxygen_docu.html#secDoxygenDocuDoxHTMLCommands", null ],
-        [ "XML Commands", "pag_doxygen_docu.html#secDoxygenDocuDoxXMLCommands", null ],
-        [ "Markdown support", "pag_doxygen_docu.html#secDoxygenDocuDoxMarkdown", null ],
-        [ "Doxygen Links and Reference", "pag_doxygen_docu.html#secDoxygenDocuSettingsLinks", null ]
-      ] ],
-      [ "Doxygen Configuration", "pag_doxygen_docu.html#secDoxygenDocuSettings", null ],
-      [ "Visual Studio Code", "pag_doxygen_docu.html#secDoxygenDocuVSC", [
-        [ "Doxygen language support", "pag_doxygen_docu.html#secDoxygenDocuVSC_doxygen", null ],
-        [ "SVG Viewer", "pag_doxygen_docu.html#secDoxygenDocuVSC_SVGviewer", null ],
-        [ "Preview", "pag_doxygen_docu.html#secDoxygenDocuVSC_preview", null ],
-        [ "PlantUML", "pag_doxygen_docu.html#secDoxygenDocuVSC_PlantUML", null ],
-        [ "Status Bar Tasks", "pag_doxygen_docu.html#secDoxygenDocuVSC_tasks", null ],
-        [ "Statusbar Commands", "pag_doxygen_docu.html#secDoxygenDocuVSC_commands", null ]
-      ] ],
-      [ "Visual Studio", "pag_doxygen_docu.html#secDoxygenDocuVS", [
-        [ "Install Visual Studio Doxygen extensions", "pag_doxygen_docu.html#secDoxygenDocuVSinstguid", null ],
-        [ "Visual Studio extensions", "pag_doxygen_docu.html#secDoxygenDocuVSext", null ]
-      ] ]
     ] ],
     [ "To do list, tasks and notes", "pag_t_o_d_o.html", null ],
     [ "Todo List", "todo.html", null ],

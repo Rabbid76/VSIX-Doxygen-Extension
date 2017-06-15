@@ -15,39 +15,133 @@
 - Preview of LaTeX Formulas \n
 
 
-\section secExtensionsRequirements Doxygen Preview Extension Requirements
+\section secExtensionsRequirements Requirements
 
-- Doxgen \n
-  cf \ref secDoxygenRequirements \n
+To install Doxygen download [**Doxygen Windows binaries**](http://www.stack.nl/~dimitri/doxygen/download.html)
+and follow the [Doxygen installation guide](http://www.stack.nl/~dimitri/doxygen/manual/install.html).
 
+- <b>Doxygen</b> \n
+  [http://www.stack.nl/~dimitri/doxygen/download.html] \n
+  
+- <b>Graphviz</b> \n 
+  [http://www.graphviz.org/Download.php] \n
+  
+- <b>Mscgen</b> \n 
+  [http://www.mcternan.me.uk/mscgen/] \n
+  
+- <b>PlantUML</b> \n
+  [http://plantuml.com/download] \n
+  
 - <b>mimeTeX</b> 
   [http://blog.math.ntu.edu.tw/~history/cgi-bin/mimetex.html] \n
   [http://ctan.mackichan.com/support/mimetex/mimetex.html] \n
   [http://www.forkosh.com/mimetex.html] \n
-  <tt>\\\hydra\\DevTools\\msw\\mimetex</tt> \n
+
+\n
+In the [**Doxygen Documentation**](http://www.stack.nl/~dimitri/doxygen/manual/index.html)
+can be found documantation about [documenting the code](http://www.stack.nl/~dimitri/doxygen/manual/docblocks.html),
+adding [documents in Markdown format](http://www.stack.nl/~dimitri/doxygen/manual/markdown.html), 
+including [formulars](http://www.stack.nl/~dimitri/doxygen/manual/formulas.html),
+[tables](http://www.stack.nl/~dimitri/doxygen/manual/tables.html),
+[graphs and diagrams](http://www.stack.nl/~dimitri/doxygen/manual/diagrams.html)
+and further.
+
+
+\section secExtensionsConfiguration Configuration
+
+The Doxygen Preview Extension searches in your Visual Studio solution directory for a XML file named <i>doxygen_config.xml</i>.
+The content of the file should look like this.
+\code{.xml}
+<config>
+    <source>https://rabbid76.github.io/VSIX-Doxygen-Extension/</source>
+    <configurationfile>.\DocsMake\DocsMake.txt</configurationfile>
+</config>
+\endcode
+
+The <tt>source</tt> tag contains the location of your doxygen documentation.
+The <tt>configurationfile</tt> tag contains the absolute or relative path to the doxygen configuration file.
+
+
+\subsection secExtensionsDoxConfigFile Doxygen configuration file
+
+The following attributes are of the doxygen configuation file are considerd by the Doxygen Preview Extension:
+
+- <b><tt>OUTPUT_DIRECTORY</tt></b> \n
+  The <tt>OUTPUT_DIRECTORY</tt> tag is used to specify the (relative or absolute) path
+  into which the generated documentation will be written. If a relative path is
+  entered, it will be relative to the location where doxygen was started. If
+  left blank the current directory will be used. \n
+
+- <b><tt>IMAGE_PATH</tt></b> \n
+  The <tt>IMAGE_PATH</tt> tag can be used to specify one or more files or directories
+  that contain images that are to be included in the documentation (see the
+  <b><tt>\\image</tt></b> command). \n
+
+- <b><tt>GENERATE_HTML</tt></b> \n
+  If the <tt>GENERATE_HTML</tt> tag is set to <tt>YES</tt>, doxygen will generate HTML output
+  The default value is: <tt>YES</tt>. \n
+
+- <b><tt>HTML_OUTPUT</tt></b> \n
+  The <tt>HTML_OUTPUT</tt> tag is used to specify where the HTML docs will be put. If a
+  relative path is entered the value of OUTPUT_DIRECTORY will be put in front of it. \n
+  The default directory is: <tt>html</tt>.
+  This tag requires that the tag <tt>GENERATE_HTML</tt> is set to <tt>YES</tt>.
+
+- <b><tt>MSCGEN_PATH</tt></b> \n
+  You can define message sequence charts within doxygen comments using the <tt>\\msc</tt>
+  command. Doxygen will then run the mscgen tool (see: [http://www.mcternan.me.uk/mscgen/]))
+  to produce the chart and insert it in the documentation. The <tt>MSCGEN_PATH</tt> tag allows you
+  to specify the directory where the mscgen tool resides. If left empty the tool is assumed to be found in the
+  default search path. \n
+
+- <b><tt>HAVE_DOT</tt></b> \n
+  If you set the <tt>HAVE_DOT</tt> tag to YES then doxygen will assume the dot tool is
+  available from the path. This tool is part of Graphviz (see: [http://www.graphviz.org/]),
+  a graph visualization toolkit from AT&T and Lucent Bell Labs.
+  The default value is: <tt>NO</tt>.
+
+- <b><tt>DOT_PATH</tt></b> \n
+  The <tt>DOT_PATH</tt> tag can be used to specify the path where the dot tool can be
+  found. If left blank, it is assumed the dot tool can be found in the path.
+  This tag requires that the tag <tt>HAVE_DOT</tt> is set to <tt>YES</tt>.
+
+- <b><tt>PLANTUML_JAR_PATH</tt></b> \n
+  When using plantuml, the <tt>PLANTUML_JAR_PATH</tt> tag should be used to specify the
+  path where java can find the plantuml.jar file. If left blank, it is assumed
+  PlantUML is not used or called during a preprocessing step. Doxygen will
+  generate a warning when it encounters a <tt>\\startuml</tt> command in this case and
+  will not generate output for the diagram.
+
+- <b><tt>PLANTUML_JAR_PATH</tt></b> \n
+  When using plantuml, the specified paths are searched for files specified by
+  the <tt>!include</tt> statement in a plantuml block.
+
+
+\subsection secExtensionsDoxVSConfig Options
+
+\n
+Configuration:
+\image html doxygen_configuration.jpg
+
+\n
+Display settings:
+\image html display_and_action_settings.jpg
 
 
 \section secExtensionsDocCode Document the source code
 
 
-\subsection secExtensionsDocCodeCreateLocalDox Crate local doxygen documantation
-
-A <b>local doxygen html documentation for the <tt>.dox</tt> files</b>, but <b>not</b> for the source code itself,
-will be generated when building the project <b><tt>.\\p\\1400\\dox_src\\DoxPreview.vcxproj</tt></b>. The generated HTML documentation can be found at 
-<b><tt>.\\p\\1400\\dox_src\\doxygen_preview\\html\\index.html</tt></b>.
+\subsection secExtensionsDocCodeCreateLocalDox Crate local doxygen documentation
 
 \subsection secExtensionsDocCodeHead Add head documantation to source code
 
 - Open dcontext menue with a <i>right click</i> in <b>C/C++</b> or <b>C#</b> content.
-- Doxygen Preview Extensions -> Kommentar einfügen
+- Doxygen Preview Extensions -> Add Doxygen comment
 
 
 \subsection secExtensionsDocCodeAddImage Add an image to source code documentation
 
-Images to be embedded in the doxygen documentation must be contained in the directory <b><tt>".\p\1400\dox_src\images"</tt></b>
-or a subdirectory thereof. The supported image types are <b><tt>.bmp</tt></b>, <b><tt>.jpg</tt></b>, <b><tt>.png</tt></b>,
-<b><tt>.gif</tt></b>, <b><tt>.tif</tt></b> and <b><tt>.svg</tt></b>. \n
-To embedded the image use the special doxygen command <b><tt>[\@image](https://www.stack.nl/~dimitri/doxygen/manual/commands.html#cmdimage)</tt></b>. \n
+To embedded an image use the special doxygen command <b><tt>[\@image](https://www.stack.nl/~dimitri/doxygen/manual/commands.html#cmdimage)</tt></b>. \n
 \n
 e.g.
 \code{.cpp}
@@ -68,9 +162,10 @@ void Foo( void )
 
 If <b>Doxygen Preview Extension</b> is installed the image will be displayed in the quicktip of the special doxygen command
 <b><tt>\@image html my_image.svg</tt></b>. \n
-In order for the images to be displayed, the directory <b><tt>".\p\1400\dox_src\images"</tt></b> is analyzed when Visual studio
-is started. All image file names are managed in a dictionary cache. If a new image is added, the cache has to be updated:
-<b><tt>Extras -> Options -> Doxygen Extensions -> Doxygen configuration -> Update Cache</tt></b>.
+In order for the images to be displayed, the directories indicated in the <b><tt>IMAGE_PATH</tt></b> attribute of the 
+Doxygen configuration file are analyzed. All image file names are managed in a dictionary cache. If a new image is added,
+the cache has to be updated: \n
+<b><tt>Extras -> Options -> Doxygen Preview -> Doxygen configuration -> Update Cache</tt></b>.
 
 
 \subsection secExtensionsDocCodeCreateDotGraph Create Dot Graph
@@ -124,12 +219,11 @@ cf LaTeX/Advanced Mathematics [https://en.wikibooks.org/wiki/LaTeX/Advanced_Math
 
 \section secExtensionsImplementation Implementation
 
-\subpage pagDoxPreviewImplementation
+- \subpage pagDoxPreviewImplementation
 
 
 \section secRelated Related
 
-\subpage pagDoxygenDocu
-\subpage pagTODO
+- \subpage pagTODO
 
 */

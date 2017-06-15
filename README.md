@@ -2,4 +2,4 @@
 
 
 # VSIX-Doxygen-Extension
-[Implementation](https://rabbid76.github.io/VSIX-Doxygen-Extension/index.html)
+[Project description](https://rabbid76.github.io/VSIX-Doxygen-Extension/index.html)

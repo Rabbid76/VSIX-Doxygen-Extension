@@ -78,7 +78,7 @@
         <CommandFlag>DefaultInvisible</CommandFlag>
         <CommandFlag>DynamicVisibility</CommandFlag>
         <Strings>
-          <ButtonText>Kommentar einfügen</ButtonText>
+          <ButtonText>Add Doxygen comment</ButtonText>
         </Strings>
       </Button>
 <!--SubMenuGroupDoxygen-->
