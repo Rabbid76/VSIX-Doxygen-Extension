@@ -1,4 +1,4 @@
 <config>
-    <source>C:\source\model3dviewer\OpenGL\DlOGL\doxygen_preview\html</source>
-    <configurationfile>..\..\model3dviewer\OpenGL\DlOGL\doxygen_dox_preview.txt</configurationfile>
+    <source>C:\source\rabbid76workbench\docs\html</source>
+    <configurationfile>..\..\rabbid76workbench\engine\DocsMake\DocsPreview.txt</configurationfile>
 </config>

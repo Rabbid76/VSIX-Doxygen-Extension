@@ -1,25 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
-  <Metadata>
-    <Identity Id="VSDoxRefExtension.{E963E28B-4135-4C2C-9B98-79097A2E8F06}" Version="0.0.1" Language="en-US" Publisher="Gernot Steinegger" />
-    <DisplayName>Doxygen Preview</DisplayName>
-    <Description xml:space="preserve">VSIX Doxygen Preview Extension for Visual Studio.</Description>
-    <Icon>DoxPreviewExtProduct.ico</Icon>
-    <PreviewImage>Resources\DoxPreviewExt.ico</PreviewImage>
-  </Metadata>
-  <Installation AllUsers="true">
-    <InstallationTarget Id="Microsoft.VisualStudio.Enterprise" Version="[15.0,16.0)" />
-  </Installation>
-  <Dependencies>
-    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.6,)" />
-    <Dependency Id="Microsoft.VisualStudio.MPF.15.0" DisplayName="Visual Studio MPF 15.0" d:Source="Installed" Version="[15.0,16.0)" />
-  </Dependencies>
-  <Assets>
-    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
-    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%|" />
-  </Assets>
-  <Prerequisites>
-    <Prerequisite Id="Microsoft.VisualStudio.Component.VC.CLI.Support" Version="[15.0.26208.0,16.0)" DisplayName="C++-/CLI-Unterstützung" />
-    <Prerequisite Id="Microsoft.VisualStudio.Component.Windows10SDK.14393" Version="[15.0.26208.0,16.0)" DisplayName="Windows 10 SDK (10.0.14393.0)" />
-  </Prerequisites>
+    <Metadata>
+        <Identity Id="VSDoxRefExtension.{E963E28B-4135-4C2C-9B98-79097A2E8F06}" Version="0.0.2" Language="en-US" Publisher="Gernot Steinegger" />
+        <DisplayName>Doxygen Preview</DisplayName>
+        <Description xml:space="preserve">VSIX Doxygen Preview Extension for Visual Studio.</Description>
+        <Icon>DoxPreviewExtProduct.ico</Icon>
+        <PreviewImage>Resources\DoxPreviewExt.ico</PreviewImage>
+    </Metadata>
+    <Installation AllUsers="true">
+        <InstallationTarget Id="Microsoft.VisualStudio.Enterprise" Version="[15.0,16.0)" />
+    </Installation>
+    <Dependencies>
+        <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.6,)" />
+        <Dependency Id="Microsoft.VisualStudio.MPF.15.0" DisplayName="Visual Studio MPF 15.0" d:Source="Installed" Version="[15.0,16.0)" />
+    </Dependencies>
+    <Assets>
+        <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
+        <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%|" />
+    </Assets>
+    <Prerequisites>
+        <Prerequisite Id="Microsoft.VisualStudio.Component.VC.CLI.Support" Version="[15.0.26208.0,16.0)" DisplayName="C++-/CLI-Unterstützung" />
+        <Prerequisite Id="Microsoft.VisualStudio.Component.Windows10SDK.14393" Version="[15.0.26208.0,16.0)" DisplayName="Windows 10 SDK (10.0.14393.0)" />
+    </Prerequisites>
 </PackageManifest>

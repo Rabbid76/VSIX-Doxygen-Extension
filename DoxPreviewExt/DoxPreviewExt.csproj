@@ -103,6 +103,7 @@
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
     </None>
+    <None Include="_ BUILD and DEBUG\build_and_debug.md" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="stylesheet.css" />

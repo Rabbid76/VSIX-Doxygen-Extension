@@ -58,10 +58,10 @@ namespace DoxPreviewExt.DoxUtil
 		public static Color IncludeColor             = Color.FromRgb(90, 160, 200); // Color.Blue
 		public static Color DisableColor             = Color.FromRgb(128, 128, 128); // Color.Gray
 		public static Color CodeContentColor         = Color.FromRgb(0xF0, 0x75, 0x75); // orange
-		public static Color DotContentColor          = Color.FromRgb(0xB0, 0x30, 0x60); // maroon
-		public static Color MscContentColor          = Color.FromRgb(0xB0, 0x30, 0x60); // maroon
-		public static Color UMLContentColor          = Color.FromRgb(0xB0, 0x30, 0x60); // maroon
-		public static Color LatexFormulaContentColor = Color.FromRgb(0xE0, 0x60, 0xA0); // pink
+		public static Color DotContentColor          = Color.FromRgb(0xB0, 0x45, 0x75); 
+		public static Color MscContentColor          = Color.FromRgb(0xB0, 0x50, 0x70); 
+		public static Color UMLContentColor          = Color.FromRgb(0xB0, 0x40, 0x80); 
+		public static Color LatexFormulaContentColor = Color.FromRgb(0x60, 0xC0, 0xA0); 
 
 		// These are the strings that will be used to form the classification types
 		// and bind those types to formats
