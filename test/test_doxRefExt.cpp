@@ -10,7 +10,7 @@
 * \ref secShaderCodeSnippetserRangeCheck
 * @ref unknown_reference
 * \ref unknown_reference
-* \image html refl5_parallax_exp1.jpg
+* \image html parallax_cone_step.png
 * @image html rim_lighting.svg
 * cf \image html OffsetTopLogic_Bezug_bei_RLK.TIF
 * \image html not_existing
@@ -110,3 +110,155 @@ void Test1( int param )
 void Test2( int param )
 {
 }
+
+
+
+
+
+/*XEOMETRIC********************************************************//**
+* @brief   Test Elite Extensions
+*
+* @image html isect_line_line_2d.png
+* 
+* @author  
+* @date    2018-07-30
+* @version 1.0
+**********************************************************************/
+void Foo(void)
+{
+
+}
+
+
+
+/*XEOMETRIC********************************************************//**
+* @brief   Test Elite Extensions
+
+\dot
+digraph example {
+  node [shape=record, fontname=Helvetica, fontsize=10];
+  b [ label="class B" URL="\ref B"];
+  c [ label="class C" URL="\ref C"];
+  b -> c [ arrowhead="open", style="dashed" ];
+}
+\enddot
+ 
+* @author  
+* @date    2018-07-30
+* @version 1.0
+**********************************************************************/
+void Foo(void)
+{
+
+}
+
+
+
+
+/*XEOMETRIC********************************************************//**
+* @brief   Test Elite Extensions
+*
+* \dotfile uml_example.dot
+*
+* @author  
+* @date    2018-07-30
+* @version 1.0
+**********************************************************************/
+void Foo(void)
+{
+
+}
+
+
+
+/*XEOMETRIC********************************************************//**
+* @brief   Test Elite Extensions
+
+\msc
+Sender,Receiver;
+Sender->Receiver [label="Command()", URL="\ref Receiver::Command()"];
+Sender<-Receiver [label="Ack()", URL="\ref Ack()", ID="1"];
+\endmsc
+ 
+* @author  
+* @date    2018-07-30
+* @version 1.0
+**********************************************************************/
+void Foo(void)
+{
+
+}
+
+
+/*XEOMETRIC********************************************************//**
+* @brief   Test Elite Extensions
+*
+* \mscfile msc_example.msc
+*
+* @author  
+* @date    2018-07-30
+* @version 1.0
+**********************************************************************/
+void Foo(void)
+{
+
+}
+
+
+/*XEOMETRIC********************************************************//**
+* @brief   Test Elite Extensions
+*
+\F$
+f_r( \omega_i, \, \omega_o ) \; = \; \displaystyle
+\frac{ \mathrm{d} L_o(\omega_o) }{ \mathrm{d} E_i(\omega _i) } \; = \;
+\frac { \mathrm{d} L_o( \omega_o ) }{ L_i( \omega_i ) \cdot \cos\theta_i \cdot \mathrm{d} \omega_i }
+\F$
+*
+* @author  
+* @date    2018-07-30
+* @version 1.0
+**********************************************************************/
+void Foo(void)
+{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

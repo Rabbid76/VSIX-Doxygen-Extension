@@ -1,4 +1,5 @@
 <config>
     <source>C:\source\rabbid76workbench\docs\html</source>
-    <configurationfile>..\..\rabbid76workbench\engine\DocsMake\DocsPreview.txt</configurationfile>
+    <!--configurationfile>..\..\..\rabbid76workbench\engine\DocsMake\DocsPreview.txt</configurationfile-->
+    <configurationfile>C:\source\rabbid76workbench\engine\DocsMake\DocsPreview.txt</configurationfile>
 </config>
