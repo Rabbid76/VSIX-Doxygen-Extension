@@ -28,5 +28,5 @@ See also:
 
 
 It may be necessary to clear the data and cache from a previous debug session, which are located in the directory
-"C:\Users\<USERNAME>\AppData\Local\Microsoft\VisualStudio", in anfolder names somehow like "15.0_f7c1d9f6" and "15.0_f7c1d9f6Exp".<br/>
+"C:\Users\<USERNAME>\AppData\Local\Microsoft\VisualStudio", in anfolder names somehow like "Exp" and "15.0_f7c1d9f6Exp".<br/>
 Possibly that was caused by a bug in earlier versions and thus be obsolete now.
