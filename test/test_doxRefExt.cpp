@@ -113,6 +113,27 @@ void Test2( int param )
 
 
 
+/*XEOMETRIC********************************************************//**
+* @brief Test Elite Extensions
+*
+* @note This comment is for demonstrating syntax highlighting.
+*
+* @attention A doxygen line comment has to start 
+*            either with     //!
+*            or              ///
+*
+* @attention A doxygen comment blocked has to be started 
+*            either by       /*!  .....  
+*            orby            /**  .....  
+* 
+* @author  
+* @date    2018-07-30
+* @version 1.0
+**********************************************************************/
+void Foo(void)
+{
+
+}
 
 
 /*XEOMETRIC********************************************************//**
