@@ -193,7 +193,7 @@ void Foo(void)
 /*XEOMETRIC********************************************************//**
 * @brief   Test Elite Extensions
 *
-* \mscfile msc_example.msc
+* \mscfile msc_example_1.msc
 *
 * @author  
 * @date    2018-07-30
@@ -203,6 +203,7 @@ void Foo(void)
 {
 
 }
+
 
 
 /*XEOMETRIC********************************************************//**
