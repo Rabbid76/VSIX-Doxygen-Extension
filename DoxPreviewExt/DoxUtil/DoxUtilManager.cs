@@ -269,7 +269,14 @@ namespace DoxPreviewExt.DoxUtil
 			"warning",
 			"weakgroup",
 			"xmlonly",
-			"xrefitem"
+			"xrefitem",
+
+			// ALIASES from doxygen configuration
+
+			"bugtrcker",
+			"cf",
+			"cftext",
+			"cfhyperlink"
 		};
 
 		private static CManager _doxManger = null; //!< doxgen utility manager singleton
