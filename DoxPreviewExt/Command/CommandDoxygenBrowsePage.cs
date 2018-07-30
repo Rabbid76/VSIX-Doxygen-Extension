@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.Shell;
 
 namespace DoxPreviewExt.Command
 {
-	internal sealed class CommandDoxygenBrowse : CommandBase
+	internal sealed class CommandDoxygenBrowsePage : CommandBase
 	{
 		public static readonly Guid CommandSet = new Guid("C7C94F14-0506-4F23-973D-E01A0685E730");
 
@@ -14,7 +14,7 @@ namespace DoxPreviewExt.Command
 		public bool UseLocalDox { get; }
 		private string htmlDest_;
 
-		private CommandDoxygenBrowse(Package package, App.CommandManager cmdManager, int commandId, bool useSourcebrowser, bool useLocal, string htmlDest)
+		private CommandDoxygenBrowsePage(Package package, App.CommandManager cmdManager, int commandId, bool useSourcebrowser, bool useLocal, string htmlDest)
 			: base(package, cmdManager)
 		{
 			this.CommandId = commandId;
@@ -37,7 +37,7 @@ namespace DoxPreviewExt.Command
 			}
 		}
 
-		public static CommandDoxygenBrowse Instance
+		public static CommandDoxygenBrowsePage Instance
 		{
 			get;
 			private set;
@@ -45,7 +45,7 @@ namespace DoxPreviewExt.Command
 
 		public static void Initialize(Package package, App.CommandManager cmdManager, int commandId, bool useSourcebrowser, bool useLocal, string htmlDest)
 		{
-			Instance = new CommandDoxygenBrowse(package, cmdManager, commandId, useSourcebrowser, useLocal, htmlDest);
+			Instance = new CommandDoxygenBrowsePage(package, cmdManager, commandId, useSourcebrowser, useLocal, htmlDest);
 		}
 
 		private void MenuItem_BeforeQueryStatus(object sender, EventArgs e)

@@ -64,8 +64,8 @@
     <Compile Include="Command\CommandBase.cs" />
     <Compile Include="Command\CommandDocumentSource.cs" />
     <Compile Include="Command\CommandDoxgenGeneratePreview.cs" />
-    <Compile Include="Command\CommandDoxygenBrowse.cs" />
-    <Compile Include="Command\CommandDoxygenRefBrowse.cs" />
+    <Compile Include="Command\CommandDoxygenBrowsePage.cs" />
+    <Compile Include="Command\CommandDoxygenBrowseCurrentRef.cs" />
     <Compile Include="App\DoxExtMain.cs" />
     <Compile Include="Configuration\DoxConfigUserControl.cs">
       <SubType>UserControl</SubType>

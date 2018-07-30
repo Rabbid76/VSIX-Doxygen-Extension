@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.Shell;
 
 namespace DoxPreviewExt.Command
 {
-	internal sealed class CommandDoxygenRefBrowse : CommandBase
+	internal sealed class CommandDoxygenBrowseCurrentRef : CommandBase
 	{
 		/// <summary>
 		/// Command ID.
@@ -24,7 +24,7 @@ namespace DoxPreviewExt.Command
 		/// Adds our command handlers for menu (commands must exist in the command table file)
 		/// </summary>
 		/// <param name="package">Owner package, not null.</param>
-		private CommandDoxygenRefBrowse(Package package, App.CommandManager cmdManager)
+		private CommandDoxygenBrowseCurrentRef(Package package, App.CommandManager cmdManager)
 			: base(package, cmdManager)
 		{
 			if (package == null)
@@ -45,7 +45,7 @@ namespace DoxPreviewExt.Command
 		/// <summary>
 		/// Gets the instance of the command.
 		/// </summary>
-		public static CommandDoxygenRefBrowse Instance
+		public static CommandDoxygenBrowseCurrentRef Instance
 		{
 			get;
 			private set;
@@ -57,7 +57,7 @@ namespace DoxPreviewExt.Command
 		/// <param name="package">Owner package, not null.</param>
 		public static void Initialize(Package package, App.CommandManager cmdManager)
 		{
-			Instance = new CommandDoxygenRefBrowse(package, cmdManager);
+			Instance = new CommandDoxygenBrowseCurrentRef(package, cmdManager);
 		}
 
 		private void MenuItem_BeforeQueryStatus(object sender, EventArgs e)
