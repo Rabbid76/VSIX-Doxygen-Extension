@@ -6,7 +6,9 @@
 
 using System;
 using System.ComponentModel.Design;
+using System.Globalization;
 using Microsoft.VisualStudio.Shell;
+using Microsoft.VisualStudio.Shell.Interop;
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -20,25 +22,26 @@ namespace DoxPreviewExt.Command
   /// </summary>
   internal sealed class CommandDocumentSource : CommandBase
   {
-    /// <summary>
-    /// Command ID.
-    /// </summary>
-    public const int CommandId = 257;
+		public enum Type { BugTracker, Head }
 
-    /// <summary>
-    /// Command menu group (command set GUID).
-    /// </summary>
-    public static readonly Guid CommandSet = new Guid("C7C94F14-0506-4F23-973D-E01A0685E730");
+		public static readonly Guid CommandSet = new Guid("C7C94F14-0506-4F23-973D-E01A0685E730");
 
-    /// <summary>
-    /// Initializes a new instance of the <see cref="CommandDocumentSource"/> class.
-    /// Adds our command handlers for menu (commands must exist in the command table file)
-    /// </summary>
-    /// <param name="package">Owner package, not null.</param>
-    private CommandDocumentSource(Package package, App.CommandManager cmdManager)
+		public int CommandId { get; }
+
+		public Type CommentType { get; }
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="CommandDocumentSource"/> class.
+		/// Adds our command handlers for menu (commands must exist in the command table file)
+		/// </summary>
+		/// <param name="package">Owner package, not null.</param>
+		private CommandDocumentSource(Package package, App.CommandManager cmdManager, int commandId, Type comment_type)
       : base(package, cmdManager)
     {
-      if (package == null)
+			this.CommandId = commandId;
+			this.CommentType = comment_type;
+
+			if (package == null)
       {
         throw new ArgumentNullException("package");
       }
@@ -66,9 +69,9 @@ namespace DoxPreviewExt.Command
     /// Initializes the singleton instance of the command.
     /// </summary>
     /// <param name="package">Owner package, not null.</param>
-    public static void Initialize(Package package, App.CommandManager cmdManager)
+    public static void Initialize(Package package, App.CommandManager cmdManager, int commandId, Type comment_type)
     {
-      Instance = new CommandDocumentSource(package, cmdManager);
+      Instance = new CommandDocumentSource(package, cmdManager, commandId, comment_type);
     }
 
     private void MenuItem_BeforeQueryStatus(object sender, EventArgs e)
@@ -119,13 +122,57 @@ namespace DoxPreviewExt.Command
       }
       return res;
     }
-    /// <summary>
-    /// Performs the command : Launch the application in Windows Explorer
-    /// </summary>
-    private void Perform(bool dotNet)
+    
+		private void Perform(bool dotNet)
+		{
+			switch (this.CommentType)
+			{
+				case Type.BugTracker:
+					PerformBugTracker(dotNet);
+					break;
+
+				default:
+				case Type.Head:
+					PerformCommentBlock(dotNet);
+					break;
+			}
+		}
+
+		private void PerformBugTracker(bool dotNet)
+		{
+			//! https://blogs.msdn.microsoft.com/vsx/2016/04/21/how-to-add-a-custom-paste-special-command-to-the-vs-editor-menu/
+
+			Application.DoEvents();
+
+			EnvDTE.TextSelection selection = (EnvDTE.TextSelection)this.CommandManager.ApplicationObject.ActiveDocument.Selection;
+			string text = selection.Text;
+			string text_trim = text.Trim();
+			bool is_numeric = int.TryParse(text_trim, out int n);
+			string bug_tracker_id = is_numeric ? text_trim : "00000";
+
+			string date = DateTime.Now.ToString("yyyy-MM-dd");
+			List<string> result = new List<string>();
+			
+			if (dotNet)
+			{
+				result.Add("/// @date " + date + "  @author " + this.CommandManager.UserName + "  @bugtracker{" + bug_tracker_id + "}");
+			}
+			else
+			{
+				result.Add("//! @date " + date + "  @author " + this.CommandManager.UserName + "  @bugtracker{" + bug_tracker_id + "}");
+			}
+
+			string str = "";
+			for (int i = 0; i < result.Count; i++)
+				str += result[i] + "\n";
+	
+			selection.Insert(str, 2);
+			if ( !is_numeric )
+				selection.FindText("00000");
+		}
+
+		private void PerformCommentBlock(bool dotNet)
     {
-
-
       bool makeRegion;
       string date = DateTime.Now.ToString("yyyy-MM-dd");
       Regex rx = new Regex(@"[^ \t]");
@@ -171,16 +218,13 @@ namespace DoxPreviewExt.Command
       }
       else
       {
-        if ((text.Length == 0) || (text[0] != '/'))
-        {
-          result.Add(SpaceShift[0] + "/******************************************************************//**");
-          result.Add(SpaceShift[0] + "* \\brief   ");
-          result.Add(SpaceShift[0] + "* ");
-          result.Add(SpaceShift[0] + "* \\author  " + this.CommandManager.UserName);
-          result.Add(SpaceShift[0] + "* \\date    " + date);
-          result.Add(SpaceShift[0] + "* \\version 1.0");
-          result.Add(SpaceShift[0] + "**********************************************************************/");
-        }
+        result.Add(SpaceShift[0] + "/******************************************************************//**");
+        result.Add(SpaceShift[0] + "* \\brief   ");
+        result.Add(SpaceShift[0] + "*");
+        result.Add(SpaceShift[0] + "* \\author  " + this.CommandManager.UserName);
+        result.Add(SpaceShift[0] + "* \\date    " + date);
+        result.Add(SpaceShift[0] + "* \\version 1.0");
+        result.Add(SpaceShift[0] + "**********************************************************************/");
       }
       if (text != "")
       {

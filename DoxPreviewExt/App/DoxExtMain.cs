@@ -90,8 +90,9 @@ namespace DoxPreviewExt.App
       this.cmdManager = new CommandManager(dte as DTE2);
 			this._doxManager = new DoxUtil.CManager(this, dte as DTE2);
 
-			Command.CommandDocumentSource.Initialize(this, this.cmdManager);
-      Command.CommandDoxygenBrowseCurrentRef.Initialize(this, this.cmdManager);
+			Command.CommandDocumentSource.Initialize(this, this.cmdManager, 257, Command.CommandDocumentSource.Type.Head);
+			// TODO $$$ Command.CommandDocumentSource.Initialize(this, this.cmdManager, xxx Command.CommandDocumentSource.Type.BugTracker);
+			Command.CommandDoxygenBrowseCurrentRef.Initialize(this, this.cmdManager);
 			Command.CommandDoxygenBrowsePage.Initialize(this, this.cmdManager, 262 /* cmdidDoxygenSourcebrowseId */, true, false, "");
 			Command.CommandDoxygenBrowsePage.Initialize(this, this.cmdManager, 267 /* cmdidDoxygenShowPreviewId */, false, true, "");
 			Command.CommandDoxgenGeneratePreview.Initialize(this, this.cmdManager);
