@@ -70,6 +70,9 @@ object *- object3
 \f$ c = \sqrt{a^2 + b^2} \f$.
 \f[ I = \frac{U}{R} \f].
 
+
+\bugtracker
+
 *
 * \author  gernot
 * \date    2017-04-29

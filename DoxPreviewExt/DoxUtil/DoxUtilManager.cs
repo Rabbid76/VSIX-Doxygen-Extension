@@ -273,7 +273,7 @@ namespace DoxPreviewExt.DoxUtil
 
 			// ALIASES from doxygen configuration
 
-			"bugtrcker",
+			"bugtracker",
 			"cf",
 			"cftext",
 			"cfhyperlink"
