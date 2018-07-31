@@ -26,6 +26,12 @@
 * \unknown_command
 * @unknown_command
 
+@bugtracker{00000}
+\bugtracker{4711}
+\bugtracker{abcd}
+\bugtracker {4711}
+\bugtracker { 4711 }
+
 \image html "Assembly UI.svg"
 \image html 'Images\Block UI.svg'
 
@@ -139,6 +145,7 @@ void Foo(void)
 }
 
 
+
 /*XEOMETRIC********************************************************//**
 * @brief   Test Elite Extensions
 *
@@ -246,6 +253,19 @@ f_r( \omega_i, \, \omega_o ) \; = \; \displaystyle
 void Foo(void)
 {
 
+}
+
+
+/*XEOMETRIC********************************************************//**
+* @brief   Test Elite Extensions
+* 
+* @author  
+* @date    2018-07-30
+* @version 1.0
+**********************************************************************/
+void Foo(void)
+{
+  //! @date 2018-07-31  @author gernot76  @bugtracker{4711}
 }
 
 
