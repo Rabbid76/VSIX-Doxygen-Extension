@@ -68,6 +68,9 @@
     <Compile Include="Command\CommandDoxygenBrowseCurrentRef.cs" />
     <Compile Include="App\DoxExtMain.cs" />
     <Compile Include="Command\CommandDoxygenBrowseRef.cs" />
+    <Compile Include="Configuration\OptionPageDocumentCode.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Configuration\DoxConfigUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -79,6 +82,12 @@
     </Compile>
     <Compile Include="Configuration\OptionPageDoxygenConfiguration.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Configuration\DocumentCodeUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configuration\DocumentCodeUserControl.Designer.cs">
+      <DependentUpon>DocumentCodeUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="DoxUtil\DoxUtilDotGraphPreview.cs" />
     <Compile Include="DoxUtil\DoxUtilDoxSrc.cs" />
@@ -115,6 +124,9 @@
     <Content Include="Command\Resources\CommandIcons.png" />
     <EmbeddedResource Include="Configuration\DoxConfigUserControl.resx">
       <DependentUpon>DoxConfigUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configuration\DocumentCodeUserControl.resx">
+      <DependentUpon>DocumentCodeUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DoxUtil\Resources\error.png" />
     <EmbeddedResource Include="DoxUtil\Resources\refresh.png" />

@@ -123,135 +123,152 @@ namespace DoxPreviewExt.Command
       return res;
     }
     
-		private void Perform(bool dotNet)
+	private void Perform(bool dotNet)
+	{
+		switch (this.CommentType)
 		{
-			switch (this.CommentType)
-			{
-				case Type.BugTracker:
-					PerformBugTracker(dotNet);
-					break;
+			case Type.BugTracker:
+				PerformBugTracker(dotNet);
+				break;
 
-				default:
-				case Type.Head:
-					PerformCommentBlock(dotNet);
-					break;
-			}
+			default:
+			case Type.Head:
+				PerformCommentBlock(dotNet);
+				break;
 		}
+	}
 
-		private void PerformBugTracker(bool dotNet)
-		{
-			//! https://blogs.msdn.microsoft.com/vsx/2016/04/21/how-to-add-a-custom-paste-special-command-to-the-vs-editor-menu/
+	private void PerformBugTracker(bool dotNet)
+	{
+		//! https://blogs.msdn.microsoft.com/vsx/2016/04/21/how-to-add-a-custom-paste-special-command-to-the-vs-editor-menu/
 
-			Application.DoEvents();
+		Application.DoEvents();
 
-			EnvDTE.TextSelection selection = (EnvDTE.TextSelection)this.CommandManager.ApplicationObject.ActiveDocument.Selection;
-			string text = selection.Text;
-			string text_trim = text.Trim();
-			bool is_numeric = int.TryParse(text_trim, out int n);
-			string bug_tracker_id = is_numeric ? text_trim : "00000";
+		EnvDTE.TextSelection selection = (EnvDTE.TextSelection)this.CommandManager.ApplicationObject.ActiveDocument.Selection;
+		string text = selection.Text;
+		string text_trim = text.Trim();
+		bool is_numeric = int.TryParse(text_trim, out int n);
+		string bug_tracker_id = is_numeric ? text_trim : "00000";
 
-			string date = DateTime.Now.ToString("yyyy-MM-dd");
-			List<string> result = new List<string>();
+		string date = DateTime.Now.ToString("yyyy-MM-dd");
+		List<string> result = new List<string>();
 			
-			if (dotNet)
-			{
-				result.Add("/// @date " + date + "  @author " + this.CommandManager.UserName + "  @bugtracker{" + bug_tracker_id + "}");
-			}
-			else
-			{
-				result.Add("//! @date " + date + "  @author " + this.CommandManager.UserName + "  @bugtracker{" + bug_tracker_id + "}");
-			}
-
-			string str = "";
-			for (int i = 0; i < result.Count; i++)
-				str += result[i] + "\n";
-	
-			selection.Insert(str, 2);
-			if ( !is_numeric )
-				selection.FindText("00000");
+		if (dotNet)
+		{
+			result.Add("/// @date " + date + "  @author " + this.CommandManager.UserName + "  @bugtracker{" + bug_tracker_id + "}");
+		}
+		else
+		{
+			result.Add("//! @date " + date + "  @author " + this.CommandManager.UserName + "  @bugtracker{" + bug_tracker_id + "}");
 		}
 
-		private void PerformCommentBlock(bool dotNet)
+		string str = "";
+		for (int i = 0; i < result.Count; i++)
+			str += result[i] + "\n";
+	
+		selection.Insert(str, 2);
+		if ( !is_numeric )
+			selection.FindText("00000");
+	}
+
+	private void PerformCommentBlock(bool dotNet)
     {
-      bool makeRegion;
-      string date = DateTime.Now.ToString("yyyy-MM-dd");
-      Regex rx = new Regex(@"[^ \t]");
-      List<string> lines = new List<string>();
-      List<string> SpaceShift = new List<string>(2);
-      List<string> result = new List<string>();
-      EnvDTE.TextSelection selection = (EnvDTE.TextSelection)this.CommandManager.ApplicationObject.ActiveDocument.Selection;
-      string text = selection.Text;
-      SpaceShift.Insert(0, "");
+          bool makeRegion;
+          string date = DateTime.Now.ToString("yyyy-MM-dd");
+          Regex rx = new Regex(@"[^ \t]");
+          List<string> lines = new List<string>();
+          List<string> SpaceShift = new List<string>(2);
+          List<string> result = new List<string>();
+          string[] commentLines;
+          EnvDTE.TextSelection selection = (EnvDTE.TextSelection)this.CommandManager.ApplicationObject.ActiveDocument.Selection;
+          string text = selection.Text;
+          SpaceShift.Insert(0, "");
+          DoxUtil.CManager manager = DoxUtil.CManager.Manager;
+      
+          if (text.Trim() != "")
+          {
+            text = text.TrimEnd();
+            lines.AddRange(text.Split('\n'));
+            makeRegion = true;
+          }
+          else
+          {
+            makeRegion = false;
+          }
+          if (lines.Count > 0)
+          {
+            SpaceShift.InsertRange(0, rx.Split(lines[0], 2));
+          }
+          if (makeRegion)
+          {
+            if (dotNet)
+            {
+              result.Add(SpaceShift[0] + "#region " + this.GetFunctionName(this.GetFirstLine(text)));
+            }
+            else
+            {
+              result.Add(SpaceShift[0] + "#pragma region " + this.GetFunctionName(this.GetFirstLine(text)));
+            }
+          }
 
-
-      if (text.Trim() != "")
-      {
-        text = text.TrimEnd();
-        lines.AddRange(text.Split('\n'));
-        makeRegion = true;
-      }
-      else
-      {
-        makeRegion = false;
-      }
-      if (lines.Count > 0)
-      {
-        SpaceShift.InsertRange(0, rx.Split(lines[0], 2));
-      }
-      if (makeRegion)
-      {
-        if (dotNet)
-        {
-          result.Add(SpaceShift[0] + "#region " + this.GetFunctionName(this.GetFirstLine(text)));
-        }
-        else
-        {
-          result.Add(SpaceShift[0] + "#pragma region " + this.GetFunctionName(this.GetFirstLine(text)));
-        }
-      }
-      if (dotNet)
-      {
-        result.Add(SpaceShift[0] + "/// <summary>");
-        result.Add(SpaceShift[0] + "///");
-        result.Add(SpaceShift[0] + "/// </summary>");
-        result.Add(SpaceShift[0] + "/// <revision date=\"" + date + "\" author=\"" + this.CommandManager.UserName + "\"></revision>");
-      }
-      else
-      {
-        result.Add(SpaceShift[0] + "/******************************************************************//**");
-        result.Add(SpaceShift[0] + "* \\brief   ");
-        result.Add(SpaceShift[0] + "*");
-        result.Add(SpaceShift[0] + "* \\author  " + this.CommandManager.UserName);
-        result.Add(SpaceShift[0] + "* \\date    " + date);
-        result.Add(SpaceShift[0] + "* \\version 1.0");
-        result.Add(SpaceShift[0] + "**********************************************************************/");
-      }
-      if (text != "")
-      {
-        result.Add(text);
-      }
-      if (makeRegion)
-      {
-        if (dotNet)
-        {
-          result.Add(SpaceShift[0] + "#endregion\n");
-        }
-        else
-        {
-          result.Add(SpaceShift[0] + "#pragma endregion\n");
-        }
-      }
-      Application.DoEvents();
-      if (text == "")
-      {
-        selection.StartOfLine(vsStartOfLineOptions.vsStartOfLineOptionsFirstColumn, false);
-      }
-      string str = "";
-      for (int i = 0; i < result.Count; i++)
-      {
-        str += result[i] + "\n";
-      }
-      selection.Insert(str, 2);
+          string headerText = manager != null && manager.Options.UserDefinedHead ? manager.Options.HeadCommentBlock  : "";
+          if (headerText.Length > 0)
+          {
+                commentLines = headerText.Split(new[] { '\r', '\n' });
+                // commentLines = Regex.Split(text, "\r\n|\r|\n");
+                for ( int i=0; i < commentLines.Length; ++ i )
+                {
+                    string lineText = commentLines[i];
+                    lineText = lineText.Replace("\\author", "\\author  " + this.CommandManager.UserName);
+                    lineText = lineText.Replace("@author", "@author  " + this.CommandManager.UserName);
+                    lineText = lineText.Replace("\\date", "\\date  " + date);
+                    lineText = lineText.Replace("@date", "@date  " + date);
+                    result.Add(SpaceShift[0] + lineText);
+                }
+          }
+          else if (dotNet)
+          {
+            result.Add(SpaceShift[0] + "/// <summary>");
+            result.Add(SpaceShift[0] + "///");
+            result.Add(SpaceShift[0] + "/// </summary>");
+            result.Add(SpaceShift[0] + "/// <revision date=\"" + date + "\" author=\"" + this.CommandManager.UserName + "\"></revision>");
+          }
+          else
+          {
+            result.Add(SpaceShift[0] + "/***********************************************************************************************//**");
+            result.Add(SpaceShift[0] + "* \\brief   ");
+            result.Add(SpaceShift[0] + "*");
+            result.Add(SpaceShift[0] + "* \\author  " + this.CommandManager.UserName);
+            result.Add(SpaceShift[0] + "* \\date    " + date);
+            result.Add(SpaceShift[0] + "* \\version 1.0");
+            result.Add(SpaceShift[0] + "***************************************************************************************************/");
+          }
+          if (text != "")
+          {
+            result.Add(text);
+          }
+          if (makeRegion)
+          {
+            if (dotNet)
+            {
+              result.Add(SpaceShift[0] + "#endregion\n");
+            }
+            else
+            {
+              result.Add(SpaceShift[0] + "#pragma endregion\n");
+            }
+          }
+          Application.DoEvents();
+          if (text == "")
+          {
+            selection.StartOfLine(vsStartOfLineOptions.vsStartOfLineOptionsFirstColumn, false);
+          }
+          string str = "";
+          for (int i = 0; i < result.Count; i++)
+          {
+            str += result[i] + "\n";
+          }
+          selection.Insert(str, 2);
     }
 
     #region  GetFirstLine

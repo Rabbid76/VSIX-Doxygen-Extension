@@ -52,7 +52,13 @@ namespace DoxPreviewExt.App
 		ExtensionCommon.ExtensionContext.ConstDoxOptionsConfigurationName,
 		0, 0, true)]
 
-	public sealed class DoxExtMain : Package
+    /// options page attribute for doxygen configuration page
+	[ProvideOptionPage(typeof(Configuration.OptionPageDocumentCode),
+        ExtensionCommon.ExtensionContext.ConstOptionsCategoryName,
+        ExtensionCommon.ExtensionContext.ConstDoxOptionsDocumentCodeName,
+        0, 0, true)]
+
+    public sealed class DoxExtMain : Package
 	{
 		/// <summary>
 		/// EliteExtension GUID string.
