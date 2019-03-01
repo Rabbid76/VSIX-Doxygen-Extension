@@ -372,7 +372,9 @@ namespace DoxPreviewExt.DoxUtil
 		{
 			try
 			{
-				return config_[key][0];
+				if ( config_.ContainsKey(key) )
+					return config_[key][0];
+				return "";
 			}
 			catch
 			{
