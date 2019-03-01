@@ -12,11 +12,13 @@ namespace ExtensionCommon
 		
 		public const string constDoxygenSourceBrowserURL = @"";
 
-		public const string doxCommadsHelpURL_ = @"https://www.stack.nl/~dimitri/doxygen/manual/commands.html";
-		public const string graphvizHelpURL_   = @"http://www.graphviz.org/";
-		public const string mscgenHelpURL_     = @"http://www.mcternan.me.uk/mscgen/";
-		public const string planUMLHelpURL_    = @"http://plantuml.com/";
-		public const string latexHelpURL_      = @"https://en.wikibooks.org/wiki/LaTeX/Mathematics";
+        public const string constDoxygenHomeURL_       = @"http://www.doxygen.nl";
+        public const string doxManualCommadsHelpURL_   = @"/manual/commands.html";
+        public const string doxManualDocblocksHelpURL_ = @"/manual/docblocks.html";
+        public const string graphvizHelpURL_           = @"http://www.graphviz.org/";
+		public const string mscgenHelpURL_             = @"http://www.mcternan.me.uk/mscgen/";
+		public const string planUMLHelpURL_            = @"http://plantuml.com/";
+		public const string latexHelpURL_              = @"https://en.wikibooks.org/wiki/LaTeX/Mathematics";
 
 		public const string ConstDoxygenExePath = @"C:/tools/doxygen/doxygen.exe";
 		

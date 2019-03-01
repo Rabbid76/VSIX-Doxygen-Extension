@@ -19,7 +19,7 @@ namespace DoxPreviewExt.Configuration
 		private string _plantumlJar = ExtensionCommon.ExtensionContext.GetPlantUmlJar();
 		private string _mimeTeXExe = ExtensionCommon.ExtensionContext.GetMimeTeXExe();
 
-		public bool UseSourceBrowser
+        public bool UseSourceBrowser
 		{
 			get { return _useSourceBrowser; }
 			set { _useSourceBrowser = value; }

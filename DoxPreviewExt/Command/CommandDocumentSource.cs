@@ -152,17 +152,29 @@ namespace DoxPreviewExt.Command
 
 		string date = DateTime.Now.ToString("yyyy-MM-dd");
 		List<string> result = new List<string>();
-			
-		if (dotNet)
-		{
-			result.Add("/// @date " + date + "  @author " + this.CommandManager.UserName + "  @bugtracker{" + bug_tracker_id + "}");
-		}
-		else
-		{
-			result.Add("//! @date " + date + "  @author " + this.CommandManager.UserName + "  @bugtracker{" + bug_tracker_id + "}");
-		}
 
-		string str = "";
+        string comment_line = dotNet ?
+                "/// @date " + date + "  @author " + this.CommandManager.UserName + "  @bugtracker{" + bug_tracker_id + "}" :
+                "//! @date " + date + "  @author " + this.CommandManager.UserName + "  @bugtracker{" + bug_tracker_id + "}";
+
+        /* TODO $$$ `selection.CurrentColumn` does not give a proper result	 
+		try
+		{
+			int column = selection.CurrentColumn;
+			if (column > 0)
+			{
+				string indent_str = "";
+				for (int i = 0; i < column; ++i)
+					indent_str += " ";
+				comment_line = indent_str + comment_line;
+			}
+		}
+		catch {}
+		*/
+
+        result.Add(comment_line);
+
+        string str = "";
 		for (int i = 0; i < result.Count; i++)
 			str += result[i] + "\n";
 	
@@ -173,6 +185,10 @@ namespace DoxPreviewExt.Command
 
 	private void PerformCommentBlock(bool dotNet)
     {
+          DoxUtil.CManager manager = DoxUtil.CManager.Manager;
+          if (manager == null)
+              return;
+
           bool makeRegion;
           string date = DateTime.Now.ToString("yyyy-MM-dd");
           Regex rx = new Regex(@"[^ \t]");
@@ -183,7 +199,6 @@ namespace DoxPreviewExt.Command
           EnvDTE.TextSelection selection = (EnvDTE.TextSelection)this.CommandManager.ApplicationObject.ActiveDocument.Selection;
           string text = selection.Text;
           SpaceShift.Insert(0, "");
-          DoxUtil.CManager manager = DoxUtil.CManager.Manager;
       
           if (text.Trim() != "")
           {
@@ -235,7 +250,19 @@ namespace DoxPreviewExt.Command
           }
           else
           {
-            result.Add(SpaceShift[0] + "/***********************************************************************************************//**");
+            int block_len = Math.Max(this.HeadCommentLength, 80);
+            const string head_start = "/*XEOMETRIC";
+            const string head_end = "//**";
+            string head_mid = "";
+            for (int i = 0; i < block_len - head_start.Length - head_end.Length; ++i)
+                head_mid += "*";
+            string head = head_start + head_mid + head_end;
+            string tail = "";
+            for (int i = 0; i < block_len - 1; ++i)
+                tail += "*";
+            tail += "/";
+
+                result.Add(SpaceShift[0] + "/***********************************************************************************************//**");
             result.Add(SpaceShift[0] + "* \\brief   ");
             result.Add(SpaceShift[0] + "*");
             result.Add(SpaceShift[0] + "* \\author  " + this.CommandManager.UserName);

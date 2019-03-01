@@ -207,7 +207,7 @@ namespace DoxPreviewExt.DoxUtil
 					AddText(textBlock, colDflt, false, false, "Doxygen Special Command  ");
 					AddText(textBlock, colCmd, true, false, "@" + cmdName);
 					AddText(textBlock, colDflt, false, false, "  [");
-					AddText(textBlock, colHRef, false, true, DoxUtil.CManager.DoxCommadsHelpURL + "#cmd" + cmdName);
+					AddText(textBlock, colHRef, false, true, manager.Options.DoxCommadsHelpURL + "#cmd" + cmdName);
 					AddText(textBlock, colDflt, false, false, "]");
 				}
 				else
@@ -215,7 +215,7 @@ namespace DoxPreviewExt.DoxUtil
 					AddText(textBlock, colDflt, false, false, "Unknown Doxygen Special Command  ");
 					AddText(textBlock, colDflt, true, false, "@" + cmdName);
 					AddText(textBlock, colDflt, false, false, ", see [");
-					AddText(textBlock, colHRef, false, true, DoxUtil.CManager.DoxCommadsHelpURL);
+					AddText(textBlock, colHRef, false, true, manager.Options.DoxCommadsHelpURL);
 					AddText(textBlock, colDflt, false, false, "] for more information");
 				}
 				qiContent.Add(textBlock);

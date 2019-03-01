@@ -42,8 +42,12 @@ namespace DoxPreviewExt.Command
 			T_PAGE page = this.package.GetDialogPage(typeof(T_PAGE)) as T_PAGE;
 			return page;
 		}
-		
-		public CommandBase(Package package, App.CommandManager cmdManager)
+
+        public int HeadCommentLength { get { return Page<Configuration.OptionPageActionSettings>().HeadCommentLength; } }
+
+        public string DoxygenHome { get { return Page<Configuration.OptionPageActionSettings>().DoxygenHome; } }
+
+        public CommandBase(Package package, App.CommandManager cmdManager)
 		{
 			if (package == null)
 			{

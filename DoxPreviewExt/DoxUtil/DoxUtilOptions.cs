@@ -86,6 +86,9 @@ namespace DoxPreviewExt.DoxUtil
         /// \brief Header comment block text
 		public string HeadCommentBlock { get { return Page<Configuration.OptionPageDocumentCode>().HeadCommentBlock; } }
 
+        public string DoxCommadsHelpURL { get { return Page<Configuration.OptionPageActionSettings>().DoxygenHome + ExtensionCommon.ExtensionContext.doxManualCommadsHelpURL_; } }
+        public string DoxDocblocksHelpURL { get { return Page<Configuration.OptionPageActionSettings>().DoxygenHome + ExtensionCommon.ExtensionContext.doxManualDocblocksHelpURL_; } }
+
 
         public List<string> ImagePaths { get { return imagePaths_; } }
 		public List<string> DotPaths { get { return dotPaths_; } }

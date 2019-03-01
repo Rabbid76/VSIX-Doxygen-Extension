@@ -84,7 +84,6 @@ namespace DoxPreviewExt.DoxUtil
 
 	public class CManager
 	{
-		public static string DoxCommadsHelpURL { get { return ExtensionContext.doxCommadsHelpURL_; } }
 		public static string GraphvizHelpURL { get { return ExtensionContext.graphvizHelpURL_; } }
 		public static string MscgenHelpURL { get { return ExtensionContext.mscgenHelpURL_; } }
 		public static string PlanUMLHelpURL { get { return ExtensionContext.planUMLHelpURL_; } }

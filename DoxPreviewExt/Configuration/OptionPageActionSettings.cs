@@ -17,9 +17,11 @@ namespace DoxPreviewExt.Configuration
 		private bool _mscQuicktip = true;
 		private bool _plantUmlQuicktip = true;
 		private bool _latexFormulaQuicktip = true;
+        private int _headCommentLength = 80;
+        private string _doxygenHome = ExtensionCommon.ExtensionContext.constDoxygenHomeURL_;
 
-		/// \brief Browse Reference, if clicked on
-		[Category(ExtensionCommon.ExtensionContext.ConstDoxOptionsActionSettingsName)]
+        /// \brief Browse Reference, if clicked on
+        [Category(ExtensionCommon.ExtensionContext.ConstDoxOptionsActionSettingsName)]
 		[DisplayName("Click on Reference  @ref")]
 		[Description("Click on Reference  @ref")]
 		public bool ClickOnRef
@@ -97,5 +99,23 @@ namespace DoxPreviewExt.Configuration
 			get { return _latexFormulaQuicktip; }
 			set { _latexFormulaQuicktip = value; }
 		}
-	}
+
+        [Category(ExtensionCommon.ExtensionContext.ConstDoxOptionsActionSettingsName)]
+        [DisplayName("Comment block length")]
+        [Description("Length of the head comment block")]
+        public int HeadCommentLength
+        {
+            get { return _headCommentLength; }
+            set { _headCommentLength = value; }
+        }
+
+        [Category(ExtensionCommon.ExtensionContext.ConstDoxOptionsActionSettingsName)]
+        [DisplayName("Doxygen home")]
+        [Description("Doxygen home")]
+        public string DoxygenHome
+        {
+            get { return _doxygenHome; }
+            set { _doxygenHome = value; }
+        }
+    }
 }
