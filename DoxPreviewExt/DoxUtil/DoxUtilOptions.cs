@@ -80,7 +80,14 @@ namespace DoxPreviewExt.DoxUtil
 		/// \brief Show Latex Formula  preview in Quicktip
 		public bool LatexFormulaQT { get { return MimeTeXValid() && Page<Configuration.OptionPageActionSettings>().LatexFormulaQuicktip; } }
 
-		public List<string> ImagePaths { get { return imagePaths_; } }
+        /// \brief User defined function header comment block
+		public bool UserDefinedHead { get { return Page<Configuration.OptionPageDocumentCode>().UserDefinedHead; } }
+
+        /// \brief Header comment block text
+		public string HeadCommentBlock { get { return Page<Configuration.OptionPageDocumentCode>().HeadCommentBlock; } }
+
+
+        public List<string> ImagePaths { get { return imagePaths_; } }
 		public List<string> DotPaths { get { return dotPaths_; } }
 		public List<string> MscPaths { get { return mscPaths_; } }
 		public List<string> DiaPaths { get { return diaPaths_; } }

@@ -6,7 +6,10 @@ using System.Windows.Forms;
 
 namespace DoxPreviewExt.Configuration
 {
-	[Guid("F0E49B98-9DBC-4683-8821-95D6429145CB")]
+    /// \brief Options Page Grid
+    /// cf Creating an Options Page
+    /// [https://msdn.microsoft.com/en-us/library/bb166195.aspx?f=255&MSPPError=-2147217396]
+    [Guid("F0E49B98-9DBC-4683-8821-95D6429145CB")]
 	class OptionPageDoxygenConfiguration : DialogPage
 	{
 		private bool _useSourceBrowser = true;

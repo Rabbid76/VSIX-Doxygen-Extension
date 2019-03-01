@@ -27,9 +27,10 @@ namespace ExtensionCommon
 
 		public const string ConstDoxOptionsActionSettingsName = @"Display and action settings";
 		public const string ConstDoxOptionsConfigurationName = @"Doxygen configuration";
+        public const string ConstDoxOptionsDocumentCodeName = @"Code documentation settings";
 
 
-		private static List<string> _pathList = new List<string>
+        private static List<string> _pathList = new List<string>
 		{
 			@"C:\Tools",
 			@"C:\Program Files",
